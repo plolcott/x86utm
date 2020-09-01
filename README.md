@@ -10,16 +10,16 @@ There are two restrictions on the "C" code that can be executed in this virtual 
 <b>The UTM environment is like a tiny little operating system here are its only functions:</b>
 
 // allocates memory from Heap_Space.<br>
-<b>Tu32* Allocate(u32 size); </b>
+<b>u32* Allocate(u32 size); </b>
 
 // executes a slave UTM in single step debug mode<br>
-<b>Tu32 Debug_Step(u32* master_state, u32* slave_state);</b>
+<b>u32 Debug_Step(u32* master_state, u32* slave_state);</b>
 
 // Saves the execution state of a UTM to state_data<br>
-<b>Tu32 Save_State(u32* state_data);  </b>
+<b>u32 Save_State(u32* state_data);  </b>
 
 // Loads the execution state of a UTM from state_data<br>
-<b>Tu32 Load_State(u32* state_data);  </b>
+<b>u32 Load_State(u32* state_data);  </b>
 
 When a UTM is running the execution trace of each assembly language instruction / operating system function call is provided.
 After each Debug_Step() virtual machine instruction is executed the Master UTM can examine the machine state of the Slave UTM.
