@@ -13,3 +13,4 @@ The UTM environment is like a tiny little operating system here are its only fun
 <b>u32 LoadState(u32* state_data);</b>----------------------------// Loads the execution state of a UTM from state_data<br>
 
 When a UTM is running the execution trace of each assembly language instruction / operating system function call is provided. 
+After each DebugStep() virtual machine instruction is executed the Master UTM can examine the machine state of the Slave UTM. 
