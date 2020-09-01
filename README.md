@@ -22,5 +22,7 @@ There are two restrictions on the "C" code that can be executed in this virtual 
 <b>u32 Load_State(u32* state_data);  </b>
 
 When a UTM is running the execution trace of each assembly language instruction / operating system function call is provided.
+
 After each Debug_Step() virtual machine instruction is executed the Master UTM can examine the machine state of the Slave UTM.
 
+The recursion depth of UTMs executing other UTMs in Debug-Step mode is of arbitrary depth. 
