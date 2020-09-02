@@ -13,16 +13,16 @@ It can be shown that every "C" and x86 program that terminates has a Turing Mach
 <b>The UTM environment is like a tiny little operating system here are its only functions:</b>
 
 // allocates memory from Heap_Space.<br>
-<b>u32* Allocate(u32 size); </b>
+<b>[A] u32* Allocate(u32 size); </b>
 
 // executes a slave UTM in single step debug mode<br>
-<b>u32 Debug_Step(u32* master_state, u32* slave_state);</b>
+<b>[B] u32 Debug_Step(u32* master_state, u32* slave_state);</b>
 
 // Saves the execution state of a UTM to state_data<br>
-<b>u32 Save_State(u32* state_data);  </b>
+<b>[C] u32 Save_State(u32* state_data);  </b>
 
 // Loads the execution state of a UTM from state_data<br>
-<b>u32 Load_State(u32* state_data);  </b>
+<b>[D] u32 Load_State(u32* state_data);  </b>
 
 When a UTM is running the execution trace of each assembly language instruction / operating system function call is provided.
 
