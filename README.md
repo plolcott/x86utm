@@ -24,7 +24,7 @@ It can be shown that every "C" and x86 program that terminates has a Turing Mach
 // Loads the execution state of a UTM from state_data<br>
 <b>[D] u32 Load_State(u32* state_data);  </b>
 
-When a UTM is running the execution trace of each assembly language instruction / operating system function call is provided.
+When a UTM is running the execution trace of each assembly language instruction / operating system function call is written to stdout. 
 
 After each Debug_Step() virtual machine instruction is executed the Master UTM can examine the machine state of the Slave UTM.
 
