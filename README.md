@@ -5,7 +5,7 @@ This x86 based Universal Turing Machine (UTM) directly executes COFF object file
 
 There are two restrictions on the "C" code that can be executed in this virtual machine:<br>
 (1) All global data must be initialized.<br>
-(2) No library function can be called.<br>
+(2) No library functions can be called.<br>
 
 <b>The UTM environment is like a tiny little operating system here are its only functions:</b>
 
