@@ -8,7 +8,7 @@ There are two restrictions on the "C" code that can be executed in this virtual 
 (2) No library functions can be called.<br>
 
 The intent is to study theory of computation problems such as the Halting Problem in a high level language such as "C". 
-It can be shown that every x86 program that terminates has a Turing Machine equivalent. 
+It can be shown that every "C" and x86 program that terminates has a Turing Machine equivalent. 
 
 <b>The UTM environment is like a tiny little operating system here are its only functions:</b>
 
