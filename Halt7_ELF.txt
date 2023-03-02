@@ -1,0 +1,199 @@
+Read: 7932 bytes from "Halt7.o"
+Reader.ObjectCode.size(7932)
+    Signature 7fELF
+     EI_CLASS 01
+     EI_DATA  01
+     EI_VERSI 01
+     EI_OSABI 00
+EI_ABIVERSION 00
+       e_type 01
+    e_machine 03
+    e_version 0001
+      e_entry 0000
+      e_phoff 0000
+      e_shoff 1cf4
+      e_flags 0000
+     e_ehsize 52 Decimal
+  e_phentsize 00 Decimal
+      e_phnum 00 Decimal
+  e_shentsize 40 Decimal
+      e_shnum 13 Decimal
+   e_shstrndx 0a
+[01] .text            PROGBITS
+Relocation.size(97)
+[02] .rel.text        REL
+[03] .data            PROGBITS
+[04] .bss             NOBITS
+[05] .rodata          PROGBITS
+[06] .comment         PROGBITS
+[07] .note.GNU-stack  PROGBITS
+[08] .eh_frame        PROGBITS
+[09] .rel.eh_frame    REL
+[10] .shstrtab        STRTAB
+Symbols.size(53)
+[11] .symtab          SYMTAB
+[12] .strtab          STRTAB
+[0000]                 sh_name:0000  sh_type:0000  sh_flags:0000  sh_offset:0000  sh_size:0000
+[0001] .text           sh_name:001f  sh_type:0001  sh_flags:0006  sh_offset:0034  sh_size:0b87
+[0002] .rel.text       sh_name:001b  sh_type:0009  sh_flags:0040  sh_offset:187c  sh_size:0308
+[0003] .data           sh_name:0025  sh_type:0001  sh_flags:0003  sh_offset:0bbc  sh_size:002c
+[0004] .bss            sh_name:002b  sh_type:0008  sh_flags:0003  sh_offset:0be8  sh_size:0000
+[0005] .rodata         sh_name:0030  sh_type:0001  sh_flags:0002  sh_offset:0be8  sh_size:0279
+[0006] .comment        sh_name:0038  sh_type:0001  sh_flags:0030  sh_offset:0e61  sh_size:0036
+[0007] .note.GNU-stack sh_name:0041  sh_type:0001  sh_flags:0000  sh_offset:0e97  sh_size:0000
+[0008] .eh_frame       sh_name:0055  sh_type:0001  sh_flags:0002  sh_offset:0e98  sh_size:0468
+[0009] .rel.eh_frame   sh_name:0051  sh_type:0009  sh_flags:0040  sh_offset:1b84  sh_size:0110
+[0010] .shstrtab       sh_name:0011  sh_type:0003  sh_flags:0000  sh_offset:1c94  sh_size:005f
+[0011] .symtab         sh_name:0001  sh_type:0002  sh_flags:0000  sh_offset:1300  sh_size:0350
+[0012] .strtab         sh_name:0009  sh_type:0003  sh_flags:0000  sh_offset:1650  sh_size:022c
+[00] Address[--None--]                                                st_name[00000000]   st_value[00000000]   st_size[00000000]  st_info[00]   st_other[000]   st_shndx[0000]
+[01] Address[--None--]  Halt7.c                                       st_name[00000001]   st_value[00000000]   st_size[00000000]  st_info[04]   st_other[000]   st_shndx[fff1]
+[02] Address[--None--]                                                st_name[00000000]   st_value[00000000]   st_size[00000000]  st_info[03]   st_other[000]   st_shndx[0001]
+[03] Address[--None--]                                                st_name[00000000]   st_value[00000000]   st_size[00000000]  st_info[03]   st_other[000]   st_shndx[0003]
+[04] Address[--None--]                                                st_name[00000000]   st_value[00000000]   st_size[00000000]  st_info[03]   st_other[000]   st_shndx[0004]
+[05] Address[--None--]                                                st_name[00000000]   st_value[00000000]   st_size[00000000]  st_info[03]   st_other[000]   st_shndx[0005]
+[06] Address[--None--]                                                st_name[00000000]   st_value[00000000]   st_size[00000000]  st_info[03]   st_other[000]   st_shndx[0007]
+[07] Address[--None--]                                                st_name[00000000]   st_value[00000000]   st_size[00000000]  st_info[03]   st_other[000]   st_shndx[0008]
+[08] Address[--None--]                                                st_name[00000000]   st_value[00000000]   st_size[00000000]  st_info[03]   st_other[000]   st_shndx[0006]
+[09] Address[00000bbc]  BEGIN                                         st_name[00000009]   st_value[00000000]   st_size[00000012]  st_info[11]   st_other[000]   st_shndx[0003]
+[0a] Address[00000bd0]  Heap_PTR                                      st_name[0000000f]   st_value[00000014]   st_size[00000004]  st_info[11]   st_other[000]   st_shndx[0003]
+[0b] Address[00000bd4]  Heap_END                                      st_name[00000018]   st_value[00000018]   st_size[00000004]  st_info[11]   st_other[000]   st_shndx[0003]
+[0c] Address[00000bd8]  END                                           st_name[0000001d]   st_value[0000001c]   st_size[00000010]  st_info[11]   st_other[000]   st_shndx[0003]
+[0d] Address[00000034]  OutputString                                  st_name[00000021]   st_value[00000000]   st_size[00000006]  st_info[12]   st_other[000]   st_shndx[0001]
+[0e] Address[0000003a]  Output                                        st_name[0000002e]   st_value[00000006]   st_size[00000006]  st_info[12]   st_other[000]   st_shndx[0001]
+[0f] Address[00000040]  Allocate                                      st_name[00000035]   st_value[0000000c]   st_size[0000000a]  st_info[12]   st_other[000]   st_shndx[0001]
+[10] Address[0000004a]  SaveState                                     st_name[0000003e]   st_value[00000016]   st_size[00000006]  st_info[12]   st_other[000]   st_shndx[0001]
+[11] Address[00000050]  LoadState                                     st_name[00000048]   st_value[0000001c]   st_size[00000006]  st_info[12]   st_other[000]   st_shndx[0001]
+[12] Address[00000056]  DebugStep                                     st_name[00000052]   st_value[00000022]   st_size[0000000a]  st_info[12]   st_other[000]   st_shndx[0001]
+[13] Address[00000060]  PushBack                                      st_name[0000005c]   st_value[0000002c]   st_size[00000006]  st_info[12]   st_other[000]   st_shndx[0001]
+[14] Address[00000066]  StackPush                                     st_name[00000065]   st_value[00000032]   st_size[0000000a]  st_info[12]   st_other[000]   st_shndx[0001]
+[15] Address[00000070]  get_code_end                                  st_name[0000006f]   st_value[0000003c]   st_size[0000000a]  st_info[12]   st_other[000]   st_shndx[0001]
+[16] Address[0000007a]  Last_Address_Of_Operating_System              st_name[0000007c]   st_value[00000046]   st_size[0000000a]  st_info[12]   st_other[000]   st_shndx[0001]
+[17] Address[00000084]  Infinite_Loop_Needs_To_Be_Aborted_Trace       st_name[0000009d]   st_value[00000050]   st_size[000000a7]  st_info[12]   st_other[000]   st_shndx[0001]
+[18] Address[0000012b]  Infinite_Recursion_Needs_To_Be_Aborted_Trace  st_name[000000c5]   st_value[000000f7]   st_size[000000b7]  st_info[12]   st_other[000]   st_shndx[0001]
+[19] Address[000001e2]  Infinite_Simulation_Needs_To_Be_Aborted_Trace st_name[000000f2]   st_value[000001ae]   st_size[000000ec]  st_info[12]   st_other[000]   st_shndx[0001]
+[1a] Address[000002ce]  Needs_To_Be_Aborted                           st_name[00000120]   st_value[0000029a]   st_size[000000ae]  st_info[12]   st_other[000]   st_shndx[0001]
+[1b] Address[0000037c]  Decide_Halting                                st_name[00000134]   st_value[00000348]   st_size[000000d5]  st_info[12]   st_other[000]   st_shndx[0001]
+[1c] Address[00000451]  Init_slave_state                              st_name[00000143]   st_value[0000041d]   st_size[00000050]  st_info[12]   st_other[000]   st_shndx[0001]
+[1d] Address[000004a1]  Needs_To_Be_Aborted_Trace_HH                  st_name[00000154]   st_value[0000046d]   st_size[00000110]  st_info[12]   st_other[000]   st_shndx[0001]
+[1e] Address[000005b1]  Needs_To_Be_Aborted_HH                        st_name[00000171]   st_value[0000057d]   st_size[0000008a]  st_info[12]   st_other[000]   st_shndx[0001]
+[1f] Address[0000063b]  Decide_Halting_HH                             st_name[00000188]   st_value[00000607]   st_size[000000d6]  st_info[12]   st_other[000]   st_shndx[0001]
+[20] Address[00000711]  Init_Halts_HH                                 st_name[0000019a]   st_value[000006dd]   st_size[000000c3]  st_info[12]   st_other[000]   st_shndx[0001]
+[21] Address[000007d4]  HH                                            st_name[00000185]   st_value[000007a0]   st_size[000000d2]  st_info[12]   st_other[000]   st_shndx[0001]
+[22] Address[--None--]  DATA1                                         st_name[000001a8]   st_value[00000000]   st_size[00000000]  st_info[10]   st_other[000]   st_shndx[0000]
+[23] Address[--None--]  Aborted                                       st_name[0000012c]   st_value[00000000]   st_size[00000000]  st_info[10]   st_other[000]   st_shndx[0000]
+[24] Address[--None--]  DATA2                                         st_name[000001ae]   st_value[00000000]   st_size[00000000]  st_info[10]   st_other[000]   st_shndx[0000]
+[25] Address[--None--]  execution_trace                               st_name[000001b4]   st_value[00000000]   st_size[00000000]  st_info[10]   st_other[000]   st_shndx[0000]
+[26] Address[--None--]  END_OF_CODE                                   st_name[000001c4]   st_value[00000000]   st_size[00000000]  st_info[10]   st_other[000]   st_shndx[0000]
+[27] Address[--None--]  End_Of_Code                                   st_name[000001d0]   st_value[00000000]   st_size[00000000]  st_info[10]   st_other[000]   st_shndx[0000]
+[28] Address[000008a6]  H1                                            st_name[000001dc]   st_value[00000872]   st_size[00000103]  st_info[12]   st_other[000]   st_shndx[0001]
+[29] Address[000009a9]  H                                             st_name[00000186]   st_value[00000975]   st_size[00000113]  st_info[12]   st_other[000]   st_shndx[0001]
+[2a] Address[00000abc]  Halts                                         st_name[000001df]   st_value[00000a88]   st_size[0000000a]  st_info[12]   st_other[000]   st_shndx[0001]
+[2b] Address[00000ac6]  P                                             st_name[00000222]   st_value[00000a92]   st_size[00000022]  st_info[12]   st_other[000]   st_shndx[0001]
+[2c] Address[00000ae8]  Infinite_Loop2                                st_name[000001e5]   st_value[00000ab4]   st_size[00000007]  st_info[12]   st_other[000]   st_shndx[0001]
+[2d] Address[00000aef]  Infinite_Loop3                                st_name[000001f4]   st_value[00000abb]   st_size[00000009]  st_info[12]   st_other[000]   st_shndx[0001]
+[2e] Address[00000af8]  Infinite_Recursion                            st_name[00000203]   st_value[00000ac4]   st_size[00000017]  st_info[12]   st_other[000]   st_shndx[0001]
+[2f] Address[00000b0f]  Add3                                          st_name[00000216]   st_value[00000adb]   st_size[0000000b]  st_info[12]   st_other[000]   st_shndx[0001]
+[30] Address[00000b1a]  PR                                            st_name[0000021b]   st_value[00000ae6]   st_size[00000017]  st_info[12]   st_other[000]   st_shndx[0001]
+[31] Address[00000b31]  HR                                            st_name[0000021e]   st_value[00000afd]   st_size[00000017]  st_info[12]   st_other[000]   st_shndx[0001]
+[32] Address[00000b48]  PP                                            st_name[00000221]   st_value[00000b14]   st_size[00000022]  st_info[12]   st_other[000]   st_shndx[0001]
+[33] Address[00000b6a]  Px                                            st_name[00000224]   st_value[00000b36]   st_size[00000014]  st_info[12]   st_other[000]   st_shndx[0001]
+[34] Address[00000b7e]  main                                          st_name[00000227]   st_value[00000b4a]   st_size[0000003d]  st_info[12]   st_other[000]   st_shndx[0001]
+[00] r_offset[00000306]  r_info[00001902]  Address2Patch[0000033a]  Patch_Address[000001e2]  Infinite_Simulation_Needs_To_Be_Aborted_Trace 
+[01] r_offset[00000319]  r_info[00001802]  Address2Patch[0000034d]  Patch_Address[0000012b]  Infinite_Recursion_Needs_To_Be_Aborted_Trace  
+[02] r_offset[00000339]  r_info[00001702]  Address2Patch[0000036d]  Patch_Address[00000084]  Infinite_Loop_Needs_To_Be_Aborted_Trace       
+[03] r_offset[00000374]  r_info[00001202]  Address2Patch[000003a8]  Patch_Address[00000056]  DebugStep                                     
+[04] r_offset[0000039e]  r_info[00001302]  Address2Patch[000003d2]  Patch_Address[00000060]  PushBack                                      
+[05] r_offset[000003b5]  r_info[00001a02]  Address2Patch[000003e9]  Patch_Address[000002ce]  Needs_To_Be_Aborted                           
+[06] r_offset[000003cf]  r_info[00000d02]  Address2Patch[00000403]  Patch_Address[00000034]  OutputString                                  
+[07] r_offset[000003dd]  r_info[00000501]  Address2Patch[00000000]  Patch_Address[00000000]                                                
+[08] r_offset[000003e2]  r_info[00000d02]  Address2Patch[00000416]  Patch_Address[00000034]  OutputString                                  
+[09] r_offset[000003f0]  r_info[00000501]  Address2Patch[00000000]  Patch_Address[00000000]                                                
+[10] r_offset[000003f5]  r_info[00000d02]  Address2Patch[00000429]  Patch_Address[00000034]  OutputString                                  
+[11] r_offset[00000403]  r_info[00000501]  Address2Patch[00000000]  Patch_Address[00000000]                                                
+[12] r_offset[00000408]  r_info[00000d02]  Address2Patch[0000043c]  Patch_Address[00000034]  OutputString                                  
+[13] r_offset[0000042a]  r_info[00001402]  Address2Patch[0000045e]  Patch_Address[00000066]  StackPush                                     
+[14] r_offset[0000043b]  r_info[00001402]  Address2Patch[0000046f]  Patch_Address[00000066]  StackPush                                     
+[15] r_offset[00000449]  r_info[00001002]  Address2Patch[0000047d]  Patch_Address[0000004a]  SaveState                                     
+[16] r_offset[00000500]  r_info[00000501]  Address2Patch[00000000]  Patch_Address[00000000]                                                
+[17] r_offset[00000505]  r_info[00000d02]  Address2Patch[00000539]  Patch_Address[00000034]  OutputString                                  
+[18] r_offset[00000555]  r_info[00000501]  Address2Patch[00000000]  Patch_Address[00000000]                                                
+[19] r_offset[0000055a]  r_info[00000d02]  Address2Patch[0000058e]  Patch_Address[00000034]  OutputString                                  
+[20] r_offset[000005d8]  r_info[00001d02]  Address2Patch[0000060c]  Patch_Address[000004a1]  Needs_To_Be_Aborted_Trace_HH                  
+[21] r_offset[000005f8]  r_info[00001d02]  Address2Patch[0000062c]  Patch_Address[000004a1]  Needs_To_Be_Aborted_Trace_HH                  
+[22] r_offset[00000637]  r_info[00001202]  Address2Patch[0000066b]  Patch_Address[00000056]  DebugStep                                     
+[23] r_offset[0000063f]  r_info[00001602]  Address2Patch[00000673]  Patch_Address[0000007a]  Last_Address_Of_Operating_System              
+[24] r_offset[0000065b]  r_info[00001302]  Address2Patch[0000068f]  Patch_Address[00000060]  PushBack                                      
+[25] r_offset[000006a8]  r_info[00001e02]  Address2Patch[000006dc]  Patch_Address[000005b1]  Needs_To_Be_Aborted_HH                        
+[26] r_offset[000006e4]  r_info[00000f02]  Address2Patch[00000718]  Patch_Address[00000040]  Allocate                                      
+[27] r_offset[000006f6]  r_info[00001502]  Address2Patch[0000072a]  Patch_Address[00000070]  get_code_end                                  
+[28] r_offset[00000707]  r_info[00000f02]  Address2Patch[0000073b]  Patch_Address[00000040]  Allocate                                      
+[29] r_offset[00000718]  r_info[00000f02]  Address2Patch[0000074c]  Patch_Address[00000040]  Allocate                                      
+[30] r_offset[0000072c]  r_info[00000f02]  Address2Patch[00000760]  Patch_Address[00000040]  Allocate                                      
+[31] r_offset[00000741]  r_info[00000501]  Address2Patch[00000000]  Patch_Address[00000000]                                                
+[32] r_offset[00000746]  r_info[00000e02]  Address2Patch[0000077a]  Patch_Address[0000003a]  Output                                        
+[33] r_offset[00000771]  r_info[00000f02]  Address2Patch[000007a5]  Patch_Address[00000040]  Allocate                                      
+[34] r_offset[00000783]  r_info[00000501]  Address2Patch[00000000]  Patch_Address[00000000]                                                
+[35] r_offset[00000788]  r_info[00000e02]  Address2Patch[000007bc]  Patch_Address[0000003a]  Output                                        
+[36] r_offset[000007aa]  r_info[00002201]  Address2Patch[000007de]  Patch_Address[00000bbc]  DATA1                                         
+[37] r_offset[000007af]  r_info[00002301]  Address2Patch[000007e3]  Patch_Address[00000bbc]  Aborted                                       
+[38] r_offset[000007b5]  r_info[00002401]  Address2Patch[000007e9]  Patch_Address[00000bbc]  DATA2                                         
+[39] r_offset[000007ba]  r_info[00002501]  Address2Patch[000007ee]  Patch_Address[00000bbc]  execution_trace                               
+[40] r_offset[000007bf]  r_info[00002601]  Address2Patch[000007f3]  Patch_Address[00000bbc]  END_OF_CODE                                   
+[41] r_offset[000007c4]  r_info[00002701]  Address2Patch[000007f8]  Patch_Address[00000bbc]  End_Of_Code                                   
+[42] r_offset[000007e9]  r_info[00002002]  Address2Patch[0000081d]  Patch_Address[00000711]  Init_Halts_HH                                 
+[43] r_offset[00000807]  r_info[00001c02]  Address2Patch[0000083b]  Patch_Address[00000451]  Init_slave_state                              
+[44] r_offset[00000831]  r_info[00001f02]  Address2Patch[00000865]  Patch_Address[0000063b]  Decide_Halting_HH                             
+[45] r_offset[0000087a]  r_info[00002801]  Address2Patch[000008ae]  Patch_Address[0000142e]  H1                                            
+[46] r_offset[00000880]  r_info[00001502]  Address2Patch[000008b4]  Patch_Address[00000070]  get_code_end                                  
+[47] r_offset[0000088d]  r_info[00002801]  Address2Patch[000008c1]  Patch_Address[0000142e]  H1                                            
+[48] r_offset[00000896]  r_info[00001502]  Address2Patch[000008ca]  Patch_Address[00000070]  get_code_end                                  
+[49] r_offset[000008a3]  r_info[00000f02]  Address2Patch[000008d7]  Patch_Address[00000040]  Allocate                                      
+[50] r_offset[000008b0]  r_info[00000f02]  Address2Patch[000008e4]  Patch_Address[00000040]  Allocate                                      
+[51] r_offset[000008bd]  r_info[00000f02]  Address2Patch[000008f1]  Patch_Address[00000040]  Allocate                                      
+[52] r_offset[000008cd]  r_info[00000f02]  Address2Patch[00000901]  Patch_Address[00000040]  Allocate                                      
+[53] r_offset[000008dd]  r_info[00000f02]  Address2Patch[00000911]  Patch_Address[00000040]  Allocate                                      
+[54] r_offset[000008fb]  r_info[00001c02]  Address2Patch[0000092f]  Patch_Address[00000451]  Init_slave_state                              
+[55] r_offset[00000907]  r_info[00000501]  Address2Patch[00000000]  Patch_Address[00000000]                                                
+[56] r_offset[0000090c]  r_info[00000e02]  Address2Patch[00000940]  Patch_Address[0000003a]  Output                                        
+[57] r_offset[00000917]  r_info[00000501]  Address2Patch[00000000]  Patch_Address[00000000]                                                
+[58] r_offset[0000091c]  r_info[00000e02]  Address2Patch[00000950]  Patch_Address[0000003a]  Output                                        
+[59] r_offset[00000946]  r_info[00000501]  Address2Patch[00000000]  Patch_Address[00000000]                                                
+[60] r_offset[0000094b]  r_info[00001b02]  Address2Patch[0000097f]  Patch_Address[0000037c]  Decide_Halting                                
+[61] r_offset[0000095f]  r_info[00000501]  Address2Patch[00000000]  Patch_Address[00000000]                                                
+[62] r_offset[00000964]  r_info[00000d02]  Address2Patch[00000998]  Patch_Address[00000034]  OutputString                                  
+[63] r_offset[0000097d]  r_info[00002901]  Address2Patch[000009b1]  Patch_Address[00001531]  H                                             
+[64] r_offset[00000983]  r_info[00001502]  Address2Patch[000009b7]  Patch_Address[00000070]  get_code_end                                  
+[65] r_offset[00000990]  r_info[00002901]  Address2Patch[000009c4]  Patch_Address[00001531]  H                                             
+[66] r_offset[00000999]  r_info[00001502]  Address2Patch[000009cd]  Patch_Address[00000070]  get_code_end                                  
+[67] r_offset[000009a6]  r_info[00000f02]  Address2Patch[000009da]  Patch_Address[00000040]  Allocate                                      
+[68] r_offset[000009b3]  r_info[00000f02]  Address2Patch[000009e7]  Patch_Address[00000040]  Allocate                                      
+[69] r_offset[000009c0]  r_info[00000f02]  Address2Patch[000009f4]  Patch_Address[00000040]  Allocate                                      
+[70] r_offset[000009d0]  r_info[00000f02]  Address2Patch[00000a04]  Patch_Address[00000040]  Allocate                                      
+[71] r_offset[000009e0]  r_info[00000f02]  Address2Patch[00000a14]  Patch_Address[00000040]  Allocate                                      
+[72] r_offset[000009ee]  r_info[00000501]  Address2Patch[00000000]  Patch_Address[00000000]                                                
+[73] r_offset[000009f3]  r_info[00000e02]  Address2Patch[00000a27]  Patch_Address[0000003a]  Output                                        
+[74] r_offset[00000a0e]  r_info[00001c02]  Address2Patch[00000a42]  Patch_Address[00000451]  Init_slave_state                              
+[75] r_offset[00000a1a]  r_info[00000501]  Address2Patch[00000000]  Patch_Address[00000000]                                                
+[76] r_offset[00000a1f]  r_info[00000e02]  Address2Patch[00000a53]  Patch_Address[0000003a]  Output                                        
+[77] r_offset[00000a2a]  r_info[00000501]  Address2Patch[00000000]  Patch_Address[00000000]                                                
+[78] r_offset[00000a2f]  r_info[00000e02]  Address2Patch[00000a63]  Patch_Address[0000003a]  Output                                        
+[79] r_offset[00000a59]  r_info[00000501]  Address2Patch[00000000]  Patch_Address[00000000]                                                
+[80] r_offset[00000a5e]  r_info[00001b02]  Address2Patch[00000a92]  Patch_Address[0000037c]  Decide_Halting                                
+[81] r_offset[00000a72]  r_info[00000501]  Address2Patch[00000000]  Patch_Address[00000000]                                                
+[82] r_offset[00000a77]  r_info[00000d02]  Address2Patch[00000aab]  Patch_Address[00000034]  OutputString                                  
+[83] r_offset[00000a9f]  r_info[00002902]  Address2Patch[00000ad3]  Patch_Address[000009a9]  H                                             
+[84] r_offset[00000ad1]  r_info[00002e02]  Address2Patch[00000b05]  Patch_Address[00000af8]  Infinite_Recursion                            
+[85] r_offset[00000af3]  r_info[00003102]  Address2Patch[00000b27]  Patch_Address[00000b31]  HR                                            
+[86] r_offset[00000b0a]  r_info[00003002]  Address2Patch[00000b3e]  Patch_Address[00000b1a]  PR                                            
+[87] r_offset[00000b21]  r_info[00002102]  Address2Patch[00000b55]  Patch_Address[000007d4]  HH                                            
+[88] r_offset[00000b40]  r_info[00002102]  Address2Patch[00000b74]  Patch_Address[000007d4]  HH                                            
+[89] r_offset[00000b4e]  r_info[00000a01]  Address2Patch[00000b82]  Patch_Address[00000bd0]  Heap_PTR                                      
+[90] r_offset[00000b54]  r_info[00000501]  Address2Patch[00000000]  Patch_Address[00000000]                                                
+[91] r_offset[00000b59]  r_info[00000e02]  Address2Patch[00000b8d]  Patch_Address[0000003a]  Output                                        
+[92] r_offset[00000b61]  r_info[00002b01]  Address2Patch[00000b95]  Patch_Address[0000164e]  P                                             
+[93] r_offset[00000b66]  r_info[00002b01]  Address2Patch[00000b9a]  Patch_Address[0000164e]  P                                             
+[94] r_offset[00000b6b]  r_info[00002902]  Address2Patch[00000b9f]  Patch_Address[000009a9]  H                                             
+[95] r_offset[00000b74]  r_info[00000501]  Address2Patch[00000000]  Patch_Address[00000000]                                                
+[96] r_offset[00000b79]  r_info[00000e02]  Address2Patch[00000bad]  Patch_Address[0000003a]  Output                                        
+Wrote: 7932 bytes from "Halt7.ooo"

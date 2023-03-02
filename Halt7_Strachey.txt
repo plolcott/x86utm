@@ -1,0 +1,617 @@
+Convert_to_Sourcefile_Name[Halt7_Strachey.c]
+Read: 3990 bytes from "Halt7_Strachey.obj"
+Is an x86 based COFF Object File!
+Section_Number(4): .text$mn
+Section_Number(3): .data
+CODE_SECTION_INDEX(4)  DATA_SECTION_INDEX (3)
+code_begin[0000030e]  code_end[0000094f]
+Bullfrog(777)
+[0000092e] Entry Point for main()
+Heap_PTR_variable[000001cf] Heap_END_variable[000001d3]  BytesRead(f96)
+Top of Stack(00100f9e) has been allocated from the Heap
+emu->x86.R_ESP(00100f9e) has been assigned to TopOfStack
+[000008e4] Reader.Last_Address_Of_Operating_System
+===============================
+Disassembly Listing
+_Output()
+[0000030e] 55             push ebp
+[0000030f] 8bec           mov ebp,esp
+[00000311] 5d             pop ebp
+[00000312] c3             ret
+Size in bytes:(0005) [00000312]
+
+_OutputString()
+[0000031e] 55             push ebp
+[0000031f] 8bec           mov ebp,esp
+[00000321] 5d             pop ebp
+[00000322] c3             ret
+Size in bytes:(0005) [00000322]
+
+_Allocate()
+[0000032e] 55             push ebp
+[0000032f] 8bec           mov ebp,esp
+[00000331] 33c0           xor eax,eax
+[00000333] 5d             pop ebp
+[00000334] c3             ret
+Size in bytes:(0007) [00000334]
+
+_SaveState()
+[0000033e] 55             push ebp
+[0000033f] 8bec           mov ebp,esp
+[00000341] 5d             pop ebp
+[00000342] c3             ret
+Size in bytes:(0005) [00000342]
+
+_LoadState()
+[0000034e] 55             push ebp
+[0000034f] 8bec           mov ebp,esp
+[00000351] 5d             pop ebp
+[00000352] c3             ret
+Size in bytes:(0005) [00000352]
+
+_DebugStep()
+[0000035e] 55             push ebp
+[0000035f] 8bec           mov ebp,esp
+[00000361] 33c0           xor eax,eax
+[00000363] 5d             pop ebp
+[00000364] c3             ret
+Size in bytes:(0007) [00000364]
+
+_PushBack()
+[0000036e] 55             push ebp
+[0000036f] 8bec           mov ebp,esp
+[00000371] 5d             pop ebp
+[00000372] c3             ret
+Size in bytes:(0005) [00000372]
+
+_StackPush()
+[0000037e] 55             push ebp
+[0000037f] 8bec           mov ebp,esp
+[00000381] 33c0           xor eax,eax
+[00000383] 5d             pop ebp
+[00000384] c3             ret
+Size in bytes:(0007) [00000384]
+
+_get_code_end()
+[0000038e] 55             push ebp
+[0000038f] 8bec           mov ebp,esp
+[00000391] 33c0           xor eax,eax
+[00000393] 5d             pop ebp
+[00000394] c3             ret
+Size in bytes:(0007) [00000394]
+
+_Infinite_Loop_Needs_To_Be_Aborted_Trace()
+[0000039e] 55             push ebp
+[0000039f] 8bec           mov ebp,esp
+[000003a1] 83ec18         sub esp,+18
+[000003a4] c745f800000000 mov [ebp-08],00000000
+[000003ab] 8b4508         mov eax,[ebp+08]
+[000003ae] 8945f0         mov [ebp-10],eax
+[000003b1] b904000000     mov ecx,00000004
+[000003b6] 6bd1ff         imul edx,ecx,-01
+[000003b9] 8b45f0         mov eax,[ebp-10]
+[000003bc] 8b0c10         mov ecx,[eax+edx]
+[000003bf] 894dec         mov [ebp-14],ecx
+[000003c2] 8b45ec         mov eax,[ebp-14]
+[000003c5] 33d2           xor edx,edx
+[000003c7] b918000000     mov ecx,00000018
+[000003cc] f7f1           div ecx
+[000003ce] 83e802         sub eax,+02
+[000003d1] 8945e8         mov [ebp-18],eax
+[000003d4] 8b55e8         mov edx,[ebp-18]
+[000003d7] 8955fc         mov [ebp-04],edx
+[000003da] eb09           jmp 000003e5
+[000003dc] 8b45fc         mov eax,[ebp-04]
+[000003df] 83e801         sub eax,+01
+[000003e2] 8945fc         mov [ebp-04],eax
+[000003e5] 837dfc00       cmp dword [ebp-04],+00
+[000003e9] 7c51           jl 0000043c
+[000003eb] 6b4dfc18       imul ecx,[ebp-04],+18
+[000003ef] 034d08         add ecx,[ebp+08]
+[000003f2] 894df4         mov [ebp-0c],ecx
+[000003f5] 8b55f4         mov edx,[ebp-0c]
+[000003f8] 837a107f       cmp dword [edx+10],+7f
+[000003fc] 7509           jnz 00000407
+[000003fe] 8b45f8         mov eax,[ebp-08]
+[00000401] 83c001         add eax,+01
+[00000404] 8945f8         mov [ebp-08],eax
+[00000407] 8b4d0c         mov ecx,[ebp+0c]
+[0000040a] 817910eb000000 cmp dword [ecx+10],000000eb
+[00000411] 7527           jnz 0000043a
+[00000413] 8b550c         mov edx,[ebp+0c]
+[00000416] 8b450c         mov eax,[ebp+0c]
+[00000419] 8b4a14         mov ecx,[edx+14]
+[0000041c] 3b08           cmp ecx,[eax]
+[0000041e] 771a           ja 0000043a
+[00000420] 8b55f4         mov edx,[ebp-0c]
+[00000423] 8b450c         mov eax,[ebp+0c]
+[00000426] 8b0a           mov ecx,[edx]
+[00000428] 3b4814         cmp ecx,[eax+14]
+[0000042b] 750d           jnz 0000043a
+[0000042d] 837df800       cmp dword [ebp-08],+00
+[00000431] 7507           jnz 0000043a
+[00000433] b801000000     mov eax,00000001
+[00000438] eb04           jmp 0000043e
+[0000043a] eba0           jmp 000003dc
+[0000043c] 33c0           xor eax,eax
+[0000043e] 8be5           mov esp,ebp
+[00000440] 5d             pop ebp
+[00000441] c3             ret
+Size in bytes:(0164) [00000441]
+
+_Infinite_Recursion_Needs_To_Be_Aborted_Trace()
+[0000044e] 55             push ebp
+[0000044f] 8bec           mov ebp,esp
+[00000451] 83ec18         sub esp,+18
+[00000454] c745f400000000 mov [ebp-0c],00000000
+[0000045b] 8b4508         mov eax,[ebp+08]
+[0000045e] 8945f0         mov [ebp-10],eax
+[00000461] b904000000     mov ecx,00000004
+[00000466] 6bd1ff         imul edx,ecx,-01
+[00000469] 8b45f0         mov eax,[ebp-10]
+[0000046c] 8b0c10         mov ecx,[eax+edx]
+[0000046f] 894dec         mov [ebp-14],ecx
+[00000472] 8b45ec         mov eax,[ebp-14]
+[00000475] 33d2           xor edx,edx
+[00000477] b918000000     mov ecx,00000018
+[0000047c] f7f1           div ecx
+[0000047e] 83e802         sub eax,+02
+[00000481] 8945e8         mov [ebp-18],eax
+[00000484] 8b55e8         mov edx,[ebp-18]
+[00000487] 8955fc         mov [ebp-04],edx
+[0000048a] eb09           jmp 00000495
+[0000048c] 8b45fc         mov eax,[ebp-04]
+[0000048f] 83e801         sub eax,+01
+[00000492] 8945fc         mov [ebp-04],eax
+[00000495] 837dfc00       cmp dword [ebp-04],+00
+[00000499] 7c5f           jl 000004fa
+[0000049b] 6b4dfc18       imul ecx,[ebp-04],+18
+[0000049f] 034d08         add ecx,[ebp+08]
+[000004a2] 894df8         mov [ebp-08],ecx
+[000004a5] 8b55f8         mov edx,[ebp-08]
+[000004a8] 837a107f       cmp dword [edx+10],+7f
+[000004ac] 7509           jnz 000004b7
+[000004ae] 8b45f4         mov eax,[ebp-0c]
+[000004b1] 83c001         add eax,+01
+[000004b4] 8945f4         mov [ebp-0c],eax
+[000004b7] 8b4d0c         mov ecx,[ebp+0c]
+[000004ba] 817910e8000000 cmp dword [ecx+10],000000e8
+[000004c1] 7535           jnz 000004f8
+[000004c3] 8b550c         mov edx,[ebp+0c]
+[000004c6] 8b45f8         mov eax,[ebp-08]
+[000004c9] 8b4a10         mov ecx,[edx+10]
+[000004cc] 3b4810         cmp ecx,[eax+10]
+[000004cf] 7527           jnz 000004f8
+[000004d1] 8b550c         mov edx,[ebp+0c]
+[000004d4] 8b45f8         mov eax,[ebp-08]
+[000004d7] 8b0a           mov ecx,[edx]
+[000004d9] 3b08           cmp ecx,[eax]
+[000004db] 751b           jnz 000004f8
+[000004dd] 8b550c         mov edx,[ebp+0c]
+[000004e0] 8b45f8         mov eax,[ebp-08]
+[000004e3] 8b4a14         mov ecx,[edx+14]
+[000004e6] 3b4814         cmp ecx,[eax+14]
+[000004e9] 750d           jnz 000004f8
+[000004eb] 837df400       cmp dword [ebp-0c],+00
+[000004ef] 7507           jnz 000004f8
+[000004f1] b802000000     mov eax,00000002
+[000004f6] eb04           jmp 000004fc
+[000004f8] eb92           jmp 0000048c
+[000004fa] 33c0           xor eax,eax
+[000004fc] 8be5           mov esp,ebp
+[000004fe] 5d             pop ebp
+[000004ff] c3             ret
+Size in bytes:(0178) [000004ff]
+
+_Infinite_Simulation_Needs_To_Be_Aborted_Trace0()
+[0000050e] 55             push ebp
+[0000050f] 8bec           mov ebp,esp
+[00000511] 83ec20         sub esp,+20
+[00000514] c745f400000000 mov [ebp-0c],00000000
+[0000051b] c745f000000000 mov [ebp-10],00000000
+[00000522] c745ec00000000 mov [ebp-14],00000000
+[00000529] 8b4508         mov eax,[ebp+08]
+[0000052c] 8945e8         mov [ebp-18],eax
+[0000052f] b904000000     mov ecx,00000004
+[00000534] 6bd1ff         imul edx,ecx,-01
+[00000537] 8b45e8         mov eax,[ebp-18]
+[0000053a] 8b0c10         mov ecx,[eax+edx]
+[0000053d] 894de4         mov [ebp-1c],ecx
+[00000540] 8b45e4         mov eax,[ebp-1c]
+[00000543] 33d2           xor edx,edx
+[00000545] b918000000     mov ecx,00000018
+[0000054a] f7f1           div ecx
+[0000054c] 83e802         sub eax,+02
+[0000054f] 8945e0         mov [ebp-20],eax
+[00000552] 8b55e0         mov edx,[ebp-20]
+[00000555] 8955fc         mov [ebp-04],edx
+[00000558] eb09           jmp 00000563
+[0000055a] 8b45fc         mov eax,[ebp-04]
+[0000055d] 83e801         sub eax,+01
+[00000560] 8945fc         mov [ebp-04],eax
+[00000563] 837dfc00       cmp dword [ebp-04],+00
+[00000567] 7c6c           jl 000005d5
+[00000569] 6b4dfc18       imul ecx,[ebp-04],+18
+[0000056d] 034d08         add ecx,[ebp+08]
+[00000570] 894df8         mov [ebp-08],ecx
+[00000573] 8b55f8         mov edx,[ebp-08]
+[00000576] 837a107f       cmp dword [edx+10],+7f
+[0000057a] 7509           jnz 00000585
+[0000057c] 8b45ec         mov eax,[ebp-14]
+[0000057f] 83c001         add eax,+01
+[00000582] 8945ec         mov [ebp-14],eax
+[00000585] 8b4df8         mov ecx,[ebp-08]
+[00000588] 83791068       cmp dword [ecx+10],+68
+[0000058c] 7509           jnz 00000597
+[0000058e] 8b55f4         mov edx,[ebp-0c]
+[00000591] 83c201         add edx,+01
+[00000594] 8955f4         mov [ebp-0c],edx
+[00000597] 8b45f8         mov eax,[ebp-08]
+[0000059a] 83781068       cmp dword [eax+10],+68
+[0000059e] 751a           jnz 000005ba
+[000005a0] 8b4df8         mov ecx,[ebp-08]
+[000005a3] 8b5114         mov edx,[ecx+14]
+[000005a6] 3b5510         cmp edx,[ebp+10]
+[000005a9] 750f           jnz 000005ba
+[000005ab] 837df401       cmp dword [ebp-0c],+01
+[000005af] 7509           jnz 000005ba
+[000005b1] 8b45f0         mov eax,[ebp-10]
+[000005b4] 83c001         add eax,+01
+[000005b7] 8945f0         mov [ebp-10],eax
+[000005ba] 837df001       cmp dword [ebp-10],+01
+[000005be] 7513           jnz 000005d3
+[000005c0] 837dfc00       cmp dword [ebp-04],+00
+[000005c4] 750d           jnz 000005d3
+[000005c6] 837dec00       cmp dword [ebp-14],+00
+[000005ca] 7507           jnz 000005d3
+[000005cc] b803000000     mov eax,00000003
+[000005d1] eb04           jmp 000005d7
+[000005d3] eb85           jmp 0000055a
+[000005d5] 33c0           xor eax,eax
+[000005d7] 8be5           mov esp,ebp
+[000005d9] 5d             pop ebp
+[000005da] c3             ret
+Size in bytes:(0205) [000005da]
+
+_Needs_To_Be_Aborted0()
+[000005de] 55             push ebp
+[000005df] 8bec           mov ebp,esp
+[000005e1] 83ec14         sub esp,+14
+[000005e4] c745f800000000 mov [ebp-08],00000000
+[000005eb] 8b4508         mov eax,[ebp+08]
+[000005ee] 8945f4         mov [ebp-0c],eax
+[000005f1] b904000000     mov ecx,00000004
+[000005f6] 6bd1ff         imul edx,ecx,-01
+[000005f9] 8b45f4         mov eax,[ebp-0c]
+[000005fc] 8b0c10         mov ecx,[eax+edx]
+[000005ff] 894df0         mov [ebp-10],ecx
+[00000602] 8b45f0         mov eax,[ebp-10]
+[00000605] 33d2           xor edx,edx
+[00000607] b918000000     mov ecx,00000018
+[0000060c] f7f1           div ecx
+[0000060e] 83e801         sub eax,+01
+[00000611] 8945ec         mov [ebp-14],eax
+[00000614] 6b55ec18       imul edx,[ebp-14],+18
+[00000618] 035508         add edx,[ebp+08]
+[0000061b] 8955fc         mov [ebp-04],edx
+[0000061e] 8b45fc         mov eax,[ebp-04]
+[00000621] 817810e8000000 cmp dword [eax+10],000000e8
+[00000628] 7539           jnz 00000663
+[0000062a] 8b4dfc         mov ecx,[ebp-04]
+[0000062d] 8b5114         mov edx,[ecx+14]
+[00000630] 3b550c         cmp edx,[ebp+0c]
+[00000633] 7519           jnz 0000064e
+[00000635] 8b4510         mov eax,[ebp+10]
+[00000638] 50             push eax
+[00000639] 8b4dfc         mov ecx,[ebp-04]
+[0000063c] 51             push ecx
+[0000063d] 8b5508         mov edx,[ebp+08]
+[00000640] 52             push edx
+[00000641] e8c8feffff     call 0000050e
+[00000646] 83c40c         add esp,+0c
+[00000649] 8945f8         mov [ebp-08],eax
+[0000064c] eb13           jmp 00000661
+[0000064e] 8b45fc         mov eax,[ebp-04]
+[00000651] 50             push eax
+[00000652] 8b4d08         mov ecx,[ebp+08]
+[00000655] 51             push ecx
+[00000656] e8f3fdffff     call 0000044e
+[0000065b] 83c408         add esp,+08
+[0000065e] 8945f8         mov [ebp-08],eax
+[00000661] eb1f           jmp 00000682
+[00000663] 8b55fc         mov edx,[ebp-04]
+[00000666] 817a10eb000000 cmp dword [edx+10],000000eb
+[0000066d] 7513           jnz 00000682
+[0000066f] 8b45fc         mov eax,[ebp-04]
+[00000672] 50             push eax
+[00000673] 8b4d08         mov ecx,[ebp+08]
+[00000676] 51             push ecx
+[00000677] e822fdffff     call 0000039e
+[0000067c] 83c408         add esp,+08
+[0000067f] 8945f8         mov [ebp-08],eax
+[00000682] 8b45f8         mov eax,[ebp-08]
+[00000685] 8be5           mov esp,ebp
+[00000687] 5d             pop ebp
+[00000688] c3             ret
+Size in bytes:(0171) [00000688]
+
+_Decide_Halting0()
+[0000068e] 55             push ebp
+[0000068f] 8bec           mov ebp,esp
+[00000691] 83ec08         sub esp,+08
+[00000694] c745fc00000000 mov [ebp-04],00000000
+[0000069b] 837dfc00       cmp dword [ebp-04],+00
+[0000069f] 7567           jnz 00000708
+[000006a1] 8b451c         mov eax,[ebp+1c]
+[000006a4] 8b08           mov ecx,[eax]
+[000006a6] 8b11           mov edx,[ecx]
+[000006a8] 8955f8         mov [ebp-08],edx
+[000006ab] 8b4510         mov eax,[ebp+10]
+[000006ae] 8b08           mov ecx,[eax]
+[000006b0] 51             push ecx
+[000006b1] 8b551c         mov edx,[ebp+1c]
+[000006b4] 8b02           mov eax,[edx]
+[000006b6] 50             push eax
+[000006b7] 8b4d18         mov ecx,[ebp+18]
+[000006ba] 8b11           mov edx,[ecx]
+[000006bc] 52             push edx
+[000006bd] e89cfcffff     call 0000035e
+[000006c2] 83c40c         add esp,+0c
+[000006c5] 8b45f8         mov eax,[ebp-08]
+[000006c8] 3b4514         cmp eax,[ebp+14]
+[000006cb] 750a           jnz 000006d7
+[000006cd] b801000000     mov eax,00000001
+[000006d2] e985000000     jmp 0000075c
+[000006d7] 6a18           push +18
+[000006d9] 8b4d10         mov ecx,[ebp+10]
+[000006dc] 8b11           mov edx,[ecx]
+[000006de] 52             push edx
+[000006df] 8b450c         mov eax,[ebp+0c]
+[000006e2] 8b08           mov ecx,[eax]
+[000006e4] 51             push ecx
+[000006e5] e884fcffff     call 0000036e
+[000006ea] 83c40c         add esp,+0c
+[000006ed] 8b5528         mov edx,[ebp+28]
+[000006f0] 52             push edx
+[000006f1] 8b4524         mov eax,[ebp+24]
+[000006f4] 50             push eax
+[000006f5] 8b4d0c         mov ecx,[ebp+0c]
+[000006f8] 8b11           mov edx,[ecx]
+[000006fa] 52             push edx
+[000006fb] e8defeffff     call 000005de
+[00000700] 83c40c         add esp,+0c
+[00000703] 8945fc         mov [ebp-04],eax
+[00000706] eb93           jmp 0000069b
+[00000708] 837dfc00       cmp dword [ebp-04],+00
+[0000070c] 7449           jz 00000757
+[0000070e] 8b4508         mov eax,[ebp+08]
+[00000711] 50             push eax
+[00000712] e807fcffff     call 0000031e
+[00000717] 83c404         add esp,+04
+[0000071a] 837dfc01       cmp dword [ebp-04],+01
+[0000071e] 750d           jnz 0000072d
+[00000720] 68e7010000     push 000001e7
+[00000725] e8f4fbffff     call 0000031e
+[0000072a] 83c404         add esp,+04
+[0000072d] 837dfc02       cmp dword [ebp-04],+02
+[00000731] 750d           jnz 00000740
+[00000733] 6813020000     push 00000213
+[00000738] e8e1fbffff     call 0000031e
+[0000073d] 83c404         add esp,+04
+[00000740] 837dfc03       cmp dword [ebp-04],+03
+[00000744] 750d           jnz 00000753
+[00000746] 6847020000     push 00000247
+[0000074b] e8cefbffff     call 0000031e
+[00000750] 83c404         add esp,+04
+[00000753] 33c0           xor eax,eax
+[00000755] eb05           jmp 0000075c
+[00000757] b801000000     mov eax,00000001
+[0000075c] 8be5           mov esp,ebp
+[0000075e] 5d             pop ebp
+[0000075f] c3             ret
+Size in bytes:(0210) [0000075f]
+
+_Init_slave_state0()
+[0000076e] 55             push ebp
+[0000076f] 8bec           mov ebp,esp
+[00000771] 83ec0c         sub esp,+0c
+[00000774] 8b450c         mov eax,[ebp+0c]
+[00000777] 50             push eax
+[00000778] 8b4d14         mov ecx,[ebp+14]
+[0000077b] 51             push ecx
+[0000077c] e8fdfbffff     call 0000037e
+[00000781] 83c408         add esp,+08
+[00000784] 8945fc         mov [ebp-04],eax
+[00000787] 8b5510         mov edx,[ebp+10]
+[0000078a] 52             push edx
+[0000078b] e8aefbffff     call 0000033e
+[00000790] 83c404         add esp,+04
+[00000793] b804000000     mov eax,00000004
+[00000798] 6bc8fe         imul ecx,eax,-02
+[0000079b] 8b5514         mov edx,[ebp+14]
+[0000079e] 8b040a         mov eax,[edx+ecx]
+[000007a1] 8945f8         mov [ebp-08],eax
+[000007a4] b904000000     mov ecx,00000004
+[000007a9] 6bd1ff         imul edx,ecx,-01
+[000007ac] 8b4514         mov eax,[ebp+14]
+[000007af] 8b0c10         mov ecx,[eax+edx]
+[000007b2] 894df4         mov [ebp-0c],ecx
+[000007b5] 8b5510         mov edx,[ebp+10]
+[000007b8] 8b4508         mov eax,[ebp+08]
+[000007bb] 8902           mov [edx],eax
+[000007bd] 8b4d10         mov ecx,[ebp+10]
+[000007c0] 8b55fc         mov edx,[ebp-04]
+[000007c3] 895120         mov [ecx+20],edx
+[000007c6] 8b4510         mov eax,[ebp+10]
+[000007c9] 8b4dfc         mov ecx,[ebp-04]
+[000007cc] 89481c         mov [eax+1c],ecx
+[000007cf] 8be5           mov esp,ebp
+[000007d1] 5d             pop ebp
+[000007d2] c3             ret
+Size in bytes:(0101) [000007d2]
+
+_T()
+[000007de] 55             push ebp
+[000007df] 8bec           mov ebp,esp
+[000007e1] 83ec20         sub esp,+20
+[000007e4] 68de070000     push 000007de
+[000007e9] e8a0fbffff     call 0000038e
+[000007ee] 83c404         add esp,+04
+[000007f1] 8945ec         mov [ebp-14],eax
+[000007f4] c745fcde070000 mov [ebp-04],000007de
+[000007fb] 8b4508         mov eax,[ebp+08]
+[000007fe] 50             push eax
+[000007ff] e88afbffff     call 0000038e
+[00000804] 83c404         add esp,+04
+[00000807] 8945e4         mov [ebp-1c],eax
+[0000080a] 6a18           push +18
+[0000080c] e81dfbffff     call 0000032e
+[00000811] 83c404         add esp,+04
+[00000814] 8945e0         mov [ebp-20],eax
+[00000817] 6a34           push +34
+[00000819] e810fbffff     call 0000032e
+[0000081e] 83c404         add esp,+04
+[00000821] 8945e8         mov [ebp-18],eax
+[00000824] 6a34           push +34
+[00000826] e803fbffff     call 0000032e
+[0000082b] 83c404         add esp,+04
+[0000082e] 8945f4         mov [ebp-0c],eax
+[00000831] 6800000100     push 00010000
+[00000836] e8f3faffff     call 0000032e
+[0000083b] 83c404         add esp,+04
+[0000083e] 8945f8         mov [ebp-08],eax
+[00000841] 68c05d0000     push 00005dc0
+[00000846] e8e3faffff     call 0000032e
+[0000084b] 83c404         add esp,+04
+[0000084e] 8945f0         mov [ebp-10],eax
+[00000851] 8b4df8         mov ecx,[ebp-08]
+[00000854] 51             push ecx
+[00000855] 8b55f4         mov edx,[ebp-0c]
+[00000858] 52             push edx
+[00000859] 8b45ec         mov eax,[ebp-14]
+[0000085c] 50             push eax
+[0000085d] 8b4d08         mov ecx,[ebp+08]
+[00000860] 51             push ecx
+[00000861] e808ffffff     call 0000076e
+[00000866] 83c410         add esp,+10
+[00000869] 8b55f0         mov edx,[ebp-10]
+[0000086c] 52             push edx
+[0000086d] 6887020000     push 00000287
+[00000872] e897faffff     call 0000030e
+[00000877] 83c408         add esp,+08
+[0000087a] 8b45fc         mov eax,[ebp-04]
+[0000087d] 50             push eax
+[0000087e] 68bb020000     push 000002bb
+[00000883] e886faffff     call 0000030e
+[00000888] 83c408         add esp,+08
+[0000088b] 8b4d08         mov ecx,[ebp+08]
+[0000088e] 51             push ecx
+[0000088f] 8b55fc         mov edx,[ebp-04]
+[00000892] 52             push edx
+[00000893] 8d45f8         lea eax,[ebp-08]
+[00000896] 50             push eax
+[00000897] 8d4df4         lea ecx,[ebp-0c]
+[0000089a] 51             push ecx
+[0000089b] 8d55e8         lea edx,[ebp-18]
+[0000089e] 52             push edx
+[0000089f] 8b45e4         mov eax,[ebp-1c]
+[000008a2] 50             push eax
+[000008a3] 8d4de0         lea ecx,[ebp-20]
+[000008a6] 51             push ecx
+[000008a7] 8d55f0         lea edx,[ebp-10]
+[000008aa] 52             push edx
+[000008ab] 68cb020000     push 000002cb
+[000008b0] e8d9fdffff     call 0000068e
+[000008b5] 83c424         add esp,+24
+[000008b8] 85c0           test eax,eax
+[000008ba] 7402           jz 000008be
+[000008bc] eb04           jmp 000008c2
+[000008be] 33c0           xor eax,eax
+[000008c0] eb12           jmp 000008d4
+[000008c2] 68cf020000     push 000002cf
+[000008c7] e852faffff     call 0000031e
+[000008cc] 83c404         add esp,+04
+[000008cf] b801000000     mov eax,00000001
+[000008d4] 8be5           mov esp,ebp
+[000008d6] 5d             pop ebp
+[000008d7] c3             ret
+Size in bytes:(0250) [000008d7]
+
+_Halts()
+[000008de] 55             push ebp
+[000008df] 8bec           mov ebp,esp
+[000008e1] 33c0           xor eax,eax
+[000008e3] 5d             pop ebp
+[000008e4] c3             ret
+Size in bytes:(0007) [000008e4]
+
+_Infinite_Loop()
+[000008ee] 55             push ebp
+[000008ef] 8bec           mov ebp,esp
+[000008f1] ebfe           jmp 000008f1
+[000008f3] 5d             pop ebp
+[000008f4] c3             ret
+Size in bytes:(0007) [000008f4]
+
+_Infinite_Recursion()
+[000008fe] 55             push ebp
+[000008ff] 8bec           mov ebp,esp
+[00000901] e8f8ffffff     call 000008fe
+[00000906] 5d             pop ebp
+[00000907] c3             ret
+Size in bytes:(0010) [00000907]
+
+_Strachey_P()
+[0000090e] 55             push ebp
+[0000090f] 8bec           mov ebp,esp
+[00000911] 680e090000     push 0000090e
+[00000916] e8c3feffff     call 000007de
+[0000091b] 83c404         add esp,+04
+[0000091e] 85c0           test eax,eax
+[00000920] 7402           jz 00000924
+[00000922] ebed           jmp 00000911
+[00000924] 5d             pop ebp
+[00000925] c3             ret
+Size in bytes:(0024) [00000925]
+
+_main()
+[0000092e] 55             push ebp
+[0000092f] 8bec           mov ebp,esp
+[00000931] 680e090000     push 0000090e
+[00000936] e8a3feffff     call 000007de
+[0000093b] 83c404         add esp,+04
+[0000093e] 50             push eax
+[0000093f] 68ff020000     push 000002ff
+[00000944] e8c5f9ffff     call 0000030e
+[00000949] 83c408         add esp,+08
+[0000094c] 33c0           xor eax,eax
+[0000094e] 5d             pop ebp
+[0000094f] c3             ret
+Size in bytes:(0034) [0000094f]
+
+ machine   stack     stack     machine    assembly
+ address   address   data      code       language
+ ========  ========  ========  =========  =============
+[0000092e][00100f9a][00000000] 55             push ebp
+[0000092f][00100f9a][00000000] 8bec           mov ebp,esp
+[00000931][00100f96][0000090e] 680e090000     push 0000090e
+[00000936][00100f92][0000093b] e8a3feffff     call 000007de
+
+T: Begin Simulation   Execution Trace Stored at:111046
+Address_of_T:7de
+[0000090e][00111036][0011103a] 55             push ebp
+[0000090f][00111036][0011103a] 8bec           mov ebp,esp
+[00000911][00111032][0000090e] 680e090000     push 0000090e
+[00000916][0011102e][0000091b] e8c3feffff     call 000007de
+T: Infinitely Recursive Simulation Detected Simulation Stopped
+
+[0000093b][00100f9a][00000000] 83c404         add esp,+04
+[0000093e][00100f96][00000000] 50             push eax
+[0000093f][00100f92][000002ff] 68ff020000     push 000002ff
+[00000944][00100f92][000002ff] e8c5f9ffff     call 0000030e
+Input_Halts = 0
+[00000949][00100f9a][00000000] 83c408         add esp,+08
+[0000094c][00100f9a][00000000] 33c0           xor eax,eax
+[0000094e][00100f9e][00000018] 5d             pop ebp
+[0000094f][00100fa2][00000000] c3             ret
+Number of Instructions Executed(537) == 8 Pages

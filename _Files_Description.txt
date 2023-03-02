@@ -1,0 +1,57 @@
+*Halt Decider and P*  
+09/21/2022  11:11 AM            24,603 Halt7.c
+09/22/2022  02:25 PM             7,213 Halt7.obj
+
+*x86utm operating system*
+08/27/2022  09:21 PM            73,159 x86utm.cpp
+08/14/2022  09:38 AM            32,959 Read_COFF_Object.h
+
+*x86 emulator source-code (adapted from libx86emu)* 
+10/04/2020  07:44 PM            17,240 api.c
+09/07/2022  11:22 AM            59,490 decode.c
+06/28/2020  05:22 PM            20,495 mem.c
+06/30/2020  12:06 AM           141,330 ops.c
+06/27/2022  11:15 AM            63,704 ops2.c
+06/30/2020  12:09 AM            73,787 prim_ops.c
+01/28/2020  06:19 AM             5,542 decode.h
+02/17/2020  08:56 PM            18,558 getopt.h
+01/28/2020  06:19 AM             1,859 mem.h
+01/28/2020  06:19 AM             1,954 ops.h
+01/28/2020  06:19 AM             6,133 prim_ops.h
+02/09/2021  10:40 PM            19,596 x86emu.h
+10/04/2020  07:34 PM             4,996 x86emu_int.h
+
+Compiles into x86utm.exe and takes Halt7.obj as its only argument 
+
+Compiles under Microsoft Visual Studio Community 2017
+https://visualstudio.microsoft.com/vs/older-downloads/
+
+This project file correctly builds the whole system 
+using the above compiler: x86utm.sln
+This build also compiles the Halt7.obj input to x86utm.exe
+
+     In computability theory, the halting problem is the problem 
+     of determining, from a description of an arbitrary computer 
+     program and an input, whether the program will finish running, 
+     or continue to run forever. Alan Turing proved in 1936 that a 
+     general algorithm to solve the halting problem for all possible 
+     program-input pairs cannot exist.
+
+     For any program H that might determine if programs halt, a 
+     "pathological" program P, called with some input, can pass its own 
+     source and its input to H and then specifically do the opposite of 
+     what H predicts P will do. *No H can exist that handles this case* 
+     https://en.wikipedia.org/wiki/Halting_problem  
+
+The H and P in Halt7.c implement the exact same pathological relationship 
+that is defined above. Simulating halt decider H correctly determines
+that its correct simulation of P cannot possibly reach the final state
+"return" instruction of P in 1 to ∞ steps of correct simulation. 
+
+A simulating halt decider (SHD) continues to simulate its input until the 
+behavior of this input matches a non-halting behavior pattern or the simulated 
+input halts on its own. 
+
+The behavior pattern that H(P,P) uses to determine that P never halts is 
+a slight adaptation to the behavior pattern used to detect infinite recursion:
+H(Infinite_Recursion, (ptr)0x777));  
