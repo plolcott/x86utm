@@ -1,11 +1,11 @@
  Volume in drive D is New Volume
- Volume Serial Number is F644-BC10
+ Volume Serial Number is 8426-2A21
 
- Directory of D:\_HP_Stream\__NLU_Notes\__Work_In_Progress\__Halt_Decider_X86\___x86utm_VS\Prior_Versions\2022_11_14
+ Directory of D:\_HP_Stream\__NLU_Notes\__Work_In_Progress\__Halt_Decider_X86\___x86utm_VS\Prior_Versions\2023_03_02
 
 10/04/2020  06:44 PM            17,240 api.c
 09/07/2022  10:22 AM            59,490 decode.c
-11/13/2022  11:32 PM            32,782 Halt7.c
+03/02/2023  05:27 PM            34,941 Halt7.c
 07/21/2022  01:27 PM            22,316 Halt7_Commented_Out.c
 10/05/2022  08:02 PM             9,732 Halt7_Strachey.c
 07/21/2022  09:33 PM            10,195 Halt7_Temp.c
@@ -15,12 +15,12 @@
 06/29/2020  11:09 PM            73,787 prim_ops.c
 08/25/2022  04:11 PM               793 Test_ELF.cpp
 10/08/2022  03:13 PM            74,449 x86utm.cpp
-              12 File(s)        526,313 bytes
-               0 Dir(s)  243,405,062,144 bytes free
+              12 File(s)        528,472 bytes
+               0 Dir(s)  739,091,562,496 bytes free
  Volume in drive D is New Volume
- Volume Serial Number is F644-BC10
+ Volume Serial Number is 8426-2A21
 
- Directory of D:\_HP_Stream\__NLU_Notes\__Work_In_Progress\__Halt_Decider_X86\___x86utm_VS\Prior_Versions\2022_11_14\include
+ Directory of D:\_HP_Stream\__NLU_Notes\__Work_In_Progress\__Halt_Decider_X86\___x86utm_VS\Prior_Versions\2023_03_02\include
 
 08/27/2022  11:03 AM            24,171 coff.h
 08/27/2022  11:06 AM            24,171 coff_ORIGINAL.h
@@ -36,12 +36,12 @@
 02/09/2021  09:40 PM            19,596 x86emu.h
 10/04/2020  06:34 PM             4,996 x86emu_int.h
               13 File(s)        376,202 bytes
-               0 Dir(s)  243,405,062,144 bytes free
+               0 Dir(s)  739,091,562,496 bytes free
  Volume in drive D is New Volume
- Volume Serial Number is F644-BC10
+ Volume Serial Number is 8426-2A21
 
- Directory of D:\_HP_Stream\__NLU_Notes\__Work_In_Progress\__Halt_Decider_X86\___x86utm_VS\Prior_Versions\2022_11_14
+ Directory of D:\_HP_Stream\__NLU_Notes\__Work_In_Progress\__Halt_Decider_X86\___x86utm_VS\Prior_Versions\2023_03_02
 
-11/13/2022  11:58 PM            10,900 Halt7.obj
-               1 File(s)         10,900 bytes
-               0 Dir(s)  243,405,062,144 bytes free
+03/02/2023  05:53 PM            12,093 Halt7.obj
+               1 File(s)         12,093 bytes
+               0 Dir(s)  739,091,562,496 bytes free
