@@ -20,4 +20,4 @@ When D calls H to simulate itself this comparable to calling H to call itself an
 
 When the simulation of D is aborted this is comparable to a divide by zero error thus is not construed as D halting. 
 
-Compiles with Microsoft Visual Studio Community Edition 2017
+**Compiles with Microsoft Visual Studio Community Edition 2017**
