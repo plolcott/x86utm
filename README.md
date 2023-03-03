@@ -19,3 +19,8 @@ Simulating halt decider H correctly predicts that D(D) would never stop running 
 When D calls H to simulate itself this comparable to calling H to call itself and can result in something like infinite recursion. Because there are no control flow instructions in D to stop this the recursive simulation continues until H aborts it. 
 
 When the simulation of D is aborted this is comparable to a divide by zero error thus is not construed as D halting. 
+
+**(a) proves (b) is a tautology**
+(a) If simulating halt decider H correctly simulates its input D until H correctly determines that its simulated D would never stop running unless aborted then 
+
+(b) H can abort its simulation of D and correctly report that D specifies a non-halting sequence of configurations. 
