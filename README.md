@@ -15,3 +15,7 @@ int D(int (*x)())
 }
 ```
 Simulating halt decider H correctly predicts that D(D) would never stop running unless H aborts its simlation of D. 
+
+When D calls H to simulate itself this comparable to calling H to call itself and can result in something like infinite recursion. Because there are no control flow instructions in D to stop this the recursive simulation continues until H aborts it. 
+
+When the simulation of D is aborted this is comparable to a divide by zero error thus is not construed as D halting. 
