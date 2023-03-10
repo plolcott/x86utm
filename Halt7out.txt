@@ -1925,11 +1925,11 @@ _DD()
 [00001c75] 837dfc00       cmp dword [ebp-04],+00
 [00001c79] 7402           jz 00001c7d
 [00001c7b] ebfe           jmp 00001c7b
-[00001c7d] b801000000     mov eax,00000001
-[00001c82] 8be5           mov esp,ebp
-[00001c84] 5d             pop ebp
-[00001c85] c3             ret
-Size in bytes:(0040) [00001c85]
+[00001c7d] 8b45fc         mov eax,[ebp-04]
+[00001c80] 8be5           mov esp,ebp
+[00001c82] 5d             pop ebp
+[00001c83] c3             ret
+Size in bytes:(0038) [00001c83]
 
 _D()
 [00001c8e] 55             push ebp

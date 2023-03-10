@@ -929,7 +929,7 @@ int DD(void (*x)())
   int Halt_Status = HH(x, x); 
   if (Halt_Status) 
     HERE: goto HERE; 
-  return 1; 
+  return Halt_Status; 
 } 
 
 int D(int (*x)()) 
