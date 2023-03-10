@@ -14,8 +14,8 @@ A simulating halt decider correctly predicts what the behavior of its input woul
 06   return Halt_Status; 
 07 }
 ```
-**Ordinary software engineering conclusively proves that D correctly simulated** <br>
-**by H cannnot possibly reach past its own line 3, thus reach its own "return" instruction and halt.** 
+**Ordinary software engineering conclusively proves that D correctly simulated by H cannnot** <br>
+**possibly reach past its own line 3, thus never reaches its own "return" instruction and halts.** 
 
 **THIS KEEPS REPEATING---> D calls H to simulate D(D)** 
 
