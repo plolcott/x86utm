@@ -16,7 +16,6 @@ A simulating halt decider correctly predicts what the behavior of its input woul
 ```
 **Ordinary software engineering conclusively proves that D correctly simulated by H cannnot** <br>
 **possibly reach past its own line 3, thus never reaches its own "return" instruction and halts.** 
-
 **THIS KEEPS REPEATING---> D calls H to simulate D(D)** 
 
 Simulating halt decider H correctly predicts that D(D) would never stop running unless H aborts its simulation of D. It does this by recognizing a behavior pattern that is very similar to infinite recursion. 
