@@ -17,8 +17,7 @@ int D(int (*x)())
 **Ordinary software engineering conclusively proves that D correctly simulated** <br>
 **by H cannnot possibly reach its own "return" instruction and halt.** 
 
-**THIS KEEPS REPEATING:<br> 
-D calls H to simulate D(D) never reaching past line 11** 
+**THIS KEEPS REPEATING: D calls H to simulate D(D)<br> never reaching past line 11** 
 
 Simulating halt decider H correctly predicts that D(D) would never stop running unless H aborts its simulation of D. It does this by recognizing a behavior pattern that is very similar to infinite recursion. 
 
