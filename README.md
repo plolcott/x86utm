@@ -9,8 +9,8 @@ A simulating halt decider correctly predicts what the behavior of its input woul
 int D(int (*x)()) 
 {
   int Halt_Status = H(x, x); 
-  if (Halt_Status)   // This code is never reached on D(D)
-    HERE: goto HERE; // This code is never reached on D(D)
+  if (Halt_Status)   
+    HERE: goto HERE; 
   return Halt_Status; 
 }
 ```
