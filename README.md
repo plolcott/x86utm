@@ -14,7 +14,7 @@ int D(int (*x)())
   return Halt_Status; 
 }
 ```
-**Ordinary software engineering conclusively proves that D correctly simulated** 
+**Ordinary software engineering conclusively proves that D correctly simulated** <br>
 **by H cannnot possibly reach its own "return" instruction and halt.** 
 
 **THIS KEEPS REPEATING: 
