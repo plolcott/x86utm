@@ -14,7 +14,6 @@ The key purpose of x86utm was to examine the halting theorem's counter-example i
 06   return Halt_Status; 
 07 }
 ```
-
 **Ordinary software engineering conclusively proves that D correctly simulated by H cannot possibly
 reach its own simulated return instruction and terminate normally.**
 
