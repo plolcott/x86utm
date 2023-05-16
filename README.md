@@ -5,7 +5,7 @@ The x86utm operating system enables functions written in C to be simulated in De
 The key purpose of x86utm was to examine the halting theorem's counter-example inputs at the high level of the C programming language. 
 
 **When simulating (partial) halt decider H correctly simulates its input D until H correctly determines that its simulated D would never stop running unless aborted then H is necessarily correct to abort its simulation and reject this input as non-halting.**
-
+```
 01 int D(int (*x)()) 
 02 {
 03   int Halt_Status = H(x, x); 
