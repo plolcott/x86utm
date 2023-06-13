@@ -21,4 +21,11 @@ USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 
-Addendum by Pixels2Words: files unrelected to libx86emu copyright by Pixels2Words 2023
+Addendum by Pixels2Words: 
+files unrelated to libx86emu Copyright 2017-2023 by Pixels2Words 
+
+These are the key x86utm files  
+Halt7.c            // termination analyzers
+x86utm.cpp         // x86utm operating system
+Read_COFF_Object.h // x86utm operating system
+
