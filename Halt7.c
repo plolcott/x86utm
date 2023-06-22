@@ -952,8 +952,8 @@ void Infinite_Loop()
 
 int main() 
 { 
-  Output("Input_Halts = ", HH(DD,DD));  // May not be Turing computable yet is easier to understand 
-//Output("Input_Halts = ", H(D,D));   // Probably Turing computable yet harder to understand 
+//Output("Input_Halts = ", HH(DD,DD));  // May not be Turing computable yet is easier to understand 
+  Output("Input_Halts = ", H(D,D));   // Probably Turing computable yet harder to understand 
 //Test(); 
 //Output((char*)"Input_Halts = ", H());  
 //Output("Input_Halts = ", H(Px, Px));  
