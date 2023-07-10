@@ -667,8 +667,13 @@ u32 H1(ptr P, ptr I)
 // 
 u32 H(ptr P, ptr I)
 { 
-  u32 End_Of_Code               = get_code_end((u32)H); 
-  u32 Address_of_H              = (u32)H;         
+  u32 Address_of_H;
+  __asm call HERE
+HERE:
+  __asm pop Address_of_H
+  Address_of_H-= 11;
+  u32 End_Of_Code               = get_code_end(Address_of_H); 
+    
   u32 code_end                  = get_code_end((u32)P); 
   Decoded_Line_Of_Code *decoded = (Decoded_Line_Of_Code*) 
                                    Allocate(sizeof(Decoded_Line_Of_Code));  
@@ -887,8 +892,8 @@ int Sipser_D(int (*M)())
 }
 
 // rec routine P
-//   งL :if T[P] go to L
-//     Return ง 
+//   ยงL :if T[P] go to L
+//     Return ยง 
 // https://academic.oup.com/comjnl/article/7/4/313/354243 
 void Strachey_P() 
 {
