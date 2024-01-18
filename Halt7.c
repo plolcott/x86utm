@@ -924,7 +924,7 @@ void E(void (*x)())
   H(x, x); 
 } 
 
-int DD(void (*x)()) 
+int DD(int (*x)()) 
 {
   int Halt_Status = HH(x, x); 
   if (Halt_Status) 
