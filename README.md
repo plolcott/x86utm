@@ -26,6 +26,17 @@ The key purpose of x86utm was to examine the halting theorem's counter-example i
 **Ordinary software engineering conclusively proves that D correctly simulated by H cannot possibly
 reach its own simulated return instruction and terminate normally.**
 
+**Execution Trace**
+Line 11: main() invokes H(D,D);
+
+**keeps repeating (unless aborted)**
+Line 03: simulated D(D) invokes simulated H(D,D) that simulates D(D)
+
+**Simulation invariant:**
+D correctly simulated by H cannot possibly reach past its own line 03.
+
+D correctly simulated by H cannot possibly reach its simulated final state in 1 to ∞ steps of correct simulation. 
+
 Simulating termination analyzer H correctly predicts that its simlated D(D) would never stop running unless H aborts its simulation of D. It does this by recognizing a behavior pattern that is very similar to infinite recursion. 
 
 When D calls H to simulate itself this comparable to calling H to call itself and can result in something like infinite recursion. Because there are no control flow instructions in D to stop this the recursive simulation continues until H aborts it. 
