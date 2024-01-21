@@ -35,7 +35,7 @@ Line 03: simulated D(D) invokes simulated H(D,D) that simulates D(D)
 **Simulation invariant:**<br>
 D correctly simulated by H cannot possibly reach past its own line 03.
 
-D correctly simulated by H cannot possibly reach its simulated final state in 1 to ∞ steps of correct simulation. 
+**D correctly simulated by H cannot possibly reach its simulated final state in 1 to ∞ steps of correct simulation.**
 
 Simulating termination analyzer H correctly predicts that its simlated D(D) would never stop running unless H aborts its simulation of D. It does this by recognizing a behavior pattern that is very similar to infinite recursion. 
 
