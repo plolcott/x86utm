@@ -6,7 +6,7 @@ Halt7.obj was generated from compiling Halt7.c with a Microsoft compiler.
 
 The key purpose of x86utm was to examine the halting theorem's counter-example inputs at the high level of the C programming language. 
 
-**When simulating termination analyzer H correctly simulates its input D until H correctly determines that its simulated D cannot possibly reach its own final state in any finite number of steps then H is necessarily correct to abort its simulation and reject this input as non-halting.**
+**When simulating termination analyzer H correctly simulates its input D until H correctly determines that its simulated D cannot possibly reach its own simulated final state in any finite number of steps then H is necessarily correct to abort its simulation of D and reject this input as non-halting.**
 ```
 01 int D(int (*x)()) 
 02 {
