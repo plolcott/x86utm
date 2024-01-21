@@ -1,6 +1,8 @@
 # x86utm operating system
 
 The x86utm operating system enables functions written in C to be simulated in Debug Step mode by another C function using an x86 emulator. 
+x86utm.exe takes the COFF object file: Halt7.obj as its command line parameter. 
+Halt7.obj was generated from compiling Halt7.c with a Microsoft compiler. 
 
 The key purpose of x86utm was to examine the halting theorem's counter-example inputs at the high level of the C programming language. 
 
