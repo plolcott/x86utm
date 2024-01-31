@@ -660,11 +660,16 @@ u32 H1(ptr P, ptr I)
 
 // Matches the recursive simulation behavior pattern with a single call 
 // from D to H(D,D). The instance of H that is simulating D is counted 
-// as the first call of the recursive simulation behavior pattern. 
-// When D calls H(D,D) this is counted as the second call. 
+// as the first call of the recursive simulation behavior pattern. When 
+// D calls H(D,D) this is counted as the second call. 
+//
 // This requires H to know its own machine address so that it can see
-// that itself is beng called from D. 
-// 
+// that D is calling itself. H verifies that D is calling itself with
+// its same parameters and that there are no conditional branch instructions
+// between the invocation of D and its call to H(D,D). This conclusively 
+// proves that D is specifing recursive simulation to H that cannot stop
+// unless aborted. 
+//
 u32 H(ptr P, ptr I)
 { 
   u32 End_Of_Code               = get_code_end((u32)H); 
