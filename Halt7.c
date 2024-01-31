@@ -658,12 +658,12 @@ u32 H1(ptr P, ptr I)
 
 
 
-// Matches the infinite recursion behavior pattern with a single call 
-// from P to H(P,P).  The instance of H that is simulating P is counted 
-// as the first call of the infinitre recusion behavior pattern. 
-// When P calls H(P,P) this is counted as the second call. 
-// This requires P to know its own machine address so that it can see
-// that itself is beng called from P. 
+// Matches the recursive simulation behavior pattern with a single call 
+// from D to H(D,D). The instance of H that is simulating D is counted 
+// as the first call of the recursive simulation behavior pattern. 
+// When D calls H(D,D) this is counted as the second call. 
+// This requires H to know its own machine address so that it can see
+// that itself is beng called from D. 
 // 
 u32 H(ptr P, ptr I)
 { 
