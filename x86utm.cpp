@@ -1,12 +1,21 @@
+/***
+  All output functions for lines of x86 code 
+  Machine_Code_Out
+  Disassembled_line_out
+  Disassembled_line_out
+  Disassembled_line_source_out
+  Disassembled_line_out2
+***/ 
 //
 //  Source code for the x86utm operating system. 
 //  Copyright PL Olcott 2020, 2021, 2022 
 //  based on libx86emu: x86emu-demo.c
 //  https://github.com/wfeldt/libx86emu 
 //
-#define TRACE_USER_CODE_ONLY
+#define TRACE_USER_CODE_ONLY 
 #define LOCAL_HALT_DECIDER_MODE 
-#define MAX_INSTRUCTIONS 1000000
+#define MAX_INSTRUCTIONS 10000000 // 10,000,000 
+//#define MAX_INSTRUCTIONS 100 // 10,000,000 
 //#define DOT_DASH_PREFIX
 
 #ifndef LOCAL_HALT_DECIDER_MODE 
@@ -18,12 +27,21 @@
 #define STACK_SIZE 0x100000  //   1 MB    // 2021-04-22 Increased to  1 MB
 #define NOP_OPCODE 0x90
 #define INT_3      0xCC 
+// The INT3 instruction is a one-byte-instruction defined for use by 
+// debuggers to temporarily replace an instruction in a running program 
+// in order to set a code breakpoint. The opcode for INT3 is 0xCC. 
+
 #define ZEROES     0x00  
 #define HALT       0xF4
 #define RETURN     0xC3
 #define SPACE      0x20
 #define FILL_VALUE NOP_OPCODE
-#define MAX_MACHINE_CODE_BYTES 7 // was 8
+// NOP, no-op, or NOOP (pronounced "no op"; short for no operation) 
+// is a machine language instruction and its assembly language mnemonic, 
+// programming language statement, or computer protocol command that 
+// does nothing.
+
+#define MAX_MACHINE_CODE_BYTES 8 // was 8
 #define NOP_OPCODE 0x90
 
 #include <stdio.h>
@@ -42,6 +60,8 @@
 struct X86_UTM; 
 void Execute_Instruction(x86emu_t *emu, unsigned flags, 
                         X86_UTM& x86utm, COFF_Reader& Reader); 
+
+u32 Allocate(x86emu_t *emu, u32 Heap_PTR_variable, u32 Heap_END_variable, u32 size); 
 
 const u32 EXECUTING = 0;
 const u32 HALTED    = 1;
@@ -102,6 +122,9 @@ struct Command_Line_Options {  // gcc C++ requires a name
   #define Decode_Line_Of_Code_NAME          "_Decode_Line_Of_Code" 
   #define Output_Decoded_Instructions_NAME  "_Output_Decoded_Instructions"  // Made Obsolete
 
+  #define Copy_Code_NAME                    "_Copy_Code"
+  #define Identical_Code_NAME               "_Identical_Code"
+
   #define SaveState_NAME                    "_SaveState"
   #define LoadState_NAME                    "_LoadState"
   #define Allocate_NAME                     "_Allocate"
@@ -141,6 +164,9 @@ struct Command_Line_Options {  // gcc C++ requires a name
   #define Halts_NAME                        "Halts"
   #define Output_Debug_Trace_NAME           "Output_Debug_Trace"
 
+  #define Copy_Code_NAME                    "Copy_Code"
+  #define Identical_Code_NAME               "Identical_Code"
+
   #define SaveState_NAME                    "SaveState"
   #define LoadState_NAME                    "LoadState"
   #define Allocate_NAME                     "Allocate"
@@ -172,6 +198,12 @@ struct Command_Line_Options {  // gcc C++ requires a name
 //
 bool Is_Virtual_Machine_Instruction(std::string Function_Name)
 {
+  if (Function_Name == Copy_Code_NAME)
+    return true;
+
+  if (Function_Name == Identical_Code_NAME)
+    return true;
+
   if (Function_Name == SaveState_NAME)
     return true;
   
@@ -403,6 +435,7 @@ int emu_init(x86emu_t *emu, COFF_Reader& Reader)
 #define   RET 0xC3 // Simplifed OpCode for all forms of Return 
 #define   HLT 0xF4 // Conventional OpCode for Halt 
 #define  PUSH 0x68 // Conventional OpCode for Halt 
+#define   MOV 0xC7 // Conventional OpCode for Halt 
 #define OTHER 0xFF // Not a Control Flow Insrtuction 
 
 
@@ -422,6 +455,8 @@ const char* Get_Simplified_Opcode_String(u32 Simplified_Opcode)
     return "HLT ";
   case PUSH:
     return "PUSH";
+  case MOV:
+    return "MOV"; 
   default:
     return "????";
   }
@@ -538,6 +573,22 @@ void Decode_Control_Flow_Instruction(x86emu_t *emu, Line_Of_Code& loc)
     loc.Decode_Target     = Target;  // Target of {JMP, CALL, JCC} 
   }
 
+  else if (Operator_Name == "mov")  // MOV IS DECODED       // 2023-07-01
+  {
+    if (loc.NumBytes == 7 && Opcode_1 == 0xC7 && Opcode_2 == 0x45)
+    {
+      s8  Offset    = x86emu_read_byte(emu, loc.Address+2);
+      u32 address   = emu->x86.R_EBP + Offset; 
+      u32 immediate = x86emu_read_dword(emu, loc.Address+3); 
+      u32 data      = x86emu_read_dword(emu, address); 
+//    printf("---[%08x] mov [%08x], %08x\n",     // 2023-07-01
+//            loc.Address, address, immediate);  // 2023-07-01
+    }
+//  [00001ff4] c7 45 dc 78563412 mov [ebp-24],12345678
+//  printf("[%08x] mov instruction[%02x][%02x](%d)\n",      // 2023-07-01
+//          loc.Address, Opcode_1, Opcode_2, loc.NumBytes); // 2023-07-01
+  }
+
   else if (Operator_Name == "call")  // CALL IS DECODED 
   {
     if (loc.NumBytes == 5 && Opcode_1 == 0xE8)
@@ -552,12 +603,26 @@ void Decode_Control_Flow_Instruction(x86emu_t *emu, Line_Of_Code& loc)
 //  Opcode_2 contains register number: 0x50-0x57: {EAX ECX EDX EBX ESP EBP ESI EDI}
     else if (loc.NumBytes == 3 && Opcode_1 == 0xFF && Opcode_2 == 0x55)
     {
-      s32 Offset = x86emu_read_byte(emu, loc.Address+2);
-      Target     = x86emu_read_dword(emu, emu->x86.R_EBP + Offset); 
-      printf("Decode_Control_Flow_Instruction([%08x][%08x][%08x])\n", 
-              Offset, emu->x86.R_EBP, Target);
-    }
+      s8 Offset = x86emu_read_byte(emu, loc.Address+2);
+      Target    = x86emu_read_dword(emu, emu->x86.R_EBP + Offset); 
+//    printf("CD_Decode_Control_Flow_Instruction([%02d][%08x][%08x])\n", 
+//            Offset, emu->x86.R_EBP, Target);
+      printf("[%08x] call (absolute) [%08x]\n", loc.Address, Target); 
+      if (Target == 0)
+        exit(0); 
+    } 
 
+    else if (loc.NumBytes == 6 && Opcode_1 == 0xFF && Opcode_2 == 0x15)
+    {
+//    [00103978][0015e434][0010397e] ff15 b301 0000         call dword [000001b3]
+      s32 Offset = x86emu_read_dword(emu, loc.Address+2);
+      Target     = x86emu_read_dword(emu, Offset); 
+      printf("CD_Decode_Control_Flow_Instruction([%02d][%08x][%08x])\n", 
+              Offset, emu->x86.R_EBP, Target);
+      printf("[%08x] call (absolute) [%08x]\n", loc.Address, Target); 
+      if (Target == 0)
+        exit(0); 
+    } 
 
     else 
       printf("[%08x] CALL not decoded correctly!\n", loc.Address); 
@@ -578,8 +643,22 @@ void Decode_Control_Flow_Instruction(x86emu_t *emu, Line_Of_Code& loc)
     else if (loc.NumBytes == 2 && (Opcode_1 >= 0x6a)) 
       loc.Simplified_Opcode = PUSH; // {JMP, CALL, JCC, RET, HLT, PUSH}
 
+    else if (loc.NumBytes == 6 && Opcode_1 >= 0xff && Opcode_2 == 0x35) 
+    {
+      loc.Simplified_Opcode = PUSH; // {JMP, CALL, JCC, RET, HLT, PUSH}
+      u32 Target = x86emu_read_dword(emu, loc.Address+2);
+      loc.Decode_Target     = Target;
+      return; // prevent fall through to wrong assignment of loc.Decode_Target
+    } 
     else 
-      printf("[%08x] PUSH not decoded correctly!\n", loc.Address); 
+    {
+      printf("[%08x](%d) PUSH not decoded correctly!\n", loc.Address, loc.NumBytes); 
+      printf("Here are the bytes:");
+      for (u32 N = 0; N < loc.NumBytes; N++)
+        printf("[%02x]", x86emu_read_byte(emu, loc.Address+N)); 
+      printf("\n");
+      exit(0); // Make sure that user notices this error
+    }
 //  loc.Simplified_Opcode = PUSH; // {JMP, CALL, JCC, RET, HLT, PUSH}
     loc.Decode_Target     = loc.TOS;    //     
   }
@@ -668,6 +747,7 @@ void Machine_Code_Out(x86emu_t *emu, u32 Address, u32 Length)
 void Disassembled_line_out(x86emu_t *emu)
 { 
 Line_Of_Code loc(emu->line_of_code); 
+//printf("Disassembled_line_out (1)\n");
 
 //printf("[%08x][%08x](%02d)  ", 
 //        emu->line_of_code.Address, emu->line_of_code.ESP, 
@@ -694,6 +774,7 @@ Line_Of_Code loc(emu->line_of_code);
 //
 void Disassembled_line_out(x86emu_t *emu, Line_Of_Code& loc)
 { 
+//printf("Disassembled_line_out (2)\n");
 //printf("[%08x](%02d)  ", loc.Address, loc.NumBytes); 
 
 #ifdef DOT_DASH_PREFIX
@@ -718,6 +799,7 @@ void Disassembled_line_out(x86emu_t *emu, Line_Of_Code& loc)
 //
 void Disassembled_line_source_out(x86emu_t *emu, Line_Of_Code& loc)
 { 
+//printf("Disassembled_line_source_out\n");
 //printf("[%08x](%02d)  ", loc.Address, loc.NumBytes); 
   printf("[%08x] ", loc.Address); 
   Machine_Code_Out(emu, loc.Address, loc.NumBytes); 
@@ -730,6 +812,7 @@ void Disassembled_line_source_out(x86emu_t *emu, Line_Of_Code& loc)
 //
 void Disassembled_line_out2(x86emu_t *emu, Line_Of_Code& loc)
 { 
+//printf("Disassembled_line_out2\n");
 //printf("---[%08x][%08x][%08x](%02d)  ", 
 //  loc.Address, loc.ESP, loc.TOS, loc.NumBytes); 
 #ifdef DOT_DASH_PREFIX
@@ -1157,8 +1240,8 @@ u32 StackPush(x86emu_t *emu, u32 slave_stack, u32 M)
   s32 MaxSize  = Capacity - 4;    // Room for one more
 
 #ifdef DEBUG_FUNCTION_CALLS
-//printf("StackPush(): slave_stack[%08x].PushBack(%x) Capacity(%d) Size(%d) MaxSize(%d)\n", 
-//        (u32)slave_stack, M, Capacity, Size, MaxSize);
+  printf("StackPush(): slave_stack[%08x].PushBack(%x) Capacity(%d) Size(%d) MaxSize(%d)\n", 
+          (u32)slave_stack, M, Capacity, Size, MaxSize);
 #endif 
   if (Size <= MaxSize)  // Room for one more u32
   {
@@ -1250,6 +1333,92 @@ void Output_Stack(x86emu_t *emu, s32 Num_Locals, u32 Num_Params)
           emu->x86.R_EBP, Num_Locals, Num_Params); 
   for (u32 Index = Start; Index <= Stop; Index += 4)
     printf("  Stack[%08x]-->%08x\n",  Index, x86emu_read_dword(emu, Index));
+}
+
+
+// Takes pointer to C function 
+// returns pointer to x86utm string type 
+//
+u32 Copy_Code(x86emu_t *emu, COFF_Reader& Reader, u32 source) 
+{
+  // switched to this method because random byte patterns c3 cc might fail
+  u32 code_size = Reader.get_code_end(source) - source + 1; 
+  u32 destination = Allocate(emu, Reader.Heap_PTR_variable, Reader.Heap_END_variable, code_size); 
+//printf("destination[%08x][%08x][%08x] code_size:%04d\n", destination, 
+//  x86emu_read_dword(emu, destination - 4), x86emu_read_dword(emu, destination - 8), code_size); 
+
+  for (u32 N = 0; N < code_size ; N++)
+  {
+    u32 OpCode = x86emu_read_byte(emu, source + N); 
+//  printf("[%08x][%08x] Opcode[%02x]\n", source + N, destination + N, OpCode); 
+    x86emu_write_byte(emu, destination + N, OpCode);  // Copy OpCodes to destination
+  }
+
+  x86emu_write_dword(emu, destination - 4, code_size);  // write length of string
+//printf("destination[%08x][%08x][%08x] code_size:%04d\n", destination, 
+//  x86emu_read_dword(emu, destination - 4), x86emu_read_dword(emu, destination - 8), code_size); 
+
+  emu->x86.R_EAX = destination;   
+  return destination; 
+}
+
+/************************************************************************
+  Tested every combination 
+
+  Output("Identical_Code():", Identical_Code(code1, code1)); // 1
+  Output("Identical_Code():", Identical_Code(code1, copy1)); // 1
+  Output("Identical_Code():", Identical_Code(copy1, code1)); // 1
+  Output("Identical_Code():", Identical_Code(copy1, copy1)); // 1
+  Output("Identical_Code():", Identical_Code(code2, code2)); // 1
+  Output("Identical_Code():", Identical_Code(code2, copy2)); // 1
+  Output("Identical_Code():", Identical_Code(copy2, code2)); // 1
+  Output("Identical_Code():", Identical_Code(copy2, copy2)); // 1
+
+  Output("Identical_Code():", Identical_Code(code1, code2)); // 0
+  Output("Identical_Code():", Identical_Code(code1, copy2)); // 0
+  Output("Identical_Code():", Identical_Code(copy1, code2)); // 0
+  Output("Identical_Code():", Identical_Code(copy1, copy2)); // 0
+  Output("Identical_Code():", Identical_Code(code2, code1)); // 0
+  Output("Identical_Code():", Identical_Code(code2, copy1)); // 0
+  Output("Identical_Code():", Identical_Code(copy2, code1)); // 0
+  Output("Identical_Code():", Identical_Code(copy2, copy1)); // 0
+**************************************************************************/\
+// Compares a function's machine code 
+// Param1: Machine code address or x86utm string of copy of machine code 
+// Param2: Machine code address or x86utm string of copy of machine code 
+int Identical_Code(x86emu_t *emu, COFF_Reader& Reader, u32 source, u32 destination) 
+{
+  u32 size1 = Reader.get_code_end(source); // address of function 
+  u32 size2 = Reader.get_code_end(destination);
+
+  if (size1 == 0)                                  // not address of function 
+    size1 = x86emu_read_dword(emu, source - 4);    // get length of x86utm string
+  else
+    size1 = size1 - source + 1; // convert end address to size of function 
+
+  if (size2 == 0)                                       // not address of function 
+    size2 = x86emu_read_dword(emu, destination - 4);    // get length of x86utm string
+  else
+    size2 = size2 - destination + 1; // convert end address to size of function 
+  
+  if (size1 != size2)
+  {
+//  printf("***source[%08x](%04d) destination[%08x](%04d)\n", source, size1, destination, size2); 
+    emu->x86.R_EAX = 0;   
+    return 0;
+  }
+//printf("---source[%08x](%04d) destination[%08x](%04d)\n", source, size1, destination, size2); 
+  for (u32 N = 0; N < size1; N++)
+  {
+//  printf("+++source[%08x](%04d) destination[%08x](%04d)\n", source+N, size1, destination+N, size2); 
+    if (x86emu_read_byte(emu, source + N) != x86emu_read_byte(emu, destination + N))
+    {
+      emu->x86.R_EAX = 0;   
+      return 0;
+    }
+  }
+  emu->x86.R_EAX = 1;   
+  return 1;
 }
 
 
@@ -1365,11 +1534,13 @@ void Output_Decoded(x86emu_t *emu, X86_UTM& x86utm, COFF_Reader& Reader, u32 dec
   Get_Line_Of_Code_From_Machine_Address(emu, x86utm, Reader, Address); 
   loc.ESP = x86emu_read_dword(emu, decoded+4); 
   loc.TOS = x86emu_read_dword(emu, decoded+8); 
-  Disassembled_line_out(emu, loc); 
+//printf("Output_Decoded(1)\n"); 
+//Disassembled_line_out(emu, loc); 
+//printf("Output_Decoded(2)\n"); 
 
 // Outputs decoded instruction 
 //  printf(">>>[%08x][%08x][%08x](%02d)  %x %08x\n", 
-    printf("[%08x][%08x][%08x](%02d)  %04s %08x\n",  
+    printf("+++[%08x][%08x][%08x](%02d)  %04s %08x\n",  
             x86emu_read_dword(emu, decoded+0),    // Address
             x86emu_read_dword(emu, decoded+4),    // ESP
             x86emu_read_dword(emu, decoded+8),    // TOS
@@ -1377,6 +1548,17 @@ void Output_Decoded(x86emu_t *emu, X86_UTM& x86utm, COFF_Reader& Reader, u32 dec
             Get_Simplified_Opcode_String(x86emu_read_dword(emu, decoded+16)), 
 //          x86emu_read_dword(emu, decoded+16),   // Simplified_Opcode 
             x86emu_read_dword(emu, decoded+20));  // Decode_Target     
+
+    Address      = x86emu_read_dword(emu, decoded+0);
+    u32 NumBytes = x86emu_read_dword(emu, decoded+12);
+    printf("Machine_Code_Bytes:");
+    for (u32 N = 0; N < NumBytes; N++)
+    {
+      u32 Machine_Code_Byte = x86emu_read_byte(emu, Address+N); 
+      printf("%02x", Machine_Code_Byte);
+    }
+    printf("\n"); 
+//printf("Output_Decoded(3)\n"); 
 }
 
 
@@ -1406,7 +1588,7 @@ void Output_Decoded_Instructions(x86emu_t *emu, X86_UTM& x86utm,
     Decode_Control_Flow_Instruction(emu, loc);
     loc.ESP = ESP;
     loc.TOS = TOS; 
-    Disassembled_line_out2(emu, loc);     
+    Disassembled_line_out2(emu, loc);     // 2024-06-19 
 //  printf("Address[%08x]\n", Address); 
   }
   printf("END---Output_Decoded_Instructions(%08x)\n\n", integer_list); 
@@ -1614,14 +1796,37 @@ void Append_If_User_Code(x86emu_t *emu, X86_UTM& x86utm, COFF_Reader& Reader)
     Execution_Trace.push_back(loc);   // 2021-02-09 
 //  PushBack(emu, Reader.Global_Execution_Trace_List_data_address, // 2022-06-30 
 //           emu->x86.R_EIP, sizeof(u32)); 
-    Disassembled_line_out2(emu, loc);     
+    Disassembled_line_out2(emu, loc);     // 2024-06-19
 //  Disassembled_line_out(emu); 
 //  Output_Debug_Trace2(emu, x86utm, Reader); // 2020-12-29 
   }
 #ifndef TRACE_USER_CODE_ONLY
 //Disassembled_line_out(emu, loc);  // 2021-04-15
-  Disassembled_line_out2(emu, loc);  // 2021-04-15
+  Disassembled_line_out2(emu, loc);  // 2021-04-15 
 #endif 
+}
+
+// get_code_end() has been fixed to work with dynamic memory 
+// 
+// Dynamic memory has been filled with NOP 
+// (pronounced "no op"; short for no operation)
+// 
+u32 get_code_end(x86emu_t *emu, COFF_Reader& Reader, u32 Address)
+{
+  u32 retval = Reader.get_code_end(Address); 
+  if (retval == 0)  // Function not in static memory, thus in dynamic memory
+  {
+//  printf("get_code_end[%08x] not a known function!\n", Address); 
+    u32 N        = 0;  
+    u8 code_byte = 0;
+    for (; code_byte != 0x90 && N < 1000; N++)
+    {
+      code_byte = x86emu_read_byte(emu, Address+N);
+//    printf("[%08x][%03d]code_byte[%02x]\n", Address+N, N, code_byte); 
+    }
+    retval = Address+N-2; 
+  }
+  return retval; 
 }
 
 
@@ -1633,6 +1838,12 @@ void Virtual_Machine_Instruction(x86emu_t *emu, unsigned flags, X86_UTM& x86utm,
   u32 Stack0 = x86emu_read_dword(emu, emu->x86.R_ESP);
   u32 Stack1 = x86emu_read_dword(emu, emu->x86.R_ESP + 4);
   u32 Stack2 = x86emu_read_dword(emu, emu->x86.R_ESP + 8); // 2021-03-20
+
+  if (Found->second.Name == Copy_Code_NAME)
+    Copy_Code(emu, Reader, (u32)Stack0);  
+
+  if (Found->second.Name == Identical_Code_NAME)
+    Identical_Code(emu, Reader, (u32)Stack0, (u32)Stack1);  
 
   if (Found->second.Name == SaveState_NAME)
     SaveState(emu, (u32)Stack0);  
@@ -1656,7 +1867,8 @@ void Virtual_Machine_Instruction(x86emu_t *emu, unsigned flags, X86_UTM& x86utm,
     Output_Registers(emu); 
 //else if (Found->second.Name == Global_Halts_NAME) {}  
   else if (Found->second.Name == get_code_end_NAME) 
-    emu->x86.R_EAX = Reader.get_code_end(Stack0); 
+//  emu->x86.R_EAX = Reader.get_code_end(Stack0);       // 2023-07-03
+    emu->x86.R_EAX = get_code_end(emu, Reader, Stack0); // 2023-07-03
 
   else if (Found->second.Name == Last_Address_Of_OS_NAME)     // 2021-08-26 
     emu->x86.R_EAX = Reader.Last_Address_Of_Operating_System; // 2021-08-26 
@@ -1701,10 +1913,10 @@ void Named_Function_PTR(x86emu_t *emu, unsigned flags,
     std::map<u32, Function_Info>::iterator Found = Reader.FunctionNames.find(Target); 
     u32 Called_Function_Address = x86emu_read_dword(emu, emu->x86.R_EBP + OpCode3); 
     Found = Reader.FunctionNames.find(Called_Function_Address); 
-    if(Found != Reader.FunctionNames.end()) 
-      printf("Calling:%s()\n", Found->second.Name.c_str()); 
-    else
-      printf("Called Function Address[%08x]\n", Called_Function_Address); 
+//  if(Found != Reader.FunctionNames.end()) 
+//    printf("Calling:%s()\n", Found->second.Name.c_str()); 
+//  else
+//    printf("Called Function Address[%08x]\n", Called_Function_Address); 
   }
 }
 
@@ -1745,14 +1957,22 @@ u32 Test_Halting(x86emu_t *emu, unsigned flags,
 // Virtual Machine Instruction (VMI) or ZERO if not
 u32 Test_VMI(x86emu_t *emu, COFF_Reader& Reader, u32 EIP)
 { 
-  u8 OpCode  = x86emu_read_byte(emu, EIP);
-  if (OpCode == 0xe8)  // call Relative-32
+  printf("Test_VMI[%08x]\n", EIP);
+  u8 OpCode0  = x86emu_read_byte(emu, EIP+0);
+  u8 OpCode1  = x86emu_read_byte(emu, EIP+1);
+  u8 OpCode2  = x86emu_read_byte(emu, EIP+2);
+
+  if (OpCode1 == 0xe8)  // call Relative-32
   {
+    printf("Test_VMI:OpCode1 == 0xe8\n"); // 2023-06-29
     std::map<u32, Function_Info>::iterator Found;  
     u32 Target = x86emu_read_dword(emu, EIP + 1) + 5 + EIP;
     Found = Reader.FunctionNames.find(Target);
     if (Found != Reader.FunctionNames.end())
-     return 1; 
+      return 1; 
+  }
+  else if (OpCode1 == 0xff && OpCode2 == 0x55)               // 2023-06-29
+    printf("Test_VMI:OpCode1 == 0xff && OpCode2 == 0x55\n"); // 2023-06-29
 /*** 
     if (Found != Reader.FunctionNames.end() &&
         Found->second.Virtual_Machine_Instruction) // Function call to VMI
@@ -1766,8 +1986,7 @@ u32 Test_VMI(x86emu_t *emu, COFF_Reader& Reader, u32 EIP)
       }
     }
 ***/ 
-  }
-  return 0; 
+   return 0; 
 }
 
 
@@ -1802,12 +2021,30 @@ void Execute_Instruction(x86emu_t *emu, unsigned flags,
                          X86_UTM& x86utm, COFF_Reader& Reader)
 {
   std::map<u32, Function_Info>::iterator Found;
-  u32 Target = x86emu_read_dword(emu, emu->x86.R_EIP + 1) + 5 + emu->x86.R_EIP;
-  u8 OpCode  = x86emu_read_byte(emu, emu->x86.R_EIP);
+  u32 Target  = x86emu_read_dword(emu, emu->x86.R_EIP + 1) + 5 + emu->x86.R_EIP;
+  u8 OpCode1  =  x86emu_read_byte(emu, emu->x86.R_EIP+0);
+  u8 OpCode2  =  x86emu_read_byte(emu, emu->x86.R_EIP+1);
+  u8 OpCode3  =  x86emu_read_byte(emu, emu->x86.R_EIP+2);
   Named_Function_PTR(emu, flags, x86utm, Reader); 
   u32 VMI_Flag = 0; // eliminate warning 2022-08-07 
 
-  if (OpCode == 0xe8)  // call Relative-32
+  if (OpCode1 == 0xff && OpCode2 == 0x55)  // call Relative-32
+  {
+    s8  Offset = x86emu_read_byte(emu, emu->x86.R_EIP+2);
+    Target     = x86emu_read_dword(emu, emu->x86.R_EBP + Offset); 
+//  printf("EI_Decode_Control_Flow_Instruction([%02d][%08x][%08x])\n", 
+//          Offset, emu->x86.R_EBP, Target);
+
+    Found = Reader.FunctionNames.find(Target);
+    if (Found != Reader.FunctionNames.end() && 
+        Is_Virtual_Machine_Instruction(Found->second.Name)) // 2023_06_29 
+    {
+      Virtual_Machine_Instruction(emu, flags, x86utm, Reader, Found);
+      emu->x86.R_EIP += 3; 
+    }
+  }
+
+  if (OpCode1 == 0xe8)  // call Relative-32
   {
     Found = Reader.FunctionNames.find(Target);
     if (Found != Reader.FunctionNames.end() && 
@@ -1859,7 +2096,7 @@ u32 Halts(x86emu_t *emu, unsigned flags,
   {
     u32 Saved_EIP      = emu->x86.R_EIP; 
     u32 Saved_ESP      = emu->x86.R_ESP; 
-    u32 Saved_TOS      = x86emu_read_dword(emu, emu->x86.R_ESP);
+    u32 Saved_TOS      = x86emu_read_dword(emu, emu->x86.R_ESP); 
     u32 TEST_DebugStep = TestDebugStep(emu, Reader);  // eliminate warning 2022-08-07 
 /*** 
     if (TEST_DebugStep) 
@@ -1870,10 +2107,11 @@ u32 Halts(x86emu_t *emu, unsigned flags,
 ***/ 
     Execute_Instruction(emu, flags, x86utm, Reader); 
 
-#ifdef TRACE_USER_CODE_ONLY
+#ifdef TRACE_USER_CODE_ONLY  // 2024-06-19
   if (emu->line_of_code.Address > Reader.Last_Address_Of_Operating_System) 
 #endif 
     Disassembled_line_out(emu);  
+
 /***
     OutputDebugTrace(emu, Reader, Saved_EIP, TEST_DebugStep, 
                      emu->line_of_code.Address, Saved_ESP, Saved_TOS);
