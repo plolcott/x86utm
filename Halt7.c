@@ -247,7 +247,7 @@ u32 Decide_Halting0(char*                   Halt_Decider_Name,
     if (Aborted == 2)
       OutputString("Infinite Recursion Detected Simulation Stopped\n\n"); 
     if (Aborted == 3)
-      OutputString("Simulation Detected Simulation Stopped\n\n");
+      OutputString("Infinitely Recursive Simulation Detected Simulation Stopped\n\n");
     return 0;        
   }
   return 1;         // 2021-01-26 Need not be aborted
@@ -1205,7 +1205,8 @@ typedef int (*ptr2)();
 //
 int Sipser_D(int (*M)()) 
 {
-  if (Sipser_H(M, M) )
+//if (Sipser_H(M, M) )
+  if (HH(M, M) )
     return 0;
   return 1;
 }
@@ -1350,19 +1351,20 @@ void Infinite_Loop()
   HERE: goto HERE;
 }
 
-void DDD() 
-{
-  HHH(DDD); 
-} 
 
-int DD(int (*x)()) 
+
+int DD() 
 {
-  int Halt_Status = HH(x, x); 
+  int Halt_Status = HHH(DD); 
   if (Halt_Status) 
     HERE: goto HERE; 
   return Halt_Status; 
 } 
 
+void DDD() 
+{
+  HHH(DDD); 
+} 
 
 // HHH(DDD) and HHH1(DDD) are the standard names for DDD input 
 // DDD calls HHH(DDD). HHH1 is identical to HHH. 
@@ -1373,10 +1375,16 @@ int DD(int (*x)())
 
 int main() 
 { 
+//DDD(); 
+  HHH(DD); 
+//HH(DD,DD); 
 //Output("Input_Halts = ", HHH(Infinite_Loop));
 //Output("Input_Halts = ", HHH(Infinite_Recursion));
 //Output("Input_Halts = ", HHH(DDD));
-  Output("Input_Halts = ", HH(DD,DD));
+//Output("Input_Halts = ", HH(DD,DD));
+//HHH(main); 
+//Output("Input_Halts = ", HHH(main));
+
 //  Output("Input_Halts = ", HH1(DD,DD));
 //  Output("Input_Halts = ", HHH1(DDD));
   return 0; 
