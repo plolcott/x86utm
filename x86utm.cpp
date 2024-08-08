@@ -886,7 +886,7 @@ void Disassembly_Listing(x86emu_t *emu, X86_UTM& x86utm, COFF_Reader& Reader)
 /***
  printf(" machine   stack     stack     machine    assembly\n");
  printf(" address   address   data      code       language\n");
- printf(" ========  ========  ========  =========  =============\n"); MAX_MACHINE_CODE_BYTES
+ printf(" ========  ========  ========  =========  =============\n");
 ***/ 
  
  printf(" machine   stack     stack     machine     "); 
@@ -900,8 +900,6 @@ void Disassembly_Listing(x86emu_t *emu, X86_UTM& x86utm, COFF_Reader& Reader)
  printf(" ========  ========  ========  "); 
    output_numbytes("=", (MAX_MACHINE_CODE_BYTES * 2)); 
    printf(" =============\n");
-
-
 }
 
 
