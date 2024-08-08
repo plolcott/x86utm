@@ -247,7 +247,7 @@ u32 Decide_Halting0(char*                   Halt_Decider_Name,
     if (Aborted == 2)
       OutputString("Infinite Recursion Detected Simulation Stopped\n\n"); 
     if (Aborted == 3)
-      OutputString("Infinitely Recursive Simulation Detected Simulation Stopped\n\n");
+      OutputString("Simulation Detected Simulation Stopped\n\n");
     return 0;        
   }
   return 1;         // 2021-01-26 Need not be aborted
@@ -1199,28 +1199,7 @@ void Px(void (*x)())
 
 typedef int (*ptr2)();
 
-//
-// H is supposed to accept its input if this input halts and 
-// returns 1 otherwise H is supposed to reject its input
-//
-int Sipser_D(int (*M)()) 
-{
-//if (Sipser_H(M, M) )
-  if (HH(M, M) )
-    return 0;
-  return 1;
-}
 
-// rec routine P
-//   §L :if T[P] go to L
-//     Return § 
-// https://academic.oup.com/comjnl/article/7/4/313/354243 
-void Strachey_P() 
-{
-//L: if (T(Strachey_P)) goto L; 
-  L: if (HHH(Strachey_P)) goto L; 
-  return; 
-}
 
 int Kozen_N(ptr2 x) 
 {
@@ -1339,7 +1318,17 @@ void HHHxyz(ptr P, ptr I)
 {
   P(I); 
 }
- 
+
+
+// rec routine P
+//   §L :if T[P] go to L
+//     Return § 
+// https://academic.oup.com/comjnl/article/7/4/313/354243 
+void Strachey_P() 
+{
+  L: if (HHH(Strachey_P)) goto L; 
+  return; 
+}
 
 void Infinite_Recursion()
 {
@@ -1351,20 +1340,28 @@ void Infinite_Loop()
   HERE: goto HERE;
 }
 
-
-
-int DD() 
+void DDD() 
 {
-  int Halt_Status = HHH(DD); 
+  HHH(DDD); 
+  return; 
+} 
+
+int DD(int (*x)()) 
+{
+  int Halt_Status = HH(x, x); 
   if (Halt_Status) 
     HERE: goto HERE; 
   return Halt_Status; 
 } 
 
-void DDD() 
+
+int Sipser_D(int (*M)()) 
 {
-  HHH(DDD); 
-} 
+  if (HH(M, M) )
+    return 0;
+  return 1;
+}
+
 
 // HHH(DDD) and HHH1(DDD) are the standard names for DDD input 
 // DDD calls HHH(DDD). HHH1 is identical to HHH. 
@@ -1375,19 +1372,16 @@ void DDD()
 
 int main() 
 { 
-//DDD(); 
-  HHH(DD); 
-//HH(DD,DD); 
+//Output("Input_Halts = ", HH(Sipser_D, Sipser_D)); 
 //Output("Input_Halts = ", HHH(Infinite_Loop));
 //Output("Input_Halts = ", HHH(Infinite_Recursion));
 //Output("Input_Halts = ", HHH(DDD));
 //Output("Input_Halts = ", HH(DD,DD));
-//HHH(main); 
-//Output("Input_Halts = ", HHH(main));
-
 //  Output("Input_Halts = ", HH1(DD,DD));
 //  Output("Input_Halts = ", HHH1(DDD));
+  Output("Input_Halts = ", HHH(Strachey_P));
   return 0; 
 } 
  
  
+
