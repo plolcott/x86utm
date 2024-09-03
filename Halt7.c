@@ -509,8 +509,8 @@ u32 Decide_Halting_HH(u32**                   Aborted,
       {                                             
         Current_Length_Of_Execution_Trace = size;
 //      **Aborted = 
-        aborted_temp =     // 2024-06-05
-        Needs_To_Be_Aborted_HH((Decoded_Line_Of_Code*)**execution_trace); 
+        aborted_temp =     // 2024-06-05                                   // 2024-08-27 
+        Needs_To_Be_Aborted_HH((Decoded_Line_Of_Code*)**execution_trace);  // 2024-08-27 
       }
     } 
   } 
@@ -1338,13 +1338,9 @@ void Infinite_Recursion()
 void Infinite_Loop() 
 {
   HERE: goto HERE;
+  return; 
 }
 
-void DDD() 
-{
-  HHH(DDD); 
-  return; 
-} 
 
 int DD(int (*x)()) 
 {
@@ -1354,7 +1350,6 @@ int DD(int (*x)())
   return Halt_Status; 
 } 
 
-
 int Sipser_D(int (*M)()) 
 {
   if (HH(M, M) )
@@ -1362,24 +1357,28 @@ int Sipser_D(int (*M)())
   return 1;
 }
 
-
 // HHH(DDD) and HHH1(DDD) are the standard names for DDD input 
 // DDD calls HHH(DDD). HHH1 is identical to HHH. 
 
 // HH(DD,DD) and HH1(DD,DD) are the standard names for (DD,DD) input
 // DD calls HH(DD,DD) and HH1 is identical to HH. 
 
+void DDD() 
+{
+  HHH(DDD); 
+  return; 
+} 
 
 int main() 
 { 
 //Output("Input_Halts = ", HH(Sipser_D, Sipser_D)); 
 //Output("Input_Halts = ", HHH(Infinite_Loop));
 //Output("Input_Halts = ", HHH(Infinite_Recursion));
-//Output("Input_Halts = ", HHH(DDD));
+  Output("Input_Halts = ", HHH(DDD));
 //Output("Input_Halts = ", HH(DD,DD));
 //  Output("Input_Halts = ", HH1(DD,DD));
 //  Output("Input_Halts = ", HHH1(DDD));
-  Output("Input_Halts = ", HHH(Strachey_P));
+//Output("Input_Halts = ", HHH(Strachey_P));
   return 0; 
 } 
  
