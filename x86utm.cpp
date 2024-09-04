@@ -14,7 +14,7 @@
 //
 #define TRACE_USER_CODE_ONLY 
 #define LOCAL_HALT_DECIDER_MODE 
-#define MAX_INSTRUCTIONS 100000000 // 10,000,000 
+#define MAX_INSTRUCTIONS 20000000 // 10,000,000 
 //#define MAX_INSTRUCTIONS 100 // 10,000,000 
 //#define DOT_DASH_PREFIX
 
@@ -41,7 +41,7 @@
 // programming language statement, or computer protocol command that 
 // does nothing.
 
-#define MAX_MACHINE_CODE_BYTES 8 // was 5 or 8
+#define MAX_MACHINE_CODE_BYTES 5 // was 5 or 8
 #define NOP_OPCODE 0x90
 
 #include <stdio.h>
