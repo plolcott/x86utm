@@ -41,7 +41,7 @@
 // programming language statement, or computer protocol command that 
 // does nothing.
 
-#define MAX_MACHINE_CODE_BYTES 5 // was 5 or 8
+#define MAX_MACHINE_CODE_BYTES 7 // was 5 or 8
 #define NOP_OPCODE 0x90
 
 #include <stdio.h>
