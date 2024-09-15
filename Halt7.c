@@ -1333,6 +1333,7 @@ void Strachey_P()
 void Infinite_Recursion()
 {
   Infinite_Recursion(); 
+  OutputString("Can't possibly get here!");
 }
 
 void Infinite_Loop() 
@@ -1350,13 +1351,6 @@ int DD(int (*x)())
   return Halt_Status; 
 } 
 
-int Sipser_D(int (*M)()) 
-{
-  if (HH(M, M) )
-    return 0;
-  return 1;
-}
-
 // HHH(DDD) and HHH1(DDD) are the standard names for DDD input 
 // DDD calls HHH(DDD). HHH1 is identical to HHH. 
 
@@ -1369,12 +1363,19 @@ void DDD()
   return; 
 } 
 
+int Sipser_D(int (*M)()) 
+{
+  if (HH(M, M) )
+    return 0;
+  return 1;
+}
+
 int main() 
 { 
-//Output("Input_Halts = ", HH(Sipser_D, Sipser_D)); 
+  Output("Input_Halts = ", Sipser_D(Sipser_D)); 
 //Output("Input_Halts = ", HHH(Infinite_Loop));
 //Output("Input_Halts = ", HHH(Infinite_Recursion));
-  Output("Input_Halts = ", HHH(DDD));
+//Output("Input_Halts = ", HHH(DDD));
 //Output("Input_Halts = ", HH(DD,DD));
 //  Output("Input_Halts = ", HH1(DD,DD));
 //  Output("Input_Halts = ", HHH1(DDD));
