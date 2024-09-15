@@ -640,7 +640,7 @@ END_OF_CODE:
 // matches the infinite recursion behavior pattern with only 
 // a single call from, P to H(P,P). 
 // 
-u32 HH(ptr P, ptr I)
+u32 H(ptr P, ptr I)  // 2024-09-15 was HH
 { 
   u32* Aborted; 
   u32* execution_trace;
@@ -998,10 +998,10 @@ u32 H1(ptr P, ptr I)
 // This requires P to know its own machine address so that it can see
 // that itself is beng called from P. 
 // 
-u32 H(ptr P, void* I)
+u32 H_prior(ptr P, void* I)  // 2024-09-15 was H 
 { 
-  u32 End_Of_Code               = get_code_end((u32)H); 
-  u32 Address_of_H              = (u32)H;         
+  u32 End_Of_Code               = get_code_end((u32)H_prior); 
+  u32 Address_of_H              = (u32)H_prior;         
   u32 code_end                  = get_code_end((u32)P); 
   Decoded_Line_Of_Code *decoded = (Decoded_Line_Of_Code*) 
                                    Allocate(sizeof(Decoded_Line_Of_Code));  
@@ -1026,7 +1026,7 @@ u32 H(ptr P, void* I)
 
 u32 Sipser_H(ptr2 P, ptr2 I)
 { 
-  u32 End_Of_Code               = get_code_end((u32)H); 
+  u32 End_Of_Code               = get_code_end((u32)H_prior); 
   u32 Address_of_Sipser_H       = (u32)Sipser_H;         
   u32 code_end                  = get_code_end((u32)P); 
   Decoded_Line_Of_Code *decoded = (Decoded_Line_Of_Code*) 
@@ -1052,7 +1052,7 @@ u32 Sipser_H(ptr2 P, ptr2 I)
 
 u32 Kozen_K(ptr2 P, ptr2 I)
 { 
-  u32 End_Of_Code               = get_code_end((u32)H); 
+  u32 End_Of_Code               = get_code_end((u32)H_prior); 
   u32 Address_of_Kozen_K        = (u32)Kozen_K;         
   u32 code_end                  = get_code_end((u32)P); 
   Decoded_Line_Of_Code *decoded = (Decoded_Line_Of_Code*) 
@@ -1192,7 +1192,7 @@ void Pz(ptr x)
 
 void Px(void (*x)())
 {
-  (void) H(x, x);
+  (void) H_prior(x, x);
   return;
 }
 
@@ -1211,7 +1211,7 @@ int Kozen_N(ptr2 x)
 
 void P(ptr x) 
 {
-  int Halt_Status = H(x, x); 
+  int Halt_Status = H_prior(x, x); 
   if (Halt_Status) 
     HERE: goto HERE; 
   return; 
@@ -1219,7 +1219,7 @@ void P(ptr x)
 
 void E(void (*x)()) 
 {
-  H(x, x); 
+  H_prior(x, x); 
 } 
 
 
@@ -1246,7 +1246,7 @@ int Y(ptr P)
 
 void B(int (*x)()) 
 {
-  H(x, x); 
+  H_prior(x, x); 
   return; 
 } 
 
@@ -1257,7 +1257,7 @@ void Infinite_Recursion3(u32 N)
 
 void Infinite_Recursion2(u32 N)
 {
-    H(Infinite_Recursion2, (ptr)N);
+    H_prior(Infinite_Recursion2, (ptr)N);
 } 
 
 int factorial(int n) 
@@ -1295,10 +1295,9 @@ void Recursion_Chain_01(int M)
 }
 
 
-
-int D(int (*x)()) 
+int D1(int (*x)())  // formerly D
 {
-  int Halt_Status = H(x, x); 
+  int Halt_Status = H_prior(x, x); 
   if (Halt_Status)   
     HERE: goto HERE; 
   return Halt_Status; 
@@ -1307,7 +1306,7 @@ int D(int (*x)())
 
 int PP(ptr2 x) 
 {
-  int Halt_Status = HH(x, x); 
+  int Halt_Status = H(x, x);  // 2024-09-15 was HH
   if (Halt_Status) 
     HERE: goto HERE; 
   return Halt_Status; 
@@ -1345,7 +1344,7 @@ void Infinite_Loop()
 
 int DD(int (*x)()) 
 {
-  int Halt_Status = HH(x, x); 
+  int Halt_Status = H(x, x); // 2024-09-15 was HH
   if (Halt_Status) 
     HERE: goto HERE; 
   return Halt_Status; 
@@ -1363,16 +1362,16 @@ void DDD()
   return; 
 } 
 
-int Sipser_D(int (*M)()) 
+int D(int (*M)()) 
 {
-  if (HH(M, M) )
+  if (H(M, M) )
     return 0;
   return 1;
 }
 
 int main() 
 { 
-  Output("Input_Halts = ", Sipser_D(Sipser_D)); 
+  Output("Input_Halts = ", D(D)); 
 //Output("Input_Halts = ", HHH(Infinite_Loop));
 //Output("Input_Halts = ", HHH(Infinite_Recursion));
 //Output("Input_Halts = ", HHH(DDD));
