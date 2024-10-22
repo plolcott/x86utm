@@ -717,7 +717,7 @@ END_OF_CODE:
   return 1; // Input has normally terminated 
 } 
 
-// Same as HHH exactly DDD does not call HH1(DDD)
+// Same as HHH exactly DDD does not call HHH1(DDD)
 u32 HHH1(ptr P)
 { 
   u32* Aborted; 
@@ -1341,10 +1341,19 @@ void Infinite_Loop()
   return; 
 }
 
-
+/***
 int DD(int (*x)()) 
 {
   int Halt_Status = H(x, x); // 2024-09-15 was HH
+  if (Halt_Status) 
+    HERE: goto HERE; 
+  return Halt_Status; 
+} 
+***/
+
+int DD() 
+{
+  int Halt_Status = HHH(DD); 
   if (Halt_Status) 
     HERE: goto HERE; 
   return Halt_Status; 
@@ -1371,14 +1380,14 @@ int D(int (*M)())
 
 int main() 
 { 
-  Output("Input_Halts = ", D(D)); 
 //Output("Input_Halts = ", HHH(Infinite_Loop));
 //Output("Input_Halts = ", HHH(Infinite_Recursion));
-//Output("Input_Halts = ", HHH(DDD));
-//Output("Input_Halts = ", HH(DD,DD));
-//  Output("Input_Halts = ", HH1(DD,DD));
-//  Output("Input_Halts = ", HHH1(DDD));
-//Output("Input_Halts = ", HHH(Strachey_P));
+//Output("Input_Halts = ", D(D));             // Sipser D
+//Output("Input_Halts = ", HHH(Strachey_P));  // Strachey_P
+//Output("Input_Halts = ", HHH(DDD));  // DDD calls HHH(DDD)--- Pathlogical self-reference
+//Output("Input_Halts = ", HHH(DD));   // DD  calls HHH(DD)---- Pathlogical self-reference
+  Output("Input_Halts = ", HHH1(DDD)); // DDD does not call HHH1(DDD) --- No PSR
+//Output("Input_Halts = ", HHH1(DD));  // DD  does not call HHH1(DD) ---- No PSR 
   return 0; 
 } 
  
