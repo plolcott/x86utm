@@ -87,6 +87,32 @@ u32  get_code_end(u32 EIP){ return 0; }
 u32  Last_Address_Of_Operating_System(){ return 0; };  // 2021-08-26 
 void Output_Decoded(u32 decoded){}; 
 
+void Init_slave_state0(u32 P, u32 End_Of_Code, 
+                       Registers* slave_state, u32* slave_stack); 
+
+u32 Init_Halts_HH(u32**                   Aborted,
+                  u32**                   execution_trace,
+                  Decoded_Line_Of_Code**  decoded,
+                  u32*                    code_end,
+                  u32                     P, 
+                  Registers**             master_state,
+                  Registers**             slave_state,
+                  u32**                   slave_stack);  
+
+u32 Needs_To_Be_Aborted_Trace_HH(Decoded_Line_Of_Code* execution_trace, 
+                                 Decoded_Line_Of_Code *current); 
+
+u32 Needs_To_Be_Aborted_HH(Decoded_Line_Of_Code* execution_trace); 
+
+u32 Decide_Halting_HH(u32**                   Aborted,
+                      u32**                   execution_trace,
+                      Decoded_Line_Of_Code**  decoded,
+                      u32                     code_end,
+                      u32                     End_Of_Code,               
+                      Registers**             master_state,
+                      Registers**             slave_state,
+                      u32**                   slave_stack, 
+                      u32                     Root); 
 
 // Copy machine code of function (delimited by 0xcc)
 void CopyMachineCode(u8* source, u8** destination)
@@ -254,23 +280,6 @@ u32 Decide_Halting0(char*                   Halt_Decider_Name,
 }
 
 
-// This only works with one ZERO PARAMETERS  to the called function 
-void Init_slave_state0(u32 P, u32 End_Of_Code, 
-                       Registers* slave_state, u32* slave_stack) 
-{
-  u32 Top_of_Stack;
-  u32 Capacity;
-  u32 Size;
-
-  Top_of_Stack = StackPush(slave_stack, End_Of_Code); // Return Address in Halts() 
-  SaveState(slave_state);    // Based on this point in execution 
-  Capacity = slave_stack[-2]; 
-  Size = slave_stack[-1];
-
-  slave_state->EIP = P;      // Function to invoke
-  slave_state->ESP = Top_of_Stack; 
-  slave_state->EBP = Top_of_Stack; 
-}
 
 
 u32 Infinite_Simulation_Needs_To_Be_Aborted_Trace
@@ -403,150 +412,10 @@ void Init_slave_state(u32 P, u32 I, u32 End_Of_Code,
 
 
 
-u32 Needs_To_Be_Aborted_Trace_HH(Decoded_Line_Of_Code* execution_trace, 
-                                 Decoded_Line_Of_Code *current) 
-{
-//OutputString("Needs_To_Be_Aborted_Trace"); 
-//Output_Decoded((u32)current); 
-
-  Decoded_Line_Of_Code *traced; 
-  u32 Count_Conditional_Branch_Instructions = 0; 
-
-  u32* ptr = (u32*)execution_trace;  // 2021-04-06 
-  u32 size = ptr[-1];                // 2021-04-06  
-
-  u32 next2last = (size/sizeof(Decoded_Line_Of_Code)) -2;
-//for (s32 N = next2last; N >= 0; N--) // 2022-09-07  Otto J. Makela Portability issue
-  s32 N;                               // 2022-09-07  Otto J. Makela Portability issue
-  for (N = next2last; N >= 0; N--) // 2022-09-07  Otto J. Makela Portability issue
-  {
-    traced = &execution_trace[N]; 
-//  Output("traced->Address:", traced->Address); 
-
-    if (traced->Simplified_Opcode == JCC)                 // JCC 
-      Count_Conditional_Branch_Instructions++; 
-
-    if (current->Simplified_Opcode == JMP)                // JMP 
-      if (current->Decode_Target <= current->Address)     // upward
-        if (traced->Address == current->Decode_Target)    // to this address 
-          if (Count_Conditional_Branch_Instructions == 0) // no escape
-          { 
-            OutputString((char*)"Local Halt Decider: "
-                         "Infinite Loop Detected Simulation Stopped\n\n");
-            return 1; 
-          }
-    if (current->Simplified_Opcode == CALL)
-      if (current->Simplified_Opcode == traced->Simplified_Opcode)  // CALL
-        if (current->Address == traced->Address)              // from same address 
-          if (current->Decode_Target == traced->Decode_Target)// to Same Function 
-            if (Count_Conditional_Branch_Instructions == 0)   // no escape
-            { 
-              OutputString((char*)"Local Halt Decider: "
-                           "Infinite Recursion Detected Simulation Stopped\n\n");
-
-              return 1; 
-            } 
-  }
-  return 0;
-}
-
-//u32 Halts(u32 P, u32 I); 
-u32 Needs_To_Be_Aborted_HH(Decoded_Line_Of_Code* execution_trace)
-{
-  u32 Aborted = 0; 
-  u32* ptr = (u32*)execution_trace;  // 2021-04-06 
-  u32 size = ptr[-1];                // 2021-04-06  
-
-//Output("Needs_To_Be_Aborted(size):", size); 
-  u32 last = (size / sizeof(Decoded_Line_Of_Code)) - 1; 
-  Decoded_Line_Of_Code* current = &execution_trace[last]; 
-
-  if (current->Simplified_Opcode == CALL) 
-    Aborted = Needs_To_Be_Aborted_Trace_HH(execution_trace, current); 
-  else if (current->Simplified_Opcode == JMP) 
-    Aborted = Needs_To_Be_Aborted_Trace_HH(execution_trace, current); 
-  return Aborted; 
-}  
 
 
 
-u32 Decide_Halting_HH(u32**                   Aborted,
-                      u32**                   execution_trace,
-                      Decoded_Line_Of_Code**  decoded,
-                      u32                     code_end,
-                      u32                     End_Of_Code,               
-                      Registers**             master_state,
-                      Registers**             slave_state,
-                      u32**                   slave_stack, 
-                      u32                     Root)
-{
-  u32 aborted_temp = 0;  // 2024-06-05
-  u32 Current_Length_Of_Execution_Trace = 0; 
-//while (**Aborted == 0)
-  while (aborted_temp == 0) // 2024-06-05
-  { 
-    u32 EIP = (*slave_state)->EIP; // Save EIP of instruction to be executed 
-    DebugStep(*master_state, *slave_state, *decoded); // Execute this instruction 
 
-//  Output_Decoded((u32)*decoded);
-
-    if (EIP > Last_Address_Of_Operating_System())  // Don't examine any OS code 
-    {
-      PushBack(**execution_trace, (u32)*decoded, sizeof(Decoded_Line_Of_Code));  
-//    Output_Decoded((u32)*decoded);
-    }
-
-    if (EIP == code_end)
-      return 1; 
-
-    if (Root)  // Master UTM halt decider 
-    {
-      u32* address = (u32*)**execution_trace; 
-      u32 size  = (u32)*(address-1); 
-
-      // Detects that a slave appended an instruction to its execution_trace 
-      if (size > Current_Length_Of_Execution_Trace) 
-      {                                             
-        Current_Length_Of_Execution_Trace = size;
-//      **Aborted = 
-        aborted_temp =     // 2024-06-05                                   // 2024-08-27 
-        Needs_To_Be_Aborted_HH((Decoded_Line_Of_Code*)**execution_trace);  // 2024-08-27 
-      }
-    } 
-  } 
-//if (**Aborted == 1) // 2021-01-26 Must be aborted 
-  if (aborted_temp == 1) // 2021-01-26 Must be aborted 
-    return 0;        
-  return 1;           // 2021-01-26 Need not be aborted
-}
-
-
-u32 Init_Halts_HH(u32**                   Aborted,
-                  u32**                   execution_trace,
-                  Decoded_Line_Of_Code**  decoded,
-                  u32*                    code_end,
-                  u32                     P, 
-                  Registers**             master_state,
-                  Registers**             slave_state,
-                  u32**                   slave_stack) 
-{
-  *decoded      = (Decoded_Line_Of_Code*) Allocate(sizeof(Decoded_Line_Of_Code)); 
-  *code_end     = get_code_end(P);
-  *master_state = (Registers*) Allocate(sizeof(Registers)); 
-  *slave_state  = (Registers*) Allocate(sizeof(Registers)); 
-  *slave_stack  = Allocate(0x10000); // 64k
-  Output((char*)"New slave_stack at:", (u32)*slave_stack);
-  if (**execution_trace == 0x90909090)
-  {
-//  Global_Recursion_Depth = 0; 
-    **Aborted = 0;
-    **execution_trace = (u32)Allocate(sizeof(Decoded_Line_Of_Code) * 10000); 
-    Output((char*)"\nBegin Local Halt Decider Simulation   "
-           "Execution Trace Stored at:", **execution_trace); 
-    return 1; 
-  } 
-  return 0;  
-}
 
 
 //==============================================
@@ -798,84 +667,6 @@ END_OF_CODE:
 
 
 
-u32 HHH(ptr P)
-{ 
-  u32* Aborted; 
-  u32* execution_trace;
-  u32  End_Of_Code; 
-  goto SKIP; 
-
-DATA1: 
-#ifdef _WIN32
-  __asm nop  // The purpose of creating static local memory 
-  __asm nop  // directly in the function body is to make it 
-  __asm nop  // clear that a Turing machine computatation has
-  __asm nop  // this ability by simply writing to its own tape
-#elif __linux__
-  __asm__("nop");  // The purpose of creating static local memory 
-  __asm__("nop");  // directly in the function body is to make it 
-  __asm__("nop");  // clear that a Turing machine computatation has
-  __asm__("nop");  // this ability by simply writing to its own tape
-#endif
-
-DATA2:
-#ifdef _WIN32
-  __asm nop  // The purpose of creating static local memory 
-  __asm nop  // directly in the function body is to make it 
-  __asm nop  // clear that a Turing machine computatation has
-  __asm nop  // this ability by simply writing to its own tape
-#elif __linux__
-  __asm__("nop");  // The purpose of creating static local memory 
-  __asm__("nop");  // directly in the function body is to make it 
-  __asm__("nop");  // clear that a Turing machine computatation has
-  __asm__("nop");  // this ability by simply writing to its own tape
-#endif
-
-SKIP:
-#ifdef _WIN32
-  __asm lea eax, DATA1
-  __asm mov Aborted, eax          // Data stored directly in the function body
-  __asm lea eax, DATA2
-  __asm mov execution_trace, eax  // Data stored directly in the function body
-  __asm mov eax, END_OF_CODE 
-  __asm mov End_Of_Code, eax 
-#elif __linux__
-  __asm__("lea eax, DATA1");
-  __asm__("mov Aborted, eax");          // Data stored directly in the function body
-  __asm__("lea eax, DATA2");
-  __asm__("mov execution_trace, eax");  // Data stored directly in the function body
-  __asm__("mov eax, END_OF_CODE"); 
-  __asm__("mov End_Of_Code, eax"); 
-#endif
-
-  Decoded_Line_Of_Code *decoded;  
-  u32 code_end;                   
-  Registers*  master_state;       
-  Registers*  slave_state;        
-         u32* slave_stack;        
-
-  u32 Root = Init_Halts_HH(&Aborted, &execution_trace, &decoded, &code_end, (u32)P,
-                           &master_state, &slave_state, &slave_stack);
-//Output("H_Root:", Root);  
-
-//Init_slave_state((u32)P, (u32)I, End_Of_Code, slave_state, slave_stack); 
-  Init_slave_state0((u32)P, End_Of_Code, slave_state, slave_stack); // 2024-06-16 
-  if (Decide_Halting_HH(&Aborted, &execution_trace, &decoded, 
-                        code_end, End_Of_Code, &master_state, 
-                        &slave_state, &slave_stack, Root))
-      goto END_OF_CODE; 
-// Output_Decoded_Instructions(*execution_trace);
-  *Aborted         = 0x90909090;
-  *execution_trace = 0x90909090;
-  return 0;  // Does not halt
-END_OF_CODE: 
-// Output_Decoded_Instructions(*execution_trace);
-  *Aborted         = 0x90909090;
-  *execution_trace = 0x90909090;
-  return 1; // Input has normally terminated 
-} 
-
-
 
 // Original version of H that uses static local data and is
 // capable of recursive simulations. I restored this one 
@@ -1124,6 +915,246 @@ END_OF_CODE:
 } 
 
 
+u32 Init_Halts_HH(u32**                   Aborted,
+                  u32**                   execution_trace,
+                  Decoded_Line_Of_Code**  decoded,
+                  u32*                    code_end,
+                  u32                     P, 
+                  Registers**             master_state,
+                  Registers**             slave_state,
+                  u32**                   slave_stack) 
+{
+  *decoded      = (Decoded_Line_Of_Code*) Allocate(sizeof(Decoded_Line_Of_Code)); 
+  *code_end     = get_code_end(P);
+  *master_state = (Registers*) Allocate(sizeof(Registers)); 
+  *slave_state  = (Registers*) Allocate(sizeof(Registers)); 
+  *slave_stack  = Allocate(0x10000); // 64k
+  Output((char*)"New slave_stack at:", (u32)*slave_stack);
+  if (**execution_trace == 0x90909090)
+  {
+//  Global_Recursion_Depth = 0; 
+    **Aborted = 0;
+    **execution_trace = (u32)Allocate(sizeof(Decoded_Line_Of_Code) * 10000); 
+    Output((char*)"\nBegin Local Halt Decider Simulation   "
+           "Execution Trace Stored at:", **execution_trace); 
+    return 1; 
+  } 
+  return 0;  
+}
+
+
+// This only works with one ZERO PARAMETERS  to the called function 
+void Init_slave_state0(u32 P, u32 End_Of_Code, 
+                       Registers* slave_state, u32* slave_stack) 
+{
+  u32 Top_of_Stack;
+  u32 Capacity;
+  u32 Size;
+
+  Top_of_Stack = StackPush(slave_stack, End_Of_Code); // Return Address in Halts() 
+  SaveState(slave_state);    // Based on this point in execution 
+  Capacity = slave_stack[-2]; 
+  Size = slave_stack[-1];
+
+  slave_state->EIP = P;      // Function to invoke
+  slave_state->ESP = Top_of_Stack; 
+  slave_state->EBP = Top_of_Stack; 
+}
+
+u32 Needs_To_Be_Aborted_Trace_HH(Decoded_Line_Of_Code* execution_trace, 
+                                 Decoded_Line_Of_Code *current) 
+{
+//OutputString("Needs_To_Be_Aborted_Trace"); 
+//Output_Decoded((u32)current); 
+
+  Decoded_Line_Of_Code *traced; 
+  u32 Count_Conditional_Branch_Instructions = 0; 
+
+  u32* ptr = (u32*)execution_trace;  // 2021-04-06 
+  u32 size = ptr[-1];                // 2021-04-06  
+
+  u32 next2last = (size/sizeof(Decoded_Line_Of_Code)) -2;
+//for (s32 N = next2last; N >= 0; N--) // 2022-09-07  Otto J. Makela Portability issue
+  s32 N;                               // 2022-09-07  Otto J. Makela Portability issue
+  for (N = next2last; N >= 0; N--) // 2022-09-07  Otto J. Makela Portability issue
+  {
+    traced = &execution_trace[N]; 
+//  Output("traced->Address:", traced->Address); 
+
+    if (traced->Simplified_Opcode == JCC)                 // JCC 
+      Count_Conditional_Branch_Instructions++; 
+
+    if (current->Simplified_Opcode == JMP)                // JMP 
+      if (current->Decode_Target <= current->Address)     // upward
+        if (traced->Address == current->Decode_Target)    // to this address 
+          if (Count_Conditional_Branch_Instructions == 0) // no escape
+          { 
+            OutputString((char*)"Local Halt Decider: "
+                         "Infinite Loop Detected Simulation Stopped\n\n");
+            return 1; 
+          }
+    if (current->Simplified_Opcode == CALL)
+      if (current->Simplified_Opcode == traced->Simplified_Opcode)  // CALL
+        if (current->Address == traced->Address)              // from same address 
+          if (current->Decode_Target == traced->Decode_Target)// to Same Function 
+            if (Count_Conditional_Branch_Instructions == 0)   // no escape
+            { 
+              OutputString((char*)"Local Halt Decider: "
+                           "Infinite Recursion Detected Simulation Stopped\n\n");
+
+              return 1; 
+            } 
+  }
+  return 0;
+}
+
+//u32 Halts(u32 P, u32 I); 
+u32 Needs_To_Be_Aborted_HH(Decoded_Line_Of_Code* execution_trace)
+{
+  u32 Aborted = 0; 
+  u32* ptr = (u32*)execution_trace;  // 2021-04-06 
+  u32 size = ptr[-1];                // 2021-04-06  
+
+//Output("Needs_To_Be_Aborted(size):", size); 
+  u32 last = (size / sizeof(Decoded_Line_Of_Code)) - 1; 
+  Decoded_Line_Of_Code* current = &execution_trace[last]; 
+
+  if (current->Simplified_Opcode == CALL) 
+    Aborted = Needs_To_Be_Aborted_Trace_HH(execution_trace, current); 
+  else if (current->Simplified_Opcode == JMP) 
+    Aborted = Needs_To_Be_Aborted_Trace_HH(execution_trace, current); 
+  return Aborted; 
+}  
+
+
+u32 Decide_Halting_HH(u32**                   Aborted,
+                      u32**                   execution_trace,
+                      Decoded_Line_Of_Code**  decoded,
+                      u32                     code_end,
+                      u32                     End_Of_Code,               
+                      Registers**             master_state,
+                      Registers**             slave_state,
+                      u32**                   slave_stack, 
+                      u32                     Root)
+{
+  u32 aborted_temp = 0;  // 2024-06-05
+  u32 Current_Length_Of_Execution_Trace = 0; 
+//while (**Aborted == 0)
+  while (aborted_temp == 0) // 2024-06-05
+  { 
+    u32 EIP = (*slave_state)->EIP; // Save EIP of instruction to be executed 
+    DebugStep(*master_state, *slave_state, *decoded); // Execute this instruction 
+
+//  Output_Decoded((u32)*decoded);
+
+    if (EIP > Last_Address_Of_Operating_System())  // Don't examine any OS code 
+    {
+      PushBack(**execution_trace, (u32)*decoded, sizeof(Decoded_Line_Of_Code));  
+//    Output_Decoded((u32)*decoded);
+    }
+
+    if (EIP == code_end)
+      return 1; 
+
+    if (Root)  // Master UTM halt decider 
+    {
+      u32* address = (u32*)**execution_trace; 
+      u32 size  = (u32)*(address-1); 
+
+      // Detects that a slave appended an instruction to its execution_trace 
+      if (size > Current_Length_Of_Execution_Trace) 
+      {                                             
+        Current_Length_Of_Execution_Trace = size;
+//      **Aborted = 
+        aborted_temp =     // 2024-06-05                                   // 2024-08-27 
+        Needs_To_Be_Aborted_HH((Decoded_Line_Of_Code*)**execution_trace);  // 2024-08-27 
+      }
+    } 
+  } 
+//if (**Aborted == 1) // 2021-01-26 Must be aborted 
+  if (aborted_temp == 1) // 2021-01-26 Must be aborted 
+    return 0;        
+  return 1;           // 2021-01-26 Need not be aborted
+}
+
+
+u32 HHH(ptr P)
+{ 
+  u32* Aborted; 
+  u32* execution_trace;
+  u32  End_Of_Code; 
+  goto SKIP; 
+
+DATA1: 
+#ifdef _WIN32
+  __asm nop  // The purpose of creating static local memory 
+  __asm nop  // directly in the function body is to make it 
+  __asm nop  // clear that a Turing machine computatation has
+  __asm nop  // this ability by simply writing to its own tape
+#elif __linux__
+  __asm__("nop");  // The purpose of creating static local memory 
+  __asm__("nop");  // directly in the function body is to make it 
+  __asm__("nop");  // clear that a Turing machine computatation has
+  __asm__("nop");  // this ability by simply writing to its own tape
+#endif
+
+DATA2:
+#ifdef _WIN32
+  __asm nop  // The purpose of creating static local memory 
+  __asm nop  // directly in the function body is to make it 
+  __asm nop  // clear that a Turing machine computatation has
+  __asm nop  // this ability by simply writing to its own tape
+#elif __linux__
+  __asm__("nop");  // The purpose of creating static local memory 
+  __asm__("nop");  // directly in the function body is to make it 
+  __asm__("nop");  // clear that a Turing machine computatation has
+  __asm__("nop");  // this ability by simply writing to its own tape
+#endif
+
+SKIP:
+#ifdef _WIN32
+  __asm lea eax, DATA1
+  __asm mov Aborted, eax          // Data stored directly in the function body
+  __asm lea eax, DATA2
+  __asm mov execution_trace, eax  // Data stored directly in the function body
+  __asm mov eax, END_OF_CODE 
+  __asm mov End_Of_Code, eax 
+#elif __linux__
+  __asm__("lea eax, DATA1");
+  __asm__("mov Aborted, eax");          // Data stored directly in the function body
+  __asm__("lea eax, DATA2");
+  __asm__("mov execution_trace, eax");  // Data stored directly in the function body
+  __asm__("mov eax, END_OF_CODE"); 
+  __asm__("mov End_Of_Code, eax"); 
+#endif
+
+  Decoded_Line_Of_Code *decoded;  
+  u32 code_end;                   
+  Registers*  master_state;       
+  Registers*  slave_state;        
+         u32* slave_stack;        
+
+  u32 Root = Init_Halts_HH(&Aborted, &execution_trace, &decoded, &code_end, (u32)P,
+                           &master_state, &slave_state, &slave_stack);
+//Output("H_Root:", Root);  
+
+//Init_slave_state((u32)P, (u32)I, End_Of_Code, slave_state, slave_stack); 
+  Init_slave_state0((u32)P, End_Of_Code, slave_state, slave_stack); // 2024-06-16 
+  if (Decide_Halting_HH(&Aborted, &execution_trace, &decoded, 
+                        code_end, End_Of_Code, &master_state, 
+                        &slave_state, &slave_stack, Root))
+      goto END_OF_CODE; 
+// Output_Decoded_Instructions(*execution_trace);
+  *Aborted         = 0x90909090;
+  *execution_trace = 0x90909090;
+  return 0;  // Does not halt
+END_OF_CODE: 
+// Output_Decoded_Instructions(*execution_trace);
+  *Aborted         = 0x90909090;
+  *execution_trace = 0x90909090;
+  return 1; // Input has normally terminated 
+} 
+
 // Dummy Place holder needed to know where 
 // the x86utm operating system is located. 
 // THIS FUNCTION MAY BE OBSOLETE 
@@ -1200,7 +1231,6 @@ void Px(void (*x)())
 typedef int (*ptr2)();
 
 
-
 int Kozen_N(ptr2 x) 
 {
   if ( Kozen_K(x,x) ) 
@@ -1269,7 +1299,6 @@ int factorial(int n)
     return 1;
 }
 
-
 void This_Halts()
 {
   return; 
@@ -1295,30 +1324,6 @@ void Recursion_Chain_01(int M)
 }
 
 
-int D1(int (*x)())  // formerly D
-{
-  int Halt_Status = H_prior(x, x); 
-  if (Halt_Status)   
-    HERE: goto HERE; 
-  return Halt_Status; 
-} 
-
-
-int PP(ptr2 x) 
-{
-  int Halt_Status = H(x, x);  // 2024-09-15 was HH
-  if (Halt_Status) 
-    HERE: goto HERE; 
-  return Halt_Status; 
-} 
-
-
-void HHHxyz(ptr P, ptr I)
-{
-  P(I); 
-}
-
-
 // rec routine P
 //   §L :if T[P] go to L
 //     Return § 
@@ -1328,6 +1333,12 @@ void Strachey_P()
   L: if (HHH(Strachey_P)) goto L; 
   return; 
 }
+
+void DDD() 
+{
+  HHH(DDD); 
+  return; 
+} 
 
 void Infinite_Recursion()
 {
@@ -1341,16 +1352,6 @@ void Infinite_Loop()
   return; 
 }
 
-/***
-int DD(int (*x)()) 
-{
-  int Halt_Status = H(x, x); // 2024-09-15 was HH
-  if (Halt_Status) 
-    HERE: goto HERE; 
-  return Halt_Status; 
-} 
-***/
-
 int DD() 
 {
   int Halt_Status = HHH(DD); 
@@ -1359,36 +1360,13 @@ int DD()
   return Halt_Status; 
 } 
 
-// HHH(DDD) and HHH1(DDD) are the standard names for DDD input 
-// DDD calls HHH(DDD). HHH1 is identical to HHH. 
-
-// HH(DD,DD) and HH1(DD,DD) are the standard names for (DD,DD) input
-// DD calls HH(DD,DD) and HH1 is identical to HH. 
-
-void DDD() 
-{
-  HHH(DDD); 
-  return; 
-} 
-
-int D(int (*M)()) 
-{
-  if (H(M, M) )
-    return 0;
-  return 1;
-}
 
 int main() 
 { 
+  Output("Input_Halts = ", HHH(DD));   // DD  calls HHH(DD)---- Pathlogical self-reference
+//Output("Input_Halts = ", HHH(DDD));
 //Output("Input_Halts = ", HHH(Infinite_Loop));
 //Output("Input_Halts = ", HHH(Infinite_Recursion));
-//Output("Input_Halts = ", D(D));             // Sipser D
-//Output("Input_Halts = ", HHH(Strachey_P));  // Strachey_P
-//Output("Input_Halts = ", HHH(DDD));  // DDD calls HHH(DDD)--- Pathlogical self-reference
-//Output("Input_Halts = ", HHH(DD));   // DD  calls HHH(DD)---- Pathlogical self-reference
-  Output("Input_Halts = ", HHH1(DDD)); // DDD does not call HHH1(DDD) --- No PSR
-//Output("Input_Halts = ", HHH1(DD));  // DD  does not call HHH1(DD) ---- No PSR 
-  return 0; 
 } 
  
  
