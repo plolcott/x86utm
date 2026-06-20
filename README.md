@@ -16,9 +16,12 @@ base according to the operational semantics of the C programming language.**
 determines that its simulated D cannot possibly reach its own simulated final state in any finite number 
 of steps then H is necessarily correct to abort its simulation of D and reject this input as a non-terminating proof.**
 ```
+typedef int (*ptr)();
+u32 HHH(ptr P); 
+
 01 int DD() 
 02 {
-03   int Halt_Status = H(DD); 
+03   int Halt_Status = HHH(DD); 
 04   if (Halt_Status)   
 05     HERE: goto HERE; 
 06   return Halt_Status; 
