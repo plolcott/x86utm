@@ -12,9 +12,9 @@ The key purpose of x86utm was to examine the halting theorem's counter-example i
 base according to the operational semantics of the C programming language.** 
 
 
-**When proof theoretic semantics (PTS) halt prover H correctly simulates its input D until H correctly
-determines that its simulated D cannot possibly reach its own simulated final state in any finite number 
-of steps then H is necessarily correct to abort its simulation of D and reject this input as a non-terminating proof.**
+**When proof theoretic semantics (PTS) halt prover HHH correctly simulates its input DD until HHH correctly
+determines that its simulated DD cannot possibly reach its own simulated final state in any finite number 
+of steps then HHH is necessarily correct to abort its simulation of DD and reject this input as a non-terminating proof.**
 ```
 typedef int (*ptr)();
 u32 HHH(ptr P); 
