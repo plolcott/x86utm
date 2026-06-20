@@ -8,13 +8,17 @@ x86utm Halt7.obj > Halt7out.txt  // x86utm invoked from the command line
 
 The key purpose of x86utm was to examine the halting theorem's counter-example inputs at the high level of the C programming language. 
 
+**Proof Theoretic Semantics halt prover HHH correctly determines that its input DD is ungrounded in its atomic 
+base according to the operational semantics of the C programming language.** 
+
+
 **When proof theoretic semantics (PTS) halt prover H correctly simulates its input D until H correctly
 determines that its simulated D cannot possibly reach its own simulated final state in any finite number 
 of steps then H is necessarily correct to abort its simulation of D and reject this input as a non-terminating proof.**
 ```
-01 int D(int (*x)()) 
+01 int DD() 
 02 {
-03   int Halt_Status = H(x, x); 
+03   int Halt_Status = H(DD); 
 04   if (Halt_Status)   
 05     HERE: goto HERE; 
 06   return Halt_Status; 
@@ -22,7 +26,7 @@ of steps then H is necessarily correct to abort its simulation of D and reject t
 08  
 09 void main()  
 10 {  
-11  H(D,D);  
+11  HHH(DD);  
 12 }
 ```
 **Ordinary software engineering conclusively proves that D correctly simulated by H cannot possibly
