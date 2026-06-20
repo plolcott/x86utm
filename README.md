@@ -8,7 +8,9 @@ x86utm Halt7.obj > Halt7out.txt  // x86utm invoked from the command line
 
 The key purpose of x86utm was to examine the halting theorem's counter-example inputs at the high level of the C programming language. 
 
-**When simulating termination analyzer H correctly simulates its input D until H correctly determines that its simulated D cannot possibly reach its own simulated final state in any finite number of steps then H is necessarily correct to abort its simulation of D and reject this input as non-halting.**
+**When proof theoretic semantics (PTS) halt prover H correctly simulates its input D until H correctly
+determines that its simulated D cannot possibly reach its own simulated final state in any finite number 
+of steps then H is necessarily correct to abort its simulation of D and reject this input as a non-terminating proof.**
 ```
 01 int D(int (*x)()) 
 02 {
