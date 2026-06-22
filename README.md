@@ -36,20 +36,20 @@ u32 HHH(ptr P);
 reach its own simulated return instruction and terminate normally.**
 
 **Execution Trace**<br>
-Line 11: main() invokes H(D,D);
+Line 11: main() invokes HHH(DD);
 
 **keeps repeating (unless aborted)**<br>
-Line 03: simulated D(D) invokes simulated H(D,D) that simulates D(D)
+Line 03: simulated DD() invokes simulated HHH(DD) that simulates DD()
 
 **Simulation invariant:**<br>
-D correctly simulated by H cannot possibly reach past its own line 03.
+DD correctly simulated by HHH cannot possibly reach past its own line 03.
 
-**D correctly simulated by H cannot possibly reach its simulated final state in 1 to ∞ steps of correct simulation.**
+**DD correctly simulated by HHH cannot possibly reach its simulated final state in 1 to ∞ steps of correct simulation.**
 
-Simulating termination analyzer H correctly predicts that its simlated D(D) would never stop running unless H aborts its simulation of D. It does this by recognizing a behavior pattern that is very similar to infinite recursion. 
+Simulating termination analyzer HHH correctly predicts that its simlated DD() would never stop running unless HHH aborts its simulation of DD. It does this by recognizing a behavior pattern that is very similar to infinite recursion. 
 
-When D calls H to simulate itself this comparable to calling H to call itself and can result in something like infinite recursion. Because there are no control flow instructions in D to stop this the recursive simulation continues until H aborts it. 
+When DD calls H to simulate itself this comparable to calling H to call itself and can result in something like infinite recursion. Because there are no control flow instructions in DD to stop this the recursive simulation continues until HHH aborts it. 
 
-When the simulation of D is aborted this is comparable to a divide by zero error thus is not construed as D halting. 
+When the simulation of DD is aborted this is comparable to a divide by zero error thus is not construed as DD halting. 
 
 **Compiles with Microsoft Visual Studio Community Edition 2017**
