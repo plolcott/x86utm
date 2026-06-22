@@ -19,6 +19,8 @@ No one understands the x86 language any more so these implementation details can
 When we simply example the execution trace of DD by HHH in C the issue becomes clear. HHH simulates DD that calls HHH(DD) to repeat 
 this process continually. In this process HHH is a pure function of its input. The first time that HHH is invoked it allocates 
 a shared memory block so that it can watch the execution trace of each DD instance thoughout all of its recursive invocations. 
+Every HHH appends each new instruction that is simulates to this shared block. As soon as the outermost HHH sees a repating state 
+it aborts its simulation and rejectes its input. 
 
 ```
 typedef int (*ptr)();
