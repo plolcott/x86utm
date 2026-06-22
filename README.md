@@ -7,6 +7,8 @@ Halt7.obj was generated from compiling Halt7.c with a Microsoft compiler.
 x86utm Halt7.obj > Halt7out.txt  // x86utm invoked from the command line
 
 The key purpose of x86utm was to examine the halting theorem's counter-example inputs at the high level of the C programming language. 
+No one understands the x86 language any more so these implementation details can be ignored. When we simply example the execution trace of 
+DD by HHH in C the issue becomes clear. 
 
 **Proof Theoretic Semantics halt prover HHH correctly determines that its input DD is ungrounded in its atomic 
 base of the operational semantics of the C programming language.** 
