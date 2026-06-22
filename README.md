@@ -14,7 +14,6 @@ HHH is a pure function of its input.
 **Proof Theoretic Semantics halt prover HHH correctly determines that its input DD is ungrounded in its atomic 
 base of the operational semantics of the C programming language.** 
 
-
 **When proof theoretic semantics (PTS) halt prover HHH correctly simulates its input DD until HHH correctly
 determines that its simulated DD cannot possibly reach its own simulated final state in any finite number 
 of steps then HHH is necessarily correct to abort its simulation of DD and reject this input as a non-terminating proof.**
