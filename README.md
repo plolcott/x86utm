@@ -1,5 +1,12 @@
 # x86utm operating system
 
+**Proof Theoretic Semantics halt prover HHH correctly determines that its input DD is ungrounded in its atomic 
+base of the operational semantics of the C programming language.** 
+
+**When proof theoretic semantics (PTS) halt prover HHH correctly simulates its input DD until HHH correctly
+determines that its simulated DD cannot possibly reach its own simulated final state in any finite number 
+of steps then HHH is necessarily correct to abort its simulation of DD and reject this input as a non-terminating proof.**
+
 The x86utm operating system enables functions written in C to be simulated in Debug Step mode by another C function using an x86 emulator. 
 x86utm.exe takes the COFF object file: Halt7.obj as its command line parameter. x86utm.exe sends its standard output to Halt7out.txt.
 Halt7.obj was generated from compiling Halt7.c with a Microsoft compiler. 
@@ -13,12 +20,6 @@ When we simply example the execution trace of DD by HHH in C the issue becomes c
 this process continually. In this process HHH is a pure function of its input. The first time that HHH is invoked it allocates 
 a shared memory block so that it can watch the execution trace of each DD instance thoughout all of its recursive invocations. 
 
-**Proof Theoretic Semantics halt prover HHH correctly determines that its input DD is ungrounded in its atomic 
-base of the operational semantics of the C programming language.** 
-
-**When proof theoretic semantics (PTS) halt prover HHH correctly simulates its input DD until HHH correctly
-determines that its simulated DD cannot possibly reach its own simulated final state in any finite number 
-of steps then HHH is necessarily correct to abort its simulation of DD and reject this input as a non-terminating proof.**
 ```
 typedef int (*ptr)();
 u32 HHH(ptr P); 
