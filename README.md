@@ -22,7 +22,7 @@ a shared memory block so that it can watch the execution trace of each DD instan
 
 ```
 typedef int (*ptr)();
-u32 HHH(ptr P); 
+int HHH(ptr P); 
 
 01 int DD() 
 02 {
