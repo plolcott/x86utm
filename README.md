@@ -53,7 +53,7 @@ DD correctly simulated by HHH cannot possibly reach past its own line 03.
 
 Simulating termination analyzer HHH correctly predicts that its simlated DD() would never stop running unless HHH aborts its simulation of DD. It does this by recognizing a behavior pattern that is very similar to infinite recursion. 
 
-When DD calls H to simulate itself this comparable to calling H to call itself and can result in something like infinite recursion. Because there are no control flow instructions in DD to stop this the recursive simulation continues until HHH aborts it. 
+When DD calls HHH to simulate itself this comparable to calling H to call itself and can result in something like infinite recursion. Because there are no control flow instructions in DD to stop this the recursive simulation continues until HHH aborts it. 
 
 When the simulation of DD is aborted this is comparable to a divide by zero error thus is not construed as DD halting. 
 
