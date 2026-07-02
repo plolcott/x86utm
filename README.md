@@ -1,7 +1,8 @@
 # x86utm operating system
 
 **Proof Theoretic Semantics halt prover HHH correctly determines that its input DD is ungrounded in its atomic 
-base of the operational semantics of the C programming language.** 
+base of the operational semantics of the C programming language. Another way of saying this is that DD does not 
+have a well-founded justication tree relative to HHH.**
 
 **When proof theoretic semantics (PTS) halt prover HHH correctly simulates its input DD until HHH correctly
 determines that its simulated DD cannot possibly reach its own simulated final state in any finite number 
