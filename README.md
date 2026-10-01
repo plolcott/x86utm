@@ -9,13 +9,13 @@ determines that its simulated DD cannot possibly reach its own simulated final s
 of steps then HHH is necessarily correct to abort its simulation of DD and reject this input as a non-terminating proof.**
 
 <MIT Professor Sipser agreed to ONLY these verbatim words 10/13/2022>
-    If simulating halt decider H correctly simulates its 
-    input D until H correctly determines that its simulated D 
-    would never stop running unless aborted then 
+    If simulating halt decider H correctly simulates its <br>
+    input D until H correctly determines that its simulated D <br> 
+    would never stop running unless aborted then <br><br>
 
-    H can abort its simulation of D and correctly report that D 
-    specifies a non-halting sequence of configurations. 
-</MIT Professor Sipser agreed to ONLY these verbatim words 10/13/2022>
+    H can abort its simulation of D and correctly report that D <br>
+    specifies a non-halting sequence of configurations. <br>
+<MIT Professor Sipser agreed to ONLY these verbatim words 10/13/2022>
 
 The x86utm operating system enables functions written in C to be simulated in Debug Step mode by another C function using an x86 emulator. 
 x86utm.exe takes the COFF object file: Halt7.obj as its command line parameter. x86utm.exe sends its standard output to Halt7out.txt.
