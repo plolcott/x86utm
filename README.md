@@ -1,12 +1,23 @@
 # x86utm operating system
 
-**Proof Theoretic Semantics halt prover HHH correctly determines that its input DD is ungrounded in its atomic 
-base of the operational semantics of the C programming language. Another way of saying this is that DD does not 
-have a well-founded justication tree relative to HHH.**
+The x86UTM operating system enables the every detail of the Halting Problem 
+proof to be concretely examined at the level of the C programming language. 
 
-**When proof theoretic semantics (PTS) halt prover HHH correctly simulates its input DD until HHH correctly
-determines that its simulated DD cannot possibly reach its own simulated final state in any finite number 
-of steps then HHH is necessarily correct to abort its simulation of DD and reject this input as a non-terminating proof.**
+The key mistake of the halting theorem is that it requires a halt decider 
+to report on the behavior of the direct execution of DD() from main()
+
+This is outside of the Church-Turing scope when this scope is understood to
+only allow finite string transformation rules to be applied to finite string
+inputs to derive any any all outputs.
+
+The only correct finite string transformation rules that HHH is allowed to
+apply to its finite string input DD are specified by the operational semantics 
+of the C programming language.
+
+There are no correct finite string transformation rules that HHH can possibly 
+apply to its input finite string that derive the behavior of DD directly 
+executed in main().
+
 ```
 <MIT Professor Sipser agreed to ONLY these verbatim words 10/13/2022>
     If simulating halt decider H correctly simulates its 
