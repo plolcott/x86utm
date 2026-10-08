@@ -4,7 +4,8 @@ The x86UTM operating system enables the every detail of the Halting Problem
 proof to be concretely examined at the level of the C programming language. 
 
 The key mistake of the halting theorem is that it requires a halt decider 
-to report on the behavior of the direct execution of DD() from main()
+to report on the behavior of something other than the behavior specified 
+by its finite string input.
 
 This is outside of the Church-Turing scope when this scope is understood to
 only allow finite string transformation rules to be applied to finite string
