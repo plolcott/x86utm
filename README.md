@@ -17,11 +17,8 @@ string inputs to derive any and all outputs.
 ```
 The only correct finite string transformation rules that HHH is allowed to
 apply to its finite string input DD are specified by the operational semantics 
-of the C programming language.
-
-There are no correct finite string transformation rules that HHH can possibly 
-apply to its input finite string that derive the behavior of DD directly 
-executed in main().
+of the C programming language. This is a single unique sequence making every
+other sequence incorrect. 
 
 ```
 <MIT Professor Sipser agreed to ONLY these verbatim words 10/13/2022>
