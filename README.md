@@ -31,7 +31,7 @@ other sequence incorrect.
     specifies a non-halting sequence of configurations. 
 <MIT Professor Sipser agreed to ONLY these verbatim words 10/13/2022>
 ```
-The key purpose of x86utm was to examine the halting theorem's counter-example inputs at the high level of the C programming language. 
+The key purpose of x86utm is to concretely formalize the missing details of the halting problem proof at the high level of the C programming language. 
 When we simply examine the trace of DD correctly simulated by HHH in C the issue becomes clear. HHH simulates DD that calls HHH(DD) to repeat 
 this process continually.
 
