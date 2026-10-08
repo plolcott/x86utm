@@ -53,8 +53,7 @@ int HHH(ptr P);
 12 }
 ```
 **Correct simulation is defined as DD simulated by HHH according to the (operational) semantics of the C programming language.**
-
-**Ordinary software engineering conclusively proves that DD correctly simulated by HHH cannot possibly reach its own simulated return instruction and terminate normally.**
+Ordinary software engineering conclusively proves that DD correctly simulated by HHH cannot possibly reach its own simulated return instruction and terminate normally.
 
 **Execution Trace**<br>
 Line 11: main() invokes HHH(DD);
