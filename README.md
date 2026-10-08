@@ -31,13 +31,8 @@ other sequence incorrect.
 <MIT Professor Sipser agreed to ONLY these verbatim words 10/13/2022>
 ```
 The key purpose of x86utm was to examine the halting theorem's counter-example inputs at the high level of the C programming language. 
-No one understands the x86 language any more so these implementation details can be ignored. 
-
 When we simply examine the execution trace of DD by HHH in C the issue becomes clear. HHH simulates DD that calls HHH(DD) to repeat 
-this process continually. In this process HHH is a pure function of its input. The first time that HHH is invoked it allocates 
-a shared memory block so that it can watch the execution trace of each DD instance thoughout all of its recursive invocations. 
-Every HHH appends each new instruction that it simulates to this shared block. As soon as the outermost HHH sees a repeating state 
-it aborts its simulation and rejects its input. 
+this process continually.
 
 ```
 typedef int (*ptr)();
@@ -71,13 +66,16 @@ DD correctly simulated by HHH cannot possibly reach past its own line 03.
 
 **DD correctly simulated by HHH cannot possibly reach its simulated final state in 1 to ∞ steps of correct simulation.**
 
-Simulating termination analyzer HHH correctly predicts that its simlated DD() would never stop running unless HHH aborts its simulation of DD. It does this by recognizing a behavior pattern that is very similar to infinite recursion. 
+Simulating termination analyzer HHH correctly predicts that its simulated DD would never stop running unless HHH aborts its simulation of DD. It does this by recognizing a behavior pattern that is very similar to infinite recursion. 
 
 When DD calls HHH to simulate itself this comparable to calling HHH to call itself and can result in something like infinite recursion. Because there are no control flow instructions in DD to stop this the recursive simulation continues until HHH aborts it. 
 
 When the simulation of DD is aborted this is comparable to a divide by zero error thus is not construed as DD halting. 
 
 **Implementation details**
+The first time that HHH is invoked it allocates a shared memory block so that it can watch the execution trace of each DD instance thoughout all of its recursive invocations. 
+Every HHH appends each new instruction that it simulates to this shared block. As soon as the outermost HHH sees a repeating state it aborts its simulation and rejects its input. 
+
 The x86utm operating system enables functions written in C to be simulated in Debug Step mode by another C function using an x86 emulator. 
 x86utm.exe takes the COFF object file: Halt7.obj as its command line parameter. x86utm.exe sends its standard output to Halt7out.txt.
 Halt7.obj was generated from compiling Halt7.c with a Microsoft compiler. 
