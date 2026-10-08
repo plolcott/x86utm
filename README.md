@@ -42,10 +42,10 @@ x86utm Halt7.obj > Halt7out.txt  // x86utm invoked from the command line
 The key purpose of x86utm was to examine the halting theorem's counter-example inputs at the high level of the C programming language. 
 No one understands the x86 language any more so these implementation details can be ignored. 
 
-When we simply example the execution trace of DD by HHH in C the issue becomes clear. HHH simulates DD that calls HHH(DD) to repeat 
+When we simply examine the execution trace of DD by HHH in C the issue becomes clear. HHH simulates DD that calls HHH(DD) to repeat 
 this process continually. In this process HHH is a pure function of its input. The first time that HHH is invoked it allocates 
 a shared memory block so that it can watch the execution trace of each DD instance thoughout all of its recursive invocations. 
-Every HHH appends each new instruction that is simulates to this shared block. As soon as the outermost HHH sees a repeating state 
+Every HHH appends each new instruction that it simulates to this shared block. As soon as the outermost HHH sees a repeating state 
 it aborts its simulation and rejects its input. 
 
 ```
