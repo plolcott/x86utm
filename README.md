@@ -10,6 +10,11 @@ This is outside of the Church-Turing scope when this scope is understood to
 only allow finite string transformation rules to be applied to finite string
 inputs to derive any any all outputs.
 
+// paraphrase of Emil Post
+All computations are essentially the application
+of correct finite string transformation rules to 
+finite string inputs to derive any and all outputs.
+
 The only correct finite string transformation rules that HHH is allowed to
 apply to its finite string input DD are specified by the operational semantics 
 of the C programming language.
