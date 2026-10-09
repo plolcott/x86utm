@@ -56,8 +56,6 @@ DD correctly simulated by HHH cannot possibly reach past its own line 03 whether
 
 **DD correctly simulated by HHH cannot possibly reach its simulated final state in 1 to ∞ steps of correct simulation.**
 
-Simulating termination analyzer HHH correctly predicts that its simulated DD would never stop running unless HHH aborts its simulation of DD. (This exacly meets the Professor Sipser approved criteia) It does this by recognizing a behavior pattern that is very similar to infinite recursion. 
-
 **Implementation details**
 The first time that HHH is invoked it allocates a shared memory block so that it can watch the execution trace of each DD instance thoughout all of its recursive invocations. 
 Every HHH appends each new instruction that it simulates to this shared block. As soon as the outermost HHH sees a repeating state it aborts its simulation and rejects its input. 
