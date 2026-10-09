@@ -22,9 +22,8 @@ string transformations to their inputs.
 The only correct finite string transformation rules that HHH is allowed to
 apply to its finite string input DD are specified by the operational semantics 
 of the C programming language. This is a single unique sequence making every
-other sequence incorrect. 
-
-This sequence does not derive the behavior of DD() executed from main(). 
+other sequence incorrect. This sequence does not derive the behavior of DD() 
+executed from main(). 
 
 ```
 typedef int (*ptr)();
