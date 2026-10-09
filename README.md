@@ -15,25 +15,16 @@ inputs to derive any any all outputs.
 All computations are essentially the application
 of finite string transformation rules to finite
 string inputs to derive any and all outputs.
+
+All computations are only allowed to apply finite
+string transformations to their inputs.
 ```
 The only correct finite string transformation rules that HHH is allowed to
 apply to its finite string input DD are specified by the operational semantics 
 of the C programming language. This is a single unique sequence making every
 other sequence incorrect. 
 
-```
-<MIT Professor Sipser agreed to ONLY these verbatim words 10/13/2022>
-    If simulating halt decider H correctly simulates its 
-    input D until H correctly determines that its simulated D 
-    would never stop running unless aborted then <br><br>
-
-    H can abort its simulation of D and correctly report that D 
-    specifies a non-halting sequence of configurations. 
-<MIT Professor Sipser agreed to ONLY these verbatim words 10/13/2022>
-```
-The key purpose of x86utm is to concretely formalize the missing details of the halting problem proof at the high level of the C programming language. 
-When we simply examine the trace of DD correctly simulated by HHH in C the issue becomes clear. HHH simulates DD that calls HHH(DD) to repeat 
-this process continually.
+This sequence does not derive the behavior of DD() executed from main(). 
 
 ```
 typedef int (*ptr)();
