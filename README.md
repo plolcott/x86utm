@@ -57,10 +57,10 @@ Line 11: main() invokes HHH(DD);
 **keeps repeating (unless aborted)**<br>
 Line 03: simulated DD() invokes simulated HHH(DD) that simulates DD()
 
-**Axiom 5** **Simulation invariant:**<br>
+**Axiom 5** <br>**Simulation invariant:**<br>
 DD correctly simulated by HHH cannot possibly reach past its own line 03 whether or not HHH ever aborts this simulation. 
 
-**Axiom 6**
+**Axiom 6**<br>
 **DD correctly simulated by HHH cannot possibly reach its simulated final state.**
 
 **Implementation details**
