@@ -13,8 +13,7 @@ inputs to derive any any all outputs.
 
 **Succinct proof that the halting problem proofs are incorrect**
 
-**Axiom 1**<br>
-**paraphrase of Emil Post**<br>
+**Axiom 1**  ---  **paraphrase of Emil Post**<br>
 All computations are essentially the application<br>
 of finite string transformation rules to finite<br>
 string inputs to derive any and all outputs.<br>
