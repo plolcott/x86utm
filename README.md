@@ -16,8 +16,8 @@ inputs to derive any any all outputs.
 **Axiom 1 --- Paraphrase of Emil Post** <br>
 All computations are essentially the application of finite string<br>
 transformation rules to finite string inputs to derive any and all<br>
-outputs. All computations are only allowed to apply finite string<br>
-transformations to their finite string inputs.
+outputs. **All computations are only allowed to apply finite string<br>
+transformations to their finite string inputs.**
 
 **Axiom 2**<br>
 The only correct finite string transformation rules that HHH is<br>
