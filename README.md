@@ -11,7 +11,7 @@ This is outside of the Church-Turing scope when this scope is understood to<br>
 only allow finite string transformation rules to be applied to finite string<br>
 inputs to derive any any all outputs.
 
-**Succinct proof that the halting problem proof are incorrect**
+**Succinct proof that the halting problem proofs are incorrect**
 
 **Axiom 1**<br>
 **paraphrase of Emil Post**<br>
