@@ -14,14 +14,13 @@ inputs to derive any any all outputs.
 **Succinct proof that the halting problem proof are incorrect**
 
 **Axiom 1**<br>
-// paraphrase of Emil Post
-```
-All computations are essentially the application
-of finite string transformation rules to finite
-string inputs to derive any and all outputs.
-All computations are only allowed to apply finite
-string transformations to their inputs.
-```
+**paraphrase of Emil Post**
+All computations are essentially the application<br>
+of finite string transformation rules to finite<br>
+string inputs to derive any and all outputs.<br>
+All computations are only allowed to apply finite<br>
+string transformations to their inputs.<br>
+
 **Axiom 2**<br>
 The only correct finite string transformation rules that HHH is allowed to
 apply to its finite string input DD is specified by the operational semantics 
