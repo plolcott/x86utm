@@ -36,10 +36,13 @@ DD correctly simulated by HHH cannot possibly reach its simulated final halt<br>
 state is determined by the execution trace shown below. 
 
 **Conclusion**<br> 
-When Simulating halt decider HHH is applied to the conventional Halting Problem<br> 
-proof counter-example input DD written by applying  Emil Post finite string<br> 
-transformations to DD it is correctly rejected as non-halting on the basis that<br> 
-is specifies non-halting recursive simulation. 
+Simulating halt decider HHH is applied to the conventional Halting Problem<br> 
+proof counter-example finite string input DD. HHH applies Emil Post finite string<br> 
+transformations to this DD. Because the input is C source code correct transformations<br> 
+must correspond to the operational semantics of the C programming language. The<br> 
+above prohibits HHH from reporting on the behavior of its caller DD() directly<br> 
+executed in main(). This also enables HHH to correctly reject its input finite<br> 
+string DD as non-halting.
 
 ```
 typedef int (*ptr)();
