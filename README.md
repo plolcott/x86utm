@@ -74,5 +74,5 @@ The x86utm operating system enables functions written in C to be simulated in De
 x86utm.exe takes the COFF object file: Halt7.obj as its command line parameter. x86utm.exe sends its standard output to Halt7out.txt.
 Halt7.obj was generated from compiling Halt7.c with a Microsoft compiler. 
 
-x86utm Halt7.obj > Halt7out.txt  // x86utm invoked from the command line
+x86utm Halt7.obj > Halt7out.txt  // x86utm invoked from the command line<br>
 Compiles with Microsoft Visual Studio Community Edition 2017
