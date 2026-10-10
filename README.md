@@ -25,7 +25,7 @@ apply to its finite string input DD is specified by the operational semantics<br
 of the C programming language. 
 
 **Axiom 3**<br>
-This is a single unique sequence making every other sequence incorrect. 
+This is a single unique sequence thus making every other sequence incorrect. 
 
 **Axiom 4**<br>
 This sequence does not derive the behavior of DD() executed from main(). <br>
