@@ -24,7 +24,7 @@ The only correct finite string transformation rules that HHH is allowed to<br>
 apply to its finite string input DD is specified by the operational semantics<br> 
 of the C programming language. 
 
-**Axiom 3***<br>
+**Axiom 3**<br>
 This is a single unique sequence making every other sequence incorrect. 
 
 **Axiom 4**<br>
