@@ -13,36 +13,37 @@ inputs to derive any any all outputs.
 
 **<H3>Succinct proof that the Halting Problem proofs are incorrect</H3>**
 
-**Axiom 1**  ---  **Paraphrase of Emil Post**<br>
+**Axiom 1 --- Paraphrase of Emil Post** <br>
 All computations are essentially the application of finite string<br>
 transformation rules to finite string inputs to derive any and all<br>
 outputs. All computations are only allowed to apply finite string<br>
-transformations to their inputs.<br>
+transformations to their inputs.
 
-**Axiom 2**<br>
-The only correct finite string transformation rules that HHH is allowed to<br>
-apply to its finite string input DD is specified by the operational semantics<br> 
-of the C programming language. 
+**Axiom 2**
+The only correct finite string transformation rules that HHH is<br>
+allowed to apply to its finite string input DD is specified by<br>
+the operational semantics of the C programming language.
 
-**Axiom 3**<br>
-This is a single unique sequence thus making every other sequence incorrect. 
+**Axiom 3**
+This is a single unique sequence thus making every other sequence incorrect.
 
-**Axiom 4**<br>
-This sequence does not derive the behavior of DD() executed from main(). <br>
-HHH cannot report on the behavior of its caller DD(). 
+**Axiom 4**
+This sequence does not derive the behavior of DD() executed from main().<br>
+HHH cannot report on the behavior of its caller DD().
 
-**Axiom 5**<br>
-DD correctly simulated by HHH cannot possibly reach its simulated final halt<br> 
-state is determined by the execution trace shown below. 
+**Axiom 5**
+DD correctly simulated by HHH cannot possibly reach its simulated<br>
+final halt state is determined by the execution trace shown below.
 
-**Conclusion**<br> 
-Simulating halt decider HHH is applied to the conventional Halting Problem<br> 
-proof counter-example finite string input DD. HHH applies Emil Post finite string<br> 
-transformations to this DD. Because the input is C source code correct transformations<br> 
-must correspond to the operational semantics of the C programming language. The<br> 
-above prohibits HHH from reporting on the behavior of its caller DD() directly<br> 
-executed in main(). This also enables HHH to correctly reject its input finite<br> 
-string DD as non-halting.
+**Conclusion**
+Simulating halt decider HHH is applied to the conventional<br>
+Halting Problem proof counter-example finite string input DD.<br>
+HHH applies Emil Post finite string transformations to this DD.<br>
+Because the input is C source code correct transformations must<br>
+correspond to the operational semantics of the C programming<br>
+language. The above prohibits HHH from reporting on the behavior<br> 
+of its caller DD() directly executed in main(). This also enables<br>
+HHH to correctly reject its input finite string DD as non-halting.
 
 ```
 typedef int (*ptr)();
