@@ -3,7 +3,7 @@
 The x86UTM operating system enables every detail of the Halting Problem 
 proof to be concretely examined at the level of the C programming language. 
 
-The key mistake of the halting theorem is that it requires a halt decider 
+The key mistake of the halting problem proofs is that they require a halt decider 
 to report on the behavior of something other than the behavior specified 
 by its finite string input.
 
@@ -15,15 +15,16 @@ inputs to derive any any all outputs.
 All computations are essentially the application
 of finite string transformation rules to finite
 string inputs to derive any and all outputs.
-
 All computations are only allowed to apply finite
 string transformations to their inputs.
 ```
 The only correct finite string transformation rules that HHH is allowed to
-apply to its finite string input DD are specified by the operational semantics 
+apply to its finite string input DD is specified by the operational semantics 
 of the C programming language. This is a single unique sequence making every
 other sequence incorrect. This sequence does not derive the behavior of DD() 
 executed from main(). 
+
+**The above two paragraphs are to be construed as self-evidently true axioms.**
 
 ```
 typedef int (*ptr)();
