@@ -35,6 +35,12 @@ HHH cannot report on the behavior of its caller DD().
 DD correctly simulated by HHH cannot possibly reach its simulated final halt<br> 
 state is determined by the execution trace shown below. 
 
+**Conclusion**<br> 
+When Simulating halt decider HHH is applied to the conventional Halting Problem<br> 
+proof counter-example input DD written by applying  Emil Post finite string<br> 
+transformations to DD it is correctly rejected as non-halting on the basis that<br> 
+is specifies non-halting recursive simulation. 
+
 ```
 typedef int (*ptr)();
 int HHH(ptr P); 
