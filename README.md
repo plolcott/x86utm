@@ -19,23 +19,23 @@ transformation rules to finite string inputs to derive any and all<br>
 outputs. All computations are only allowed to apply finite string<br>
 transformations to their inputs.
 
-**Axiom 2**
+**Axiom 2**<br>
 The only correct finite string transformation rules that HHH is<br>
 allowed to apply to its finite string input DD is specified by<br>
 the operational semantics of the C programming language.
 
-**Axiom 3**
+**Axiom 3**<br>
 This is a single unique sequence thus making every other sequence incorrect.
 
-**Axiom 4**
+**Axiom 4**<br>
 This sequence does not derive the behavior of DD() executed from main().<br>
 HHH cannot report on the behavior of its caller DD().
 
-**Axiom 5**
+**Axiom 5**<br>
 DD correctly simulated by HHH cannot possibly reach its simulated<br>
 final halt state is determined by the execution trace shown below.
 
-**Conclusion**
+**Conclusion**<br>
 Simulating halt decider HHH is applied to the conventional<br>
 Halting Problem proof counter-example finite string input DD.<br>
 HHH applies Emil Post finite string transformations to this DD.<br>
