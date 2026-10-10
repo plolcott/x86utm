@@ -1,5 +1,5 @@
 # x86utm operating system
-**Overview of what will be shown below**<br>
+**<h3>Overview of what will be shown below<h3>**<br>
 The x86UTM operating system enables every detail of the Halting Problem<br> 
 proof to be concretely examined at the level of the C programming language. 
 
