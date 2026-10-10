@@ -31,8 +31,9 @@ This is a single unique sequence making every other sequence incorrect.
 This sequence does not derive the behavior of DD() executed from main(). <br>
 HHH cannot report on the behavior of its caller DD(). 
 
-**Axiom 6**<br>
-DD correctly simulated by HHH cannot possibly reach its simulated final state.
+**Axiom 5**<br>
+DD correctly simulated by HHH cannot possibly reach its simulated final halt<br> 
+state is determined by the execution trace shown below. 
 
 ```
 typedef int (*ptr)();
