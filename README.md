@@ -21,15 +21,15 @@ All computations are only allowed to apply finite<br>
 string transformations to their inputs.<br>
 
 **Axiom 2**<br>
-The only correct finite string transformation rules that HHH is allowed to
-apply to its finite string input DD is specified by the operational semantics 
+The only correct finite string transformation rules that HHH is allowed to<br>
+apply to its finite string input DD is specified by the operational semantics<br> 
 of the C programming language. 
 
 **Axiom 3***<br>
 This is a single unique sequence making every other sequence incorrect. 
 
 **Axiom 4**<br>
-This sequence does not derive the behavior of DD() executed from main(). 
+This sequence does not derive the behavior of DD() executed from main(). <br>
 HHH cannot report on the behavior of its caller DD(). 
 
 ```
