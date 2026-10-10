@@ -1,20 +1,19 @@
 # x86utm operating system
-**Overview of what will be shown below**
-
+**Overview of what will be shown below**<br>
 The x86UTM operating system enables every detail of the Halting Problem<br> 
 proof to be concretely examined at the level of the C programming language. 
 
-The key mistake of the halting problem proofs is that they require a halt decider 
-to report on the behavior of something other than the behavior specified 
+The key mistake of the halting problem proofs is that they require a halt<br> 
+decider to report on the behavior of something other than the behavior specified<br>
 by its finite string input.
 
-This is outside of the Church-Turing scope when this scope is understood to
-only allow finite string transformation rules to be applied to finite string
+This is outside of the Church-Turing scope when this scope is understood to<br>
+only allow finite string transformation rules to be applied to finite string<br>
 inputs to derive any any all outputs.
 
 **Succinct proof that the halting problem proof are incorrect**
 
-**Axiom 1**
+**Axiom 1**<br>
 // paraphrase of Emil Post
 ```
 All computations are essentially the application
@@ -23,15 +22,15 @@ string inputs to derive any and all outputs.
 All computations are only allowed to apply finite
 string transformations to their inputs.
 ```
-**Axiom 2**
+**Axiom 2**<br>
 The only correct finite string transformation rules that HHH is allowed to
 apply to its finite string input DD is specified by the operational semantics 
 of the C programming language. 
 
-**Axiom 3***
+**Axiom 3***<br>
 This is a single unique sequence making every other sequence incorrect. 
 
-**Axiom 4**
+**Axiom 4**<br>
 This sequence does not derive the behavior of DD() executed from main(). 
 HHH cannot report on the behavior of its caller DD(). 
 
