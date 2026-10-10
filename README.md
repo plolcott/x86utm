@@ -1,5 +1,5 @@
 # x86utm operating system
-
+**Overview of what will be shown below**
 The x86UTM operating system enables every detail of the Halting Problem 
 proof to be concretely examined at the level of the C programming language. 
 
@@ -10,21 +10,29 @@ by its finite string input.
 This is outside of the Church-Turing scope when this scope is understood to
 only allow finite string transformation rules to be applied to finite string
 inputs to derive any any all outputs.
-```
+
+**Succinct proof that the halting problem proof are incorrect**
+
+**Axiom 1**
 // paraphrase of Emil Post
+```
 All computations are essentially the application
 of finite string transformation rules to finite
 string inputs to derive any and all outputs.
 All computations are only allowed to apply finite
 string transformations to their inputs.
 ```
+**Axiom 2**
 The only correct finite string transformation rules that HHH is allowed to
 apply to its finite string input DD is specified by the operational semantics 
-of the C programming language. This is a single unique sequence making every
-other sequence incorrect. This sequence does not derive the behavior of DD() 
-executed from main(). HHH cannot report on the behavior of its caller DD(). 
+of the C programming language. 
 
-**The above two paragraphs are to be construed as self-evidently true axioms.**
+**Axiom 3***
+This is a single unique sequence making every other sequence incorrect. 
+
+**Axiom 4**
+This sequence does not derive the behavior of DD() executed from main(). 
+HHH cannot report on the behavior of its caller DD(). 
 
 ```
 typedef int (*ptr)();
@@ -52,10 +60,11 @@ Line 11: main() invokes HHH(DD);
 **keeps repeating (unless aborted)**<br>
 Line 03: simulated DD() invokes simulated HHH(DD) that simulates DD()
 
-**Simulation invariant:**<br>
+**Axiom 5** **Simulation invariant:**<br>
 DD correctly simulated by HHH cannot possibly reach past its own line 03 whether or not HHH ever aborts this simulation. 
 
-**DD correctly simulated by HHH cannot possibly reach its simulated final state in 1 to ∞ steps of correct simulation.**
+**Axiom 6**
+**DD correctly simulated by HHH cannot possibly reach its simulated final state.**
 
 **Implementation details**
 The first time that HHH is invoked it allocates a shared memory block so that it can watch the execution trace of each DD instance thoughout all of its recursive invocations. 
