@@ -27,7 +27,7 @@ operational semantics of the C programming language. This<br>
 requires DD to be simulated by HHH according to these rules.  
 
 **Axiom 3**<br>
-The single unique simulation trace derived from Axiom 2 can be seen<br>
+This single unique simulation trace derived from Axiom 2 can be seen<br>
 below. This trace excludes behavior equivalent to the behavior of<br>
 DD() executed from main(). HHH cannot report on the behavior of its<br>
 caller DD().
