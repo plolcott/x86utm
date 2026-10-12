@@ -34,8 +34,8 @@ below. This trace excludes behavior equivalent to DD() directly executed<br>
 from main(). HHH cannot report on the behavior of its caller DD().
 
 **Axiom 4**<br>
-DD correctly simulated by HHH cannot possibly reach its simulated<br>
-final halt state is determined by the simulattion trace shown below.
+DD correctly simulated by HHH cannot possibly reach its own simulated<br>
+final halt state is determined by the simulation trace shown below.
 
 **Conclusion**<br>
 From (4) HHH is correct to reject its input as non-halting. From (3)<br>
