@@ -33,10 +33,6 @@ DD() executed from main(). HHH cannot report on the behavior of its<br>
 caller DD().
 
 **Axiom 4**<br>
-This sequence does not derive the behavior of DD() executed from main().<br>
-HHH cannot report on the behavior of its caller DD().
-
-**Axiom 5**<br>
 DD correctly simulated by HHH cannot possibly reach its simulated<br>
 final halt state is determined by the simulattion trace shown below.
 
