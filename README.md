@@ -30,7 +30,7 @@ and leap to its own line 06.**<br>
 
 **Axiom 3**<br>
 This single unique correct simulation trace derived from (2) can be seen<br>
-below. This trace excludes behavior equivalent to the behavior of DD()<br> 
+below. This trace excludes behavior equivalent to DD() directly <br> 
 executed from main(). HHH cannot report on the behavior of its caller DD().
 
 **Axiom 4**<br>
