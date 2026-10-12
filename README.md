@@ -69,7 +69,7 @@ Ordinary software engineering conclusively proves that DD correctly simulated by
 **Execution Trace**<br>
 Line 11: main() invokes HHH(DD);
 
-**keeps repeating (unless aborted)**<br>
+**keeps repeating unless aborted**<br>
 Line 03: simulated DD() invokes simulated HHH(DD) that simulates DD()
 
 **Simulation invariant**<br>
