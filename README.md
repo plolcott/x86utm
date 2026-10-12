@@ -29,8 +29,8 @@ DD to be simulated by HHH according to these rules.
 **Axiom 3**<br>
 This is a single unique sequence thus making every other sequence incorrect.
 
-Axiom 2 derives a single unique simulation trace (as can be seen below) that
-excludes behavior equivalent to the behavior of DD() executed from main(). 
+Axiom 2 derives a single unique simulation trace (as can be seen below) that<br>
+excludes behavior equivalent to the behavior of DD() executed from main().<br>
 
 HHH cannot report on the behavior of its caller DD().
 
