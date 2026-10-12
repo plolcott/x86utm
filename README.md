@@ -23,7 +23,7 @@ transformations to their finite string inputs.**
 **Axiom 2**<br>
 The only correct finite string transformation rules that HHH is<br> 
 allowed to apply to its finite string input DD is specified by the<br> 
-operational semantics of the C programming language that require<br> 
+operational semantics of the C programming language. This requires<br> 
 DD to be simulated by HHH according to these rules.  
 
 **Axiom 3**<br>
