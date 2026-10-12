@@ -38,11 +38,11 @@ DD correctly simulated by HHH cannot possibly reach its simulated<br>
 final halt state is determined by the simulattion trace shown below.
 
 **Conclusion**<br>
-From (4) HHH is correct to reject its input as non-halting. From (3)
+From (4) HHH is correct to reject its input as non-halting. From (3)<br>
 we know that it is incorrect To require HHH to report on the behavior of DD(). 
 
-Every instance of the Halting Problem proof require a halt decider H
-report on the behavior it its own caller D otherwise this caller D cannot 
+Every instance of the Halting Problem proof require a halt decider H<br>
+report on the behavior it its own caller D otherwise this caller D cannot<br> 
 possibly do the opposite of whatever value that H returns to it. 
 
 ```
