@@ -12,8 +12,9 @@ only allow finite string transformation rules to be applied to finite string<br>
 inputs to derive any any all outputs.
 
 **<H3>Succinct proof that the Halting Problem Theorem is incorrect</H3>**
+(all these axioms refer to the simulation trace shown below)
 
-**Axiom 1 --- Paraphrase of Emil Post** <br>
+**Axiom 1 --- Paraphrase of Emil Post definition of computation** <br>
 All computations are essentially the application of finite string<br>
 transformation rules to finite string inputs to derive any and all<br>
 outputs. **All computations are only allowed to apply finite string<br>
@@ -22,7 +23,7 @@ transformations to their finite string inputs.**
 **Axiom 2**<br>
 The only correct finite string transformation rules that HHH is<br>
 allowed to apply to its finite string input DD is specified by<br>
-the operational semantics of the C programming language.
+the operational semantics of the C programming language. 
 
 **Axiom 3**<br>
 This is a single unique sequence thus making every other sequence incorrect.
