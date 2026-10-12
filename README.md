@@ -35,7 +35,7 @@ HHH cannot report on the behavior of its caller DD().
 
 **Axiom 5**<br>
 DD correctly simulated by HHH cannot possibly reach its simulated<br>
-final halt state is determined by the execution trace shown below.
+final halt state is determined by the simulattion trace shown below.
 
 **Conclusion**<br>
 Simulating halt decider HHH is applied to the conventional<br>
