@@ -27,7 +27,7 @@ operational semantics of the C programming language. This<br>
 requires DD to be simulated by HHH according to these rules.  
 
 **Axiom 3**<br>
-This single unique simulation trace derived from Axiom 2 can be seen<br>
+This single unique simulation trace derived from (2) can be seen<br>
 below. This trace excludes behavior equivalent to the behavior of<br>
 DD() executed from main(). HHH cannot report on the behavior of its<br>
 caller DD().
@@ -37,14 +37,12 @@ DD correctly simulated by HHH cannot possibly reach its simulated<br>
 final halt state is determined by the simulattion trace shown below.
 
 **Conclusion**<br>
-Simulating halt decider HHH is applied to the conventional<br>
-Halting Problem proof counter-example finite string input DD.<br>
-HHH applies Emil Post finite string transformations to this DD.<br>
-Because the input is C source code correct transformations must<br>
-correspond to the operational semantics of the C programming<br>
-language. The above prohibits HHH from reporting on the behavior<br> 
-of its caller DD() directly executed in main(). This also enables<br>
-HHH to correctly reject its input finite string DD as non-halting.
+From (4) HHH is correct to reject its input as non-halting. From (3)
+we know that it is incorrect To require HHH to report on the behavior of DD(). 
+
+Every instance of the Halting Problem proof require a halt decider H
+report on the behavior it its own caller D otherwise this caller D cannot 
+possibly do the opposite of whatever value that H returns to it. 
 
 ```
 typedef int (*ptr)();
