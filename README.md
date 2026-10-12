@@ -74,7 +74,7 @@ DD correctly simulated by HHH cannot possibly reach past its own line 03<br>
 (whether or not HHH ever aborts this simulation) thus<br> 
 **DD correctly simulated by HHH cannot possibly reach its simulated final state.**
 
-**Implementation details**
+**Implementation details**<br>
 The first time that HHH is invoked it allocates a shared memory block so that it can watch the execution trace of each DD instance thoughout all of its recursive invocations. 
 Every HHH appends each new instruction that it simulates to this shared block. As soon as the outermost HHH sees a repeating state it aborts its simulation and rejects its input. 
 
