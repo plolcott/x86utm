@@ -39,6 +39,10 @@ From Axioms (1)(2)(3)(4) HHH is correct to reject its input as non-halting<br>
 and we know that it is incorrect to require HHH to report on the behavior of<br> 
 its own caller DD(). 
 
+**Axiom 6**<br>
+From Axioms (1)(2)(3)(4)(5) The HP requires the logically impossible on the basis<br> 
+of violating the correctly elaborated details of the fundamental nature of a halt decider.
+
 **Axiom 6 From knowledge of the conventional proof**<br>
 Every instance of the Halting Problem proof requires a halt decider H<br>
 to report on the behavior it its own caller D otherwise this caller D cannot<br> 
