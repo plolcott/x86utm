@@ -8,7 +8,8 @@ proof to be concretely examined at the level of the C programming language.
 **Axiom 1 --- Paraphrase of Emil Post definition of computation** <br>
 All computations are eqivalent to the application of finite string<br>
 transformation rules to finite string inputs to derive any and all<br>
-outputs. 
+outputs. The rest of this proof will be restricted to the above model<br> 
+of computation thus
 
 **All computations are only allowed to apply finite string<br>
 transformations to their finite string inputs.**
