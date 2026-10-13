@@ -28,7 +28,7 @@ allowed to apply to its finite string input DD is specified by the<br>
 operational semantics of the C programming language. This<br> 
 requires DD to be simulated by HHH according to these rules.<br> 
 
-**HHH cannot correctly guess that DD will ignore its own line<br>  
+**HHH cannot correctly guess that DD will ignore its own line<br>
 03 and leap to its own line 06**<br>
 
 **Axiom 3**<br>
