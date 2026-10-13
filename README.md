@@ -35,8 +35,8 @@ DD correctly simulated by HHH cannot possibly reach its own simulated<br>
 final halt state is determined by the simulation trace shown below.
 
 **Axiom 5**<br>
-From (4) HHH is correct to reject its input as non-halting. From (3)<br>
-we know that it is incorrect to require HHH to report on the behavior of <br> 
+From Axioms (1)(2)(3)(4) HHH is correct to reject its input as non-halting.<br> 
+and we know that it is incorrect to require HHH to report on the behavior of<br> 
 its own caller DD(). 
 
 **Axiom 6 From knowledge of the conventional proof**<br>
