@@ -43,10 +43,11 @@ its own caller DD().
 From Axioms (1)(2)(3)(4)(5) The HP requires the logically impossible on the basis<br> 
 of violating the correctly elaborated details of the fundamental nature of a halt decider.
 
-**Axiom 6 From knowledge of the conventional proof**<br>
-Every instance of the Halting Problem proof requires a halt decider H<br>
-to report on the behavior it its own caller D otherwise this caller D cannot<br> 
-possibly do the opposite of whatever value that H returns to it. 
+**Extra Axiom 7**<br> 
+From knowledge of the conventional proof every instance of the Halting Problem<br>
+proof requires a halt decider H to report on the behavior it its own caller D<br>
+otherwise this caller D cannot possibly do the opposite of whatever value that<br> 
+H returns to it. 
 
 ```
 typedef int (*ptr)();
