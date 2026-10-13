@@ -19,7 +19,7 @@ All computations are essentially the application of finite string<br>
 transformation rules to finite string inputs to derive any and all<br>
 outputs. 
 
-**All computations are only allowed to apply finite string<br>https://github.com/plolcott/x86utm/blob/master/README.md
+**All computations are only allowed to apply finite string<br>
 transformations to their finite string inputs.**
 
 **Axiom 2**<br>
