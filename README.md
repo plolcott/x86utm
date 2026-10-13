@@ -2,7 +2,7 @@
 The x86UTM operating system enables every detail of the Halting Problem<br> 
 proof to be concretely examined at the level of the C programming language. 
 
-**<H3>Succinct proof that the Halting Problem Theorem is incorrect</H3>**
+**Succinct proof that the Halting Problem Theorem is incorrect**
 (all these axioms refer to the simulation trace shown below)
 
 **Axiom 1 --- Paraphrase of Emil Post definition of computation** <br>
