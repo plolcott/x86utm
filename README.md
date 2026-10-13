@@ -3,14 +3,6 @@
 The x86UTM operating system enables every detail of the Halting Problem<br> 
 proof to be concretely examined at the level of the C programming language. 
 
-The key mistake of the halting problem proofs is that they require a halt<br> 
-decider to report on the behavior of something other than the behavior specified<br>
-by its finite string input.
-
-This is outside of the Church-Turing scope when this scope is understood to<br>
-only allow finite string transformation rules to be applied to finite string<br>
-inputs to derive any any all outputs.
-
 **<H3>Succinct proof that the Halting Problem Theorem is incorrect</H3>**
 (all these axioms refer to the simulation trace shown below)
 
