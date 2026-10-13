@@ -28,8 +28,7 @@ The only correct finite string transformation rules that a halt<br>
 decider H is allowed to apply to its finite string input D are<br>
 specified strictly by the operational semantics of the source<br>
 language of the computation. This applies universally to all<br>
-computation formats, including the source code descriptions of<br>
-Turing Machines.
+computation formats, including the source code of Turing Machines.<br> 
 
 **Axiom 3**<br>
 This single unique correct simulation trace derived from (2) can be seen<br>
