@@ -48,6 +48,7 @@ From (4) HHH is correct to reject its input as non-halting. From (3)<br>
 we know that it is incorrect to require HHH to report on the behavior of <br> 
 its own caller DD(). 
 
+From knowledge of the convetional proof:<br>
 Every instance of the Halting Problem proof requires a halt decider H<br>
 to report on the behavior it its own caller D otherwise this caller D cannot<br> 
 possibly do the opposite of whatever value that H returns to it. 
