@@ -22,6 +22,14 @@ requires DD to be simulated by HHH according to these rules.<br>
 **HHH cannot correctly guess that DD will ignore its own line<br>
 03 and leap to its own line 06**<br>
 
+**Generic Axiom 2**
+The only correct finite string transformation rules that a halt<br>
+decider H is allowed to apply to its finite string input D are<br>
+specified strictly by the operational semantics of the source<br>
+language of the computation. This applies universally to all<br>
+computation formats, including the source code descriptions of<br>
+Turing Machines.
+
 **Axiom 3**<br>
 This single unique correct simulation trace derived from (2) can be seen<br>
 below. This trace excludes behavior equivalent to DD() directly executed<br> 
