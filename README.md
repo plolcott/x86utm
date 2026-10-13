@@ -15,6 +15,11 @@ of computation thus
 transformations to their finite string inputs.**
 
 **Axiom 2**<br>
+
+**The brand new key insight that I had into the foundations of<br>
+computation applied to halt deciders is the notion of "correct" as<br> 
+opposed to and contrast with "arbitrary" finite string transformations.**
+
 The only correct finite string transformation rules that HHH is<br> 
 allowed to apply to its finite string input DD is specified by the<br> 
 operational semantics of the C programming language. This<br> 
