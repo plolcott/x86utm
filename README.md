@@ -8,17 +8,16 @@ proof to be concretely examined at the level of the C programming language.
 **Axiom 1 --- Paraphrase of Emil Post definition of computation** <br>
 All computations are eqivalent to the application of finite string<br>
 transformation rules to finite string inputs to derive any and all<br>
-outputs. The rest of this proof will be restricted to the above model<br> 
-of computation thus
+outputs. 
 
-**All computations are only allowed to apply finite string<br>
-transformations to their finite string inputs.**
+The rest of this proof will be restricted to the above model of computation<br> 
+thus **All computations are only allowed to apply finite string transformations<br> 
+to their finite string inputs.**
 
 **Axiom 2**<br>
-
-**The brand new key insight that I had into the foundations of<br>
-computation applied to halt deciders is the notion of "correct" as<br> 
-opposed to and contrast with "arbitrary" finite string transformations.**
+**The brand new key insight that I had into the foundations of<br> 
+computation is the notion of {correct finite string transformations} as<br> 
+opposed to and contrast with {arbitrary finite string transformations}.**
 
 The only correct finite string transformation rules that HHH is<br> 
 allowed to apply to its finite string input DD is specified by the<br> 
@@ -35,6 +34,12 @@ specified strictly by the operational semantics of the source<br>
 language of the computation. This applies universally to all<br>
 models of computation, including the source code of Turing<br> 
 Machines. 
+
+Axiom 2 and Generic Axiom 2 are my own unique augmention<br>
+distinguishing {correct finite string transformations} for halt deciders<br>
+from {arbitrary finite string transformations}. When combined with<br>
+Axiom 1 they establish a brand new foundation for halt deciders.<br>
+The last sentence of Axiom 2 shows this with a concrete example.<br>
 
 **Axiom 3**<br>
 This single unique correct simulation trace derived from (2) can be seen<br>
