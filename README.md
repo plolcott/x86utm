@@ -35,12 +35,6 @@ language of the computation. This applies universally to all<br>
 models of computation, including the source code of Turing<br> 
 Machines. 
 
-Axiom 2 and Generic Axiom 2 are my own unique augmention<br>
-distinguishing {correct finite string transformations} for halt deciders<br>
-from {arbitrary finite string transformations}. When combined with<br>
-Axiom 1 they establish a brand new foundation for halt deciders.<br>
-The last sentence of Axiom 2 shows this with a concrete example.<br>
-
 **Axiom 3**<br>
 This single unique correct simulation trace derived from (2) can be seen<br>
 below. This trace excludes behavior equivalent to DD() directly executed<br> 
