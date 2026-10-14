@@ -12,7 +12,7 @@ outputs.
 
 The rest of this proof will be restricted to the above model of<br>
 computation thus **All computations are only allowed to apply finite<br>
-string transformations<br> to their finite string inputs**
+string transformations to their finite string inputs**
 
 **Axiom 2**<br>
 **The brand new key insight that I had into the foundations of<br> 
