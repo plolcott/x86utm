@@ -10,9 +10,9 @@ All computations are eqivalent to the application of finite string<br>
 transformation rules to finite string inputs to derive any and all<br>
 outputs. 
 
-The rest of this proof will be restricted to the above model of computation<br> 
-thus **All computations are only allowed to apply finite string transformations<br> 
-to their finite string inputs.**
+The rest of this proof will be restricted to the above model of<br>
+computation thus **All computations are only allowed to apply finite<br>
+string transformations<br> to their finite string inputs**
 
 **Axiom 2**<br>
 **The brand new key insight that I had into the foundations of<br> 
