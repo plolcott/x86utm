@@ -26,7 +26,7 @@ language of the computation. This applies universally to all<br>
 models of computation, including the source code of Turing<br> 
 Machines. 
 
-**Concretely applied to the HHH/DD decider/input pair** 
+**Concretely applied to the HHH/DD decider/input pair**<br> 
 The only correct finite string transformation rules that HHH is<br> 
 allowed to apply to its finite string input DD is specified by the<br> 
 operational semantics of the C programming language. This<br> 
