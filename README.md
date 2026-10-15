@@ -19,6 +19,14 @@ string transformations to their finite string inputs**
 computation is the notion of {correct finite string transformations} as<br> 
 opposed to and contrast with {arbitrary finite string transformations}.**
 
+The only correct finite string transformation rules that a halt<br>
+decider H is allowed to apply to its finite string input D are<br>
+specified strictly by the operational semantics of the source<br>
+language of the computation. This applies universally to all<br>
+models of computation, including the source code of Turing<br> 
+Machines. 
+
+**Concretely applied to the HHH/DD decider/input pair** 
 The only correct finite string transformation rules that HHH is<br> 
 allowed to apply to its finite string input DD is specified by the<br> 
 operational semantics of the C programming language. This<br> 
@@ -27,13 +35,6 @@ requires DD to be simulated by HHH according to these rules.<br>
 **HHH cannot correctly guess that DD will ignore its own line<br>
 03 and leap to its own line 06**<br>
 
-**Generic Axiom 2**<br> 
-The only correct finite string transformation rules that a halt<br>
-decider H is allowed to apply to its finite string input D are<br>
-specified strictly by the operational semantics of the source<br>
-language of the computation. This applies universally to all<br>
-models of computation, including the source code of Turing<br> 
-Machines. 
 
 **Axiom 3**<br>
 This single unique correct simulation trace derived from (2) can be seen<br>
