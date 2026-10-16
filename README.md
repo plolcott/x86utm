@@ -19,6 +19,12 @@ string transformations to their finite string inputs**
 computation is the notion of {correct finite string transformations} as<br> 
 opposed to and contrast with {arbitrary finite string transformations}.**
 
+If we need to know the sum of 2 + 3 there seems to be only a single<br>
+sequence of finite string transformation rules that derive this within<br>
+arithmetic operations on the integer type. This is one concrete example<br>
+of how computation is limited to correct finite string transformations.<br>
+
+
 The only correct finite string transformation rules that a halt<br>
 decider H is allowed to apply to its finite string input D are<br>
 specified strictly by the operational semantics of the source<br>
