@@ -25,6 +25,8 @@ arithmetic operations on the integer type. This is one concrete example<br>
 of how computation is limited to correct finite string transformations.<br>
 
 
+
+
 The only correct finite string transformation rules that a halt<br>
 decider H is allowed to apply to its finite string input D are<br>
 specified strictly by the operational semantics of the source<br>
