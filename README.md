@@ -27,8 +27,8 @@ of how computation is limited to correct finite string transformations.<br>
 
 Halt deciders have always been inherently required to return the halt<br>
 property of their input finite string by applying finie string transformations<br> 
-to this string. This is because computations have only been allowed to operate<br> 
-on input finite strings.
+to this string. This is because computations have only been allowed to<br>
+operate on input finite strings.
 
 When we apply this same reasoning to halt deciders then correct finite<br>
 string transformation rules are limited by the operational semantics of<br>
