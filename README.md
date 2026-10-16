@@ -46,7 +46,9 @@ requires DD to be simulated by HHH according to these rules.<br>
 **HHH cannot correctly guess that DD will ignore its own line<br>
 03 and leap to its own line 06**<br>
 
-HHH is only allowed to return the halt property of its input finite string.
+Halt deciders have always been inherently required to return the halt<br>
+property of their input finite string because computations have only<br>
+been allowed to operate on input finite strings.
 
 **Axiom 3**<br>
 This single unique correct simulation trace derived from (2) can be seen<br>
