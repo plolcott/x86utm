@@ -15,9 +15,10 @@ computation thus **All computations are only allowed to apply finite<br>
 string transformations to their finite string inputs**
 
 **Axiom 2**<br>
-**The brand new key insight that I had into the foundations of<br> 
+**Computation requires correct rather than arbitrary finite string transformations**
+The brand new key insight that I had into the foundations of<br> 
 computation is the notion of {correct finite string transformations} as<br> 
-opposed to and contrast with {arbitrary finite string transformations}.**
+opposed to and contrast with {arbitrary finite string transformations}.
 
 If we need to know the sum of 2 + 3 there seems to be only a single<br>
 sequence of finite string transformation rules that derive this within<br>
