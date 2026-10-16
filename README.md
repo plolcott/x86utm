@@ -19,14 +19,14 @@ string transformations to their finite string inputs**
 computation is the notion of {correct finite string transformations} as<br> 
 opposed to and contrast with {arbitrary finite string transformations}.**
 
-Halt deciders have always been inherently required to return the halt<br>
-property of their input finite string because computations have only<br>
-been allowed to operate on input finite strings.
-
 If we need to know the sum of 2 + 3 there seems to be only a single<br>
 sequence of finite string transformation rules that derive this within<br>
 arithmetic operations on the integer type. This is one concrete example<br>
 of how computation is limited to correct finite string transformations.<br>
+
+Halt deciders have always been inherently required to return the halt<br>
+property of their input finite string because computations have only<br>
+been allowed to operate on input finite strings.
 
 When we apply this same reasoning to halt deciders then correct finite<br>
 string transformation rules are limited by the operational semantics of<br>
