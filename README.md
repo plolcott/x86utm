@@ -24,6 +24,9 @@ sequence of finite string transformation rules that derive this within<br>
 arithmetic operations on the integer type. This is one concrete example<br>
 of how computation is limited to correct finite string transformations.<br>
 
+When we apply this same reasoning to halt deciders then correct finite 
+string transformation rules are limited by the operational semantics of 
+the source language of the computation.<br> 
 
 
 
