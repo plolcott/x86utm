@@ -64,7 +64,7 @@ From Axioms (1)(2)(3)(4) HHH is correct to reject its input as non-halting<br>
 and we know that it is incorrect to require HHH to report on the behavior of<br> 
 its own caller DD(). 
 
-**Axiom 6**<br>
+**Conclusion**<br>
 From Axioms (1)(2)(3)(4)(5) The HP requires the logically impossible on the basis<br> 
 of violating the correctly elaborated details of the fundamental nature of a halt decider.
 
