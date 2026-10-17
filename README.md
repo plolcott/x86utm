@@ -14,7 +14,8 @@ The rest of this proof will be restricted to the above model of<br>
 computation thus **All computations are only allowed to apply finite<br>
 string transformations to their finite string inputs**
 
-**Axiom 2 Basis:** Random answers to specific questions are never correct<br>
+**Axiom 2** 
+**Self Evidence Basis:** Random answers to specific questions are never correct<br>
 **Computation requires correct rather than arbitrary finite string transformations**<br> 
 The brand new key insight that I had into the foundations of<br> 
 computation is the notion of {correct finite string transformations} as<br> 
