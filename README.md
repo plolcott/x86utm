@@ -22,7 +22,7 @@ The brand new key insight that I had into the foundations of<br>
 computation is the notion of {correct finite string transformations} as<br> 
 opposed to and contrast with {arbitrary finite string transformations}.
 
-Deciders must apply finite string transformations semantically relevant to the 
+Deciders must apply finite string transformations semantically relevant to the<br>
 decision criteria.
 
 If we need to know the sum of 2 + 3 there seems to be only a single<br>
