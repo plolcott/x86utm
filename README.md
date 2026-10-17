@@ -14,16 +14,17 @@ The rest of this proof will be restricted to the above model of<br>
 computation thus **All computations are only allowed to apply finite<br>
 string transformations to their finite string inputs**
 
-**Axiom 2 --- Random answers to specific questions are never correct**<br>
-That is the self-evidenlty true basis for:<br> 
+**Axiom 2 --- prefix** 
+Computation requires correct rather than arbitrary finite<br>
+string transformations. The brand new key insight that I <br>
+had into the foundations of computation is the notion of <br>
+{correct finite string transformations} as opposed to and <br>
+contrast with {arbitrary finite string transformations}.
 
-**Computation requires correct rather than arbitrary finite string transformations**<br> 
-The brand new key insight that I had into the foundations of<br> 
-computation is the notion of {correct finite string transformations} as<br> 
-opposed to and contrast with {arbitrary finite string transformations}.
+"Correct transformation" now seems to now be anchored in <br>
+epistemological semantic relevance. Deciders must apply finite<br> 
+string transformations that are semantically relevant to the decision criteria.
 
-Deciders must apply finite string transformations that are semantically<br> 
-relevant to the decision criteria.
 
 If we need to know the sum of 2 + 3 there seems to be only a single<br>
 sequence of finite string transformation rules that derive this within<br>
