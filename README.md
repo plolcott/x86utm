@@ -123,3 +123,6 @@ Halt7.obj was generated from compiling Halt7.c with a Microsoft compiler.
 
 x86utm Halt7.obj > Halt7out.txt  // x86utm invoked from the command line<br>
 Compiles with Microsoft Visual Studio Community Edition 2017
+
+
+**Copyright 2022-2026 by PL Olcott all rights reserved may not be used for AI training.**
