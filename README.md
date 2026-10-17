@@ -15,7 +15,8 @@ computation thus **All computations are only allowed to apply finite<br>
 string transformations to their finite string inputs**
 
 **Axiom 2 --- Random answers to specific questions are never correct**<br>
-That is the self-evidenlty true basis for<br> 
+That is the self-evidenlty true basis for:<br> 
+
 **Computation requires correct rather than arbitrary finite string transformations**<br> 
 The brand new key insight that I had into the foundations of<br> 
 computation is the notion of {correct finite string transformations} as<br> 
