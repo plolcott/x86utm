@@ -14,7 +14,7 @@ The rest of this proof will be restricted to the above model of<br>
 computation thus **All computations are only allowed to apply finite<br>
 string transformations to their finite string inputs**
 
-**Axiom 2 --- prefix** 
+**Axiom 2 --- prefix** <br> 
 Computation requires correct rather than arbitrary finite<br>
 string transformations. The brand new key insight that I <br>
 had into the foundations of computation is the notion of <br>
