@@ -16,7 +16,10 @@ string transformations to their finite string inputs**
 
 **Axiom 2 --- prefix** <br> 
 Computation requires correct rather than arbitrary finite<br>
-string transformations. The brand new key insight that I <br>
+string transformations. 
+
+
+The brand new key insight that I <br>
 had into the foundations of computation is the notion of <br>
 {correct finite string transformations} as opposed to and <br>
 contrast with {arbitrary finite string transformations}.
