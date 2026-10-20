@@ -6,9 +6,9 @@ proof to be concretely examined at the level of the C programming language.
 **All axioms refer to the simulation trace shown below**
 
 **Axiom 1 --- Paraphrase of Emil Post definition of computation** <br>
-All computations are equivalent to the application of finite string<br>
-transformation rules to finite string inputs to derive any and all<br>
-outputs. 
+All computations are equivalent to the application of finite <br>
+string transformation rules to finite string inputs to derive <br>
+any and all outputs. 
 
 **Axiom 2**<br>
 Computation inherently requires relevant rather than arbitrary <br>
