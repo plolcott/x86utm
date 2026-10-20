@@ -15,7 +15,7 @@ Computation inherently requires relevant rather than arbitrary finite<br>
 string transformations. 
 
 The term-of-the-art definition of a decider ignores this and includes<br>
-computations that ignore their input and halt.
+computations that ignore their input and simply halt.
 
 We are augmenting that now. A decider must apply finite string transformations to
 its finite string input that are relevant to the decision criteria. 
