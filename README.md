@@ -14,13 +14,23 @@ outputs.
 Computation requires correct rather than arbitrary finite string <br>
 transformations.<br> 
 
-**Concrete Example --- of required semantic relevance**<br> 
+**Computation Concrete Example --- of required semantic relevance**<br> 
 To determine the sum of 2 + 3 there is only a single sequence<br> 
 of finite string transformation rules that derive this within<br>
 arithmetic operations on the integer type. 
 
-Deciders must apply finite string transformations <br>
-that are semantically relevant to the decision criteria. <br>
+**Decider Concrete Example --- of required semantic relevance**<br> 
+Technically a decider is any computation that halts. Under this <br> 
+idiomatic term-of-the-art definition a computation that always ignores<br> 
+all of its input can be contrued as correctly "deciding" this input.<br> 
+
+and accepts all of its input does "decide" some of this input correctly.
+A deeper understanding of computation can be achie
+
+Deciders must apply finite string transformations that are semantically <br> 
+relevant to the decision criteria. A decider that accepts a finite string
+of integer values as within the ASCII uppercase alphabetic range of 65
+to 90 must actually examine its input for these values. 
 
 
 Halt deciders have always been inherently required to return the halt<br>
