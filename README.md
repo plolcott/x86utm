@@ -22,7 +22,7 @@ to its finite string input that are relevant to the decision criteria.
 
 A decider that accepts a finite string of integer values as within the ASCII<br>
 uppercase alphabetic range of 65 to 90 must actually examine its input for <br> 
-these values. 
+these values.
 
 A halt decider must apply finite string transformations to its finite string<br>
 input that are semantically relevant to determining the halting property  <br>
