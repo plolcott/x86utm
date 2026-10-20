@@ -6,7 +6,17 @@ proof to be concretely examined at the level of the C programming language.
 It is impossible to construct an actual input that calls its halt decider and<br> 
 then does the opposite of whatever this decider reports because inputs<br>
 and deciders have always been mutually exclusive. <br>
+```
+int main()
+{
+  DD(); // is not and cannot be the input to HHH
+}
 
+int main()
+{
+  HHH(DD); // This DD is not and cannot be the caller of HHH
+}          // because main() is already specified as the caller.
+```
 
 **All axioms refer to the simulation trace shown below**
 
