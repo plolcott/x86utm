@@ -10,28 +10,31 @@ All computations are equivalent to the application of finite string<br>
 transformation rules to finite string inputs to derive any and all<br>
 outputs. 
 
-**Axiom 2**<br>
-Computation inherently requires relevant rather than arbitrary finite<br> 
-string transformations. To determine the sum of 2 + 3 relevant steps<br> 
-must be performed. 
+**Axiom 2**
+Computation inherently requires relevant rather than arbitrary <br>
+finite string transformations. To determine the sum of 2 + 3 <br>
+relevant steps must be performed.<br>
 
-The term-of-the-art definition of a decider ignores this and includes<br>
-computations that ignore their input and simply halt. We are augmenting <br>
-this: A decider must apply finite string transformations to its finite string <br>
-input that are relevant to the decision criteria.<br>
+The term-of-the-art definition of a decider ignores this and <br>
+includes computations that ignore their input and simply halt. <br>
+We are augmenting this: A decider must apply finite string <br>
+transformations to its finite string input that are relevant <br>
+to the decision criteria.
 
-A decider that accepts a finite string of integer values as within the ASCII<br>
-uppercase alphabetic range of 65 to 90 must actually examine its input for <br> 
-these values.
+A decider that accepts a finite string of integer values as <br>
+within the ASCII uppercase alphabetic range of 65 to 90 must <br>
+actually examine its input for these values.
 
-A halt decider must apply finite string transformations to its finite string<br>
-input that are semantically relevant to determining the halting property  <br>
-specified by this finite string input. <br>
+A halt decider must apply finite string transformations to <br>
+its finite string input that are semantically relevant to <br>
+determining the halting property specified by this finite <br>
+string input.
 
-Halt decider H must apply finite string transformations to finite string<br>
-input D strictly according to the operational semantics of the source<br>
-language of the computation. This applies universally to all models of <br> 
-computation, including the source code of Turing Machines. 
+Halt decider H must apply finite string transformations to <br>
+finite string input D strictly according to the operational <br>
+semantics of the source language of the computation. This <br>
+applies universally to all models of computation, including <br>
+the source code of Turing Machines.
 
 **Concretely applied to the HHH/DD decider/input pair**<br> 
 The only correct finite string transformation rules that HHH is<br> 
