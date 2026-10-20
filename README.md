@@ -10,7 +10,7 @@ All computations are equivalent to the application of finite string<br>
 transformation rules to finite string inputs to derive any and all<br>
 outputs. 
 
-**Axiom 2**<br> -
+**Axiom 2**<br>
 Computation inherently requires relevant rather than arbitrary finite<br> 
 string transformations. To determine the sum of 2 + 3 relevant steps<br> 
 must be performed. 
