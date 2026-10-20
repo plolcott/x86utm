@@ -14,7 +14,7 @@ outputs.
 Computation requires correct rather than arbitrary finite string <br>
 transformations.<br> 
 
-**Concrete Example**<br> 
+**Concrete Example --- of semantic relevance**<br> 
 If we need to know the sum of 2 + 3 there seems to be only a single<br>
 sequence of finite string transformation rules that derive this within<br>
 arithmetic operations on the integer type. 
