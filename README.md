@@ -12,10 +12,11 @@ outputs.
 
 **Axiom 2**<br> 
 Computation inherently requires relevant rather than arbitrary finite<br> 
-string transformations. 
+string transformations. To determine the sum of 2 + 3 relevant steps<br> 
+must be performed. 
 
 The term-of-the-art definition of a decider ignores this and includes<br>
-computations that ignore their input and simply halt.
+computations that ignore their input and simply halt. 
 
 We are augmenting this: A decider must apply finite string transformations<br> 
 to its finite string input that are relevant to the decision criteria. 
