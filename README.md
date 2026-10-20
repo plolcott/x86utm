@@ -30,32 +30,6 @@ input D strictly according to the operational semantics of the source<br>
 language of the computation. This applies universally to all models of <br> 
 computation, including the source code of Turing Machines. 
 
-are<br>
-specified strictly by the operational semantics of the source<br>
-language of the computation. This applies universally to all<br>
-models of computation, including the source code of Turing<br> 
-Machines. 
-
-
-
-Halt deciders have always been inherently required to return the halt<br>
-property of their input finite string by applying finite string transformations<br> 
-to this string. This is because computations have only been allowed to<br>
-operate on input finite strings.
-
-When we apply this same reasoning to halt deciders then correct finite<br>
-string transformation rules are limited by the operational semantics of<br>
-the source language of the computation.<br> 
-
-
-
-The only correct finite string transformation rules that a halt<br>
-decider H is allowed to apply to its finite string input D are<br>
-specified strictly by the operational semantics of the source<br>
-language of the computation. This applies universally to all<br>
-models of computation, including the source code of Turing<br> 
-Machines. 
-
 **Concretely applied to the HHH/DD decider/input pair**<br> 
 The only correct finite string transformation rules that HHH is<br> 
 allowed to apply to its finite string input DD is specified by the<br> 
@@ -64,7 +38,6 @@ requires DD to be simulated by HHH according to these rules.<br>
 
 **HHH cannot correctly guess that DD will ignore its own line<br>
 03 and leap to its own line 06**<br>
-
 
 **Axiom 3**<br>
 This single unique correct simulation trace derived from (2) can be seen<br>
