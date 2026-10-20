@@ -21,6 +21,23 @@ A decider that accepts a finite string of integer values as within the ASCII<br>
 uppercase alphabetic range of 65 to 90 must actually examine its input for <br> 
 these values. 
 
+A halt decider must apply finite string transformations to its finite string<br>
+input that are semantically relevant to determining the halting property specified<br>
+by this finite string input. <br>
+
+Halt decider H must apply finite string transformations to finite string<br>
+input D strictly according to the operational semantics of the source<br>
+language of the computation. This applies universally to all models of <br> 
+computation, including the source code of Turing Machines. 
+
+are<br>
+specified strictly by the operational semantics of the source<br>
+language of the computation. This applies universally to all<br>
+models of computation, including the source code of Turing<br> 
+Machines. 
+
+
+
 Halt deciders have always been inherently required to return the halt<br>
 property of their input finite string by applying finite string transformations<br> 
 to this string. This is because computations have only been allowed to<br>
