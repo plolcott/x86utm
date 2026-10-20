@@ -17,7 +17,7 @@ string transformations.
 The term-of-the-art definition of a decider ignores this and includes<br>
 computations that ignore their input and simply halt.
 
-We are augmenting that now. A decider must apply finite string transformations<br> 
+We are augmenting this: A decider must apply finite string transformations<br> 
 to its finite string input that are relevant to the decision criteria. 
 
 A decider that accepts a finite string of integer values as within the ASCII<br>
