@@ -12,7 +12,7 @@ outputs.
 
 **Axiom 2**<br> 
 Computation requires correct rather than arbitrary finite string <br>
-transformations. The term-of-the-art definition of a decider includes<br>
+transformations. The term-of-the-art (TOTA) definition of a decider includes<br>
 computations that ignore their input and halt. We are augmenting that<br> 
 now. A decider must apply finite string transformations to its finite<br> 
 string input that are relevant to the decision criteria. 
