@@ -12,7 +12,13 @@ outputs.
 
 **Axiom 2**<br> 
 Computation requires correct rather than arbitrary finite string <br>
-transformations. When we apply this to deciders then this requires that<br>
+transformations. The term-of-the-art definition of a decider includes<br>
+computations that ignore their input and halt. We are augmenting that now.<br>
+A decider must apply finite string transformation rules to its finite <br>
+string input that are relevant to the decision criteria. 
+
+
+When we apply this to deciders then this requires that<br>
 a computation actually performs steps to make a decision and these steps<br>
 must be relevant to the decision criteria. 
 
