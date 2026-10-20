@@ -21,7 +21,7 @@ uppercase alphabetic range of 65 to 90 must actually examine its input for <br>
 these values. 
 
 Halt deciders have always been inherently required to return the halt<br>
-property of their input finite string by applying finie string transformations<br> 
+property of their input finite string by applying finite string transformations<br> 
 to this string. This is because computations have only been allowed to<br>
 operate on input finite strings.
 
