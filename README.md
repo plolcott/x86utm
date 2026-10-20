@@ -22,8 +22,8 @@ uppercase alphabetic range of 65 to 90 must actually examine its input for <br>
 these values. 
 
 A halt decider must apply finite string transformations to its finite string<br>
-input that are semantically relevant to determining the halting property specified<br>
-by this finite string input. <br>
+input that are semantically relevant to determining the halting property  <br>
+specified by this finite string input. <br>
 
 Halt decider H must apply finite string transformations to finite string<br>
 input D strictly according to the operational semantics of the source<br>
