@@ -14,9 +14,9 @@ outputs.
 Computation requires correct rather than arbitrary finite string <br>
 transformations.<br> 
 
-**Concrete Example --- of semantic relevance requirement**<br> 
-If we need to know the sum of 2 + 3 there seems to be only a single<br>
-sequence of finite string transformation rules that derive this within<br>
+**Concrete Example --- of required semantic relevance**<br> 
+To determine the sum of 2 + 3 there is only a single sequence<br> 
+of finite string transformation rules that derive this within<br>
 arithmetic operations on the integer type. 
 
 Deciders must apply finite string transformations <br>
