@@ -15,17 +15,6 @@ Computation requires correct rather than arbitrary finite string <br>
 transformations. Deciders must apply finite string transformations <br>
 that are semantically relevant to the decision criteria. <br>
 
-
-The brand new key insight that I <br>
-had into the foundations of computation is the notion of <br>
-{correct finite string transformations} as opposed to and <br>
-contrast with {arbitrary finite string transformations}.
-
-"Correct transformation" now seems to now be anchored in <br>
-epistemological semantic relevance. Deciders must apply finite<br> 
-string transformations that are semantically relevant to the decision criteria.
-
-
 If we need to know the sum of 2 + 3 there seems to be only a single<br>
 sequence of finite string transformation rules that derive this within<br>
 arithmetic operations on the integer type. This is one concrete example<br>
