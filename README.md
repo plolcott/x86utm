@@ -10,7 +10,7 @@ All computations are equivalent to the application of finite string<br>
 transformation rules to finite string inputs to derive any and all<br>
 outputs. 
 
-**Axiom 2 --- prefix** <br> 
+**Axiom 2 <br> 
 Computation requires correct rather than arbitrary finite string <br>
 transformations. Deciders must apply finite string transformations <br>
 that are semantically relevant to the decision criteria. <br>
