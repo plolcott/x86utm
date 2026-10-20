@@ -12,10 +12,13 @@ outputs.
 
 **Axiom 2**<br> 
 Computation inherently requires relevant rather than arbitrary finite<br> 
-string transformations. The term-of-the-art definition of a decider includes<br>
-computations that ignore their input and halt. We are augmenting that<br> 
-now. A decider must apply finite string transformations to its finite<br> 
-string input that are relevant to the decision criteria. 
+string transformations. 
+
+The term-of-the-art definition of a decider ignores this and includes<br>
+computations that ignore their input and halt.
+
+We are augmenting that now. A decider must apply finite string transformations to
+its finite string input that are relevant to the decision criteria. 
 
 A decider that accepts a finite string of integer values as within the ASCII<br>
 uppercase alphabetic range of 65 to 90 must actually examine its input for <br> 
