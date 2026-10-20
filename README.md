@@ -11,8 +11,8 @@ transformation rules to finite string inputs to derive any and all<br>
 outputs. 
 
 **Axiom 2**<br> 
-Computation inherently requires relevant rather than arbitrary finite string <br>
-transformations. The term-of-the-art definition of a decider includes<br>
+Computation inherently requires relevant rather than arbitrary finite<br> 
+string transformations. The term-of-the-art definition of a decider includes<br>
 computations that ignore their input and halt. We are augmenting that<br> 
 now. A decider must apply finite string transformations to its finite<br> 
 string input that are relevant to the decision criteria. 
