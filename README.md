@@ -10,13 +10,10 @@ All computations are equivalent to the application of finite string<br>
 transformation rules to finite string inputs to derive any and all<br>
 outputs. 
 
-The rest of this proof will be restricted to the above model of<br>
-computation thus **All computations are only allowed to apply finite<br>
-string transformations to their finite string inputs**
-
 **Axiom 2 --- prefix** <br> 
-Computation requires correct rather than arbitrary finite<br>
-string transformations. 
+Computation requires correct rather than arbitrary finite string <br>
+transformations. Deciders must apply finite string transformations <br>
+that are semantically relevant to the decision criteria. <br>
 
 
 The brand new key insight that I <br>
