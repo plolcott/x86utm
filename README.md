@@ -104,7 +104,7 @@ int HHH(ptr P);
 11  HHH(DD);  
 12 }
 ```
-**Execution Trace**<br>
+**Simulation Trace**<br>
 Line 11: main() invokes HHH(DD);
 
 **keeps repeating unless aborted**<br>
