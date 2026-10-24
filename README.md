@@ -15,7 +15,7 @@ Deciders must apply finite string transformation inference<br>
 steps to their finite string inputs that are relevent to the<br>
 decision criteria. <br>
 
-**Concrete example**<br>
+**Concrete examples**<br>
 int strcmp(const char *str1, const char *str2);<br>
 Must actually compare a pair of finite strings as its relevant <br>
 finite string inference steps. <br>
