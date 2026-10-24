@@ -13,7 +13,7 @@ any and all outputs.
 **Axiom 2**<br>
 Deciders must apply finite string transformation inference<br>
 steps to their finite string inputs that are relevant to the<br>
-decision criteria. <br>
+decision criteria until a decision is made. <br>
 
 **Concrete examples**<br>
 int strcmp(const char *str1, const char *str2);<br>
