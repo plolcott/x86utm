@@ -24,15 +24,9 @@ Halt decider H(D) must apply finite string inference steps <br>
 according to the operational semantics of the source code<br>
 computation language of D. 
 
-
 **Concretely applied to the HHH/DD decider/input pair**<br> 
-The only correct finite string transformation rules that HHH is<br> 
-allowed to apply to its finite string input DD is specified by the<br> 
-operational semantics of the C programming language. This<br> 
-requires DD to be simulated by HHH according to these rules.<br> 
-
-**HHH cannot correctly guess that DD will ignore its own line<br>
-03 and leap to its own line 06**<br>
+DD is simulated by HHH according to the operational semantics<br>
+of the C programming language.  (see trace below)<br>
 
 **Axiom 3**<br>
 This single unique correct simulation trace derived from (2) can be seen<br>
