@@ -11,9 +11,14 @@ string transformation rules to finite string inputs to derive <br>
 any and all outputs. 
 
 **Axiom 2**<br>
-Deciders must apply finite string transformation inference
-steps to their finite string inputs that are relevent to the
-decision criteria. 
+Deciders must apply finite string transformation inference<br>
+steps to their finite string inputs that are relevent to the<br>
+decision criteria. <br>
+
+**Concrete example**<br>
+int strcmp(const char *str1, const char *str2);<br>
+Must actually compare a pair of finite strings as its relevant <br>
+finite string inference steps. <br>
 
 Computation inherently requires relevant rather than arbitrary <br>
 finite string transformations. To determine the sum of 2 + 3 <br>
