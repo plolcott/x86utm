@@ -11,6 +11,10 @@ string transformation rules to finite string inputs to derive <br>
 any and all outputs. 
 
 **Axiom 2**<br>
+Deciders must apply finite string transformation inference
+steps to their finite string inputs that are relevent to the
+decision criteria. 
+
 Computation inherently requires relevant rather than arbitrary <br>
 finite string transformations. To determine the sum of 2 + 3 <br>
 relevant steps must be performed.<br>
