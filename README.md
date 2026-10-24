@@ -12,7 +12,7 @@ any and all outputs.
 
 **Axiom 2**<br>
 Deciders must apply finite string transformation inference<br>
-steps to their finite string inputs that are relevent to the<br>
+steps to their finite string inputs that are relevant to the<br>
 decision criteria. <br>
 
 **Concrete examples**<br>
