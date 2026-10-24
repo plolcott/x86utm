@@ -25,6 +25,9 @@ according to the operational semantics of the source code<br>
 computation language of D. 
 
 
+
+
+
 Computation inherently requires relevant rather than arbitrary <br>
 finite string transformations. To determine the sum of 2 + 3 <br>
 relevant steps must be performed.<br>
