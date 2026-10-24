@@ -24,6 +24,10 @@ Halt decider H(D) must apply finite string inference steps <br>
 according to the operational semantics of the source code<br>
 computation language of D. 
 
+The only way to implement the above is for D to be simulated <br>
+by H according to the operational semantics of the source code<br>
+computation language of D. 
+
 **Concretely applied to the HHH/DD decider/input pair**<br> 
 DD is simulated by HHH according to the operational semantics<br>
 of the C programming language.  (see trace below)<br>
