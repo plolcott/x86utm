@@ -36,7 +36,6 @@ of the C programming language.  (see trace below)<br>
 This single unique correct simulation trace derived from (2) can be seen<br>
 below. This trace excludes behavior equivalent to DD() directly executed<br> 
 from main(). HHH cannot report on the behavior of its caller DD().
-
 **There cannot possibly be any input to a halt decider that is also its<br> 
 caller these are always mutually exclusive.**
 
