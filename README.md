@@ -20,6 +20,11 @@ int strcmp(const char *str1, const char *str2);<br>
 Must actually compare a pair of finite strings as its relevant <br>
 finite string inference steps. <br>
 
+Halt decider H(D) must apply finite string inference steps <br>
+according to the operational semantics of the source code<br>
+computation language of D. 
+
+
 Computation inherently requires relevant rather than arbitrary <br>
 finite string transformations. To determine the sum of 2 + 3 <br>
 relevant steps must be performed.<br>
