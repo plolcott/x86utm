@@ -10,6 +10,9 @@ All computations are equivalent to the application of finite <br>
 string transformation rules to finite string inputs to derive <br>
 any and all outputs. 
 
+Computation is equivalent to finite string transformation rules
+deriving outputs from finite string inputs.
+
 **Axiom 2**<br>
 Deciders must apply finite string transformation inference<br>
 steps to their finite string inputs that are relevant to the<br>
