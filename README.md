@@ -16,7 +16,7 @@ deriving outputs from finite string inputs.
 **Axiom 2**<br>
 Deciders must apply finite string transformation inference<br>
 steps to their finite string inputs that are relevant to the<br>
-decision criteria.
+decision criteria and make their decision on this basis. 
 
 **Concrete examples**<br>
 int strcmp(const char *str1, const char *str2);<br>
