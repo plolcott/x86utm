@@ -16,14 +16,14 @@ steps to their finite string inputs that are relevant to the<br>
 decision criteria and make their decision on this basis. 
 
 **Axiom 3**<br>
-From Axiom 2 halt decider H(D) must apply finite string inference<br> 
-steps according to the operational semantics of the source code<br>
-computation language of D.
+From Axiom 2 halt decider H(D) must apply finite string <br>
+inference steps according to the operational semantics of<br>
+the source code computation language of D.
 
 **Axiom 4**<br>
-The only way to implement the above is for D to be simulated <br>
-by H according to the operational semantics of the source code<br>
-computation language of D. 
+The only way to implement the above is for D to be <br>
+simulated by H according to the operational semantics <br>
+of the source code computation language of D. 
 
 **Concretely applied to the HHH/DD decider/input pair**<br> 
 DD is simulated by HHH according to the operational semantics<br>
