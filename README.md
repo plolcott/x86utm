@@ -21,9 +21,9 @@ inference steps according to the operational semantics of<br>
 the source code computation language of D.
 
 **Axiom 4**<br>
-The only way to implement the above is for D to be <br>
-simulated by H according to the operational semantics <br>
-of the source code computation language of D. 
+These inference steps must derive the same sequence of<br>
+confutations as D simulated by H. according to the operational<br> 
+semantics of the source code computation language of D. 
 
 **Concretely applied to the HHH/DD decider/input pair**<br> 
 DD is simulated by HHH according to the operational semantics<br>
