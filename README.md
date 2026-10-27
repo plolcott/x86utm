@@ -18,7 +18,7 @@ decision criteria and make their decision on this basis.
 **Axiom 3**<br>
 From Axiom 2 halt decider H(D) must apply finite string inference<br> 
 steps according to the operational semantics of the source code<br>
-computation language of D. 
+computation language of D.
 
 **Axiom 4**<br>
 The only way to implement the above is for D to be simulated <br>
