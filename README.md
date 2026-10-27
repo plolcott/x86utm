@@ -10,23 +10,19 @@ All computations are equivalent to the application of finite <br>
 string transformation rules to finite string inputs to derive <br>
 any and all outputs. 
 
-Computation is equivalent to finite string transformation rules
-deriving outputs from finite string inputs.
-
 **Axiom 2**<br>
 Deciders must apply finite string transformation inference<br>
 steps to their finite string inputs that are relevant to the<br>
 decision criteria and make their decision on this basis. 
 
-**Concrete examples**<br>
-int strcmp(const char *str1, const char *str2);<br>
-Must actually compare a pair of finite strings as its relevant <br>
-finite string inference steps. <br>
+**Everything below is a consequence of Axiom 1 and Axiom 2**
 
+**Axiom 3**<br>
 Halt decider H(D) must apply finite string inference steps <br>
 according to the operational semantics of the source code<br>
 computation language of D. 
 
+**Axiom 4**<br>
 The only way to implement the above is for D to be simulated <br>
 by H according to the operational semantics of the source code<br>
 computation language of D. 
@@ -35,27 +31,26 @@ computation language of D.
 DD is simulated by HHH according to the operational semantics<br>
 of the C programming language.  (see trace below)<br>
 
-**Axiom 3**<br>
+**Axiom 5**<br>
 This single unique correct simulation trace derived from (2) can be seen<br>
 below. This trace excludes behavior equivalent to DD() directly executed<br> 
 from main(). HHH cannot report on the behavior of its caller DD().<br> 
 **There cannot possibly be any input to a halt decider that is also its<br> 
 caller these are always mutually exclusive.**
 
-**Axiom 4**<br>
+**Axiom 6**<br>
 DD correctly simulated by HHH cannot possibly reach its own simulated<br>
 final halt state is determined by the simulation trace shown below.
 
-**Axiom 5**<br>
-From Axioms (1)(2)(3)(4) HHH is correct to reject its input as non-halting<br> 
+**Axiom 7**<br>
+From Axioms (1)(2)(3)(4)(5)(6) HHH is correct to reject its input as non-halting<br> 
 and we know that it is incorrect to require HHH to report on the behavior of<br> 
 its own caller DD(). 
 
 **Conclusion**<br>
-From Axioms (1)(2)(3)(4)(5) The HP requires the logically impossible on the basis<br> 
+From Axioms (1)(2)(3)(4)(5)(6)(7) The HP requires the logically impossible on the basis<br> 
 of violating the correctly elaborated details of the fundamental nature of a halt decider.
 
-**Extra Axiom 7**<br> 
 From knowledge of the conventional proof every instance of the Halting Problem<br>
 proof requires a halt decider H to report on the behavior it its own caller D<br>
 otherwise this caller D cannot possibly do the opposite of whatever value that<br> 
