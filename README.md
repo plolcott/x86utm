@@ -15,11 +15,9 @@ Deciders must apply finite string transformation inference<br>
 steps to their finite string inputs that are relevant to the<br>
 decision criteria and make their decision on this basis. 
 
-**Everything below is a consequence of Axiom 1 and Axiom 2**
-
 **Axiom 3**<br>
-Halt decider H(D) must apply finite string inference steps <br>
-according to the operational semantics of the source code<br>
+From Axiom 2 halt decider H(D) must apply finite string inference<br> 
+steps according to the operational semantics of the source code<br>
 computation language of D. 
 
 **Axiom 4**<br>
