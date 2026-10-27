@@ -10,7 +10,7 @@ All computations are equivalent to the application of finite <br>
 string transformation rules to finite string inputs to derive <br>
 any and all outputs. 
 
-**Axiom 2 --- Correcting the misnomner term-of-the-art: Decider**<br>
+**Axiom 2 --- Correcting the misnomner term-of-the-art: decider**<br>
 Deciders must apply finite string transformation inference<br>
 steps to their finite string inputs that are relevant to the<br>
 decision criteria and make their decision on this basis. 
