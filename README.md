@@ -21,13 +21,9 @@ inference steps to their finite string inputs that are relevant <br>
 to the decision criteria and make their decision on this basis. <br>
 
 Halt Decider(Olcott) entails that H(D) must apply finite string<br>
-inference steps according to the operational semantics of<br>
-the source code computation language of D.
-
-These inference steps must derive the sequence of<br>
-configurations as D simulated by H according to the<br> 
-operational semantics of the source code computation<br> 
-language of D. 
+inference steps according to the operational semantics of the <br>
+source code computation language of D. This species the behavior 
+of D correctly simulated by H. 
 
 **Concretely applied to the HHH/DD decider/input pair**<br> 
 DD is simulated by HHH according to the operational semantics<br>
