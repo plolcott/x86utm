@@ -26,6 +26,13 @@ according to the operational semantics of the source code <br>
 computation language of D. This must species the behavior <br>
 of D correctly simulated by H. 
 
+**Input Halt Decider(Olcott)<br>** 
+Is not any description of any executing process. The term<br>
+"Turing Machine Description" expressly not allowed. In its<br>
+place are lists of 'quintuples', each one of which is a <br>
+five-symbol Turing machine instruction. These lists are called<br>
+the source code of the Turing Model of computation.<br>
+
 **Concretely applied to the HHH/DD decider/input pair**<br> 
 DD is simulated by HHH according to the operational semantics<br>
 of the C programming language.  (see trace below)<br>
