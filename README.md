@@ -20,12 +20,10 @@ Every Decider(Olcott) must apply finite string transformation <br>
 inference steps to their finite string inputs that are relevant <br>
 to the decision criteria and make their decision on this basis. <br>
 
-**Axiom 3**<br>
-From Axiom 2 halt decider H(D) must apply finite string <br>
+Halt Decider(Olcott) H(D) must apply finite string <br>
 inference steps according to the operational semantics of<br>
 the source code computation language of D.
 
-**Axiom 4**<br>
 These inference steps must derive the sequence of<br>
 configurations of D simulated by H according to the<br> 
 operational semantics of the source code computation<br> 
