@@ -4,15 +4,6 @@ proof to be concretely examined at the level of the C programming language.<br>
 When we do this we can directly see details that could not be represented <br> 
 in the Turing Machine form of the Halting Theorem. 
 
-In the concrete example in C we can see that the executable process of DD()
-executing in main calls the 
-
-
-The big mistake of the Halting Theorem is assuming that a finite string<br>
-input to a halt decider can be exactly one-and-the-same-thing as the <br>
-executable process that calls a halt decider. Even these words do not make<br> 
-sense within the conventional proof only because key details were assumed away.
-
 **<h3>Succinct proof that the Halting Problem Theorem is incorrect**</h3>
 **All axioms refer to the simulation trace shown below**
 
