@@ -22,7 +22,7 @@ to the decision criteria and make their decision on this basis. <br>
 
 Halt Decider(Olcott) entails that H(D) must apply finite string<br>
 inference steps according to the operational semantics of the <br>
-source code computation language of D. This species the behavior 
+source code computation language of D. This species the behavior <br>
 of D correctly simulated by H. 
 
 **Concretely applied to the HHH/DD decider/input pair**<br> 
