@@ -21,10 +21,11 @@ inference steps to their finite string inputs that are relevant <br>
 to the decision criteria. It must make a decision on this basis.<br>
 
 **Halt Decider(Olcott)<br>** 
-entails that H(D) must apply finite string inference steps<br> 
-according to the operational semantics of the source code <br>
-computation language of D. This must species the behavior <br>
-of D correctly simulated by H. 
+entails that H(D) must apply finite-string inference steps<br>
+according to the operational semantics of the source-code <br>
+computation language of D. These inference steps must <br>
+correctly determine the behavior specified by D. <br>
+H must make its halting decision on this basis.<br>
 
 **Input to Halt Decider(Olcott)<br>** 
 Is not any mere description of any executing process such as<br>
