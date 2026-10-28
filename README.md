@@ -21,8 +21,8 @@ inference steps according to the operational semantics of<br>
 the source code computation language of D.
 
 **Axiom 4**<br>
-These inference steps must derive the same sequence of<br>
-configurations as D simulated by H according to the operational<br> 
+These inference steps must derive the sequence of<br>
+configurations of D simulated by H according to the operational<br> 
 semantics of the source code computation language of D. 
 
 **Concretely applied to the HHH/DD decider/input pair**<br> 
