@@ -1,8 +1,12 @@
 # x86utm operating system
 The x86UTM operating system enables every detail of the Halting Problem<br> 
 proof to be concretely examined at the level of the C programming language.<br>
-When we do this we can directly see details that were left out of the Turing<br> 
-Machine form of the Halting Theorem. 
+When we do this we can directly see details that could not be represented <br> 
+in the Turing Machine form of the Halting Theorem. 
+
+In the concrete example in C we can see that the executable process of DD()
+executing in main calls the 
+
 
 The big mistake of the Halting Theorem is assuming that a finite string<br>
 input to a halt decider can be exactly one-and-the-same-thing as the <br>
