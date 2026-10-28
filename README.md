@@ -8,9 +8,6 @@ In the concrete C implementation it is clear that the behavior of the<br>
 executable function invoked in main() is the caller of HHH(DD). This can<br>
 also be seen in the Peter Linz Turing Machine based proof. 
 
-**<h3>Succinct proof that the Halting Problem Theorem is incorrect**</h3>
-**All axioms refer to the simulation trace shown below**
-
 **Axiom 1 --- Paraphrase of Emil Post definition of computation** <br>
 All computations are equivalent to the application of finite <br>
 string transformation rules to finite string inputs to derive <br>
