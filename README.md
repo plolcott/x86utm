@@ -20,9 +20,10 @@ Every Decider(Olcott) must apply finite string transformation <br>
 inference steps to their finite string inputs that are relevant <br>
 to the decision criteria and make their decision only on this basis.<br>
 
-**Halt Decider(Olcott)<br>** entails that H(D) must apply finite string<br>
-inference steps according to the operational semantics of the <br>
-source code computation language of D. This must species the behavior <br>
+**Halt Decider(Olcott)<br>** 
+entails that H(D) must apply finite string inference steps<br> 
+according to the operational semantics of the source code <br>
+computation language of D. This must species the behavior <br>
 of D correctly simulated by H. 
 
 **Concretely applied to the HHH/DD decider/input pair**<br> 
