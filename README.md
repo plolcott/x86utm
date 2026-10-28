@@ -8,15 +8,17 @@ In the concrete C implementation it is clear that the behavior of the<br>
 executable function invoked in main() is the caller of HHH(DD). This can<br>
 also be seen in the Peter Linz Turing Machine based proof. 
 
-**Axiom 1 --- Paraphrase of Emil Post definition of computation** <br>
+**Computation(Olcott)<br> 
+Paraphrase of Emil Post definition of computation** <br>
 All computations are equivalent to the application of finite <br>
 string transformation rules to finite string inputs to derive <br>
 any and all outputs. 
 
-**Axiom 2 --- Correcting the misnomer term-of-the-art: decider**<br>
-Deciders must apply finite string transformation inference<br>
-steps to their finite string inputs that are relevant to the<br>
-decision criteria and make their decision on this basis. 
+**Decider(Olcott)<br>
+Correcting the misnomer term-of-the-art: decider**<br>
+Every Decider(Olcott) must apply finite string transformation <br> 
+inference steps to their finite string inputs that are relevant <br>
+to the decision criteria and make their decision on this basis. <br>
 
 **Axiom 3**<br>
 From Axiom 2 halt decider H(D) must apply finite string <br>
