@@ -5,7 +5,7 @@ When we do this we can directly see details that could not be represented <br>
 in the Turing Machine form of the Halting Theorem. 
 
 In the concrete C implementation it is clear that the behavior of the<br>
-executable function invoked in main() is the caller of HHH(DD). This can
+executable function invoked in main() is the caller of HHH(DD). This can<br>
 also be seen in the Peter Linz Turing Machine based proof. 
 
 **<h3>Succinct proof that the Halting Problem Theorem is incorrect**</h3>
