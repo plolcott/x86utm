@@ -18,7 +18,7 @@ any and all outputs.
 Correcting the misnomer term-of-the-art: decider**<br>
 Every Decider(Olcott) must apply finite string transformation <br> 
 inference steps to their finite string inputs that are relevant <br>
-to the decision criteria. It must make a decision on this basis.<br>
+to the decision criteria. It must make its decision on this basis.<br>
 
 **Halt Decider(Olcott)<br>** 
 entails that H(D) must apply finite-string inference steps<br>
