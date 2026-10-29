@@ -4,9 +4,9 @@ Problem proof to be concretely examined at the level of the C<br>
 programming language. 
 
 **What is shown below**<br> 
-The Halting Theorem defines a mapping other than the mapping from<br>
-finite string inputs to outputs thus outside of the domain of<br>
-computable functions. 
+The Halting Theorem defines a mapping other than the mapping <br>
+from finite string inputs to outputs thus outside of the domain<br>
+of computable functions. 
 
 **Computation(Olcott)<br> 
 Paraphrase of Emil Post definition of computation** <br>
