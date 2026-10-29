@@ -1,12 +1,12 @@
 # x86utm operating system
-The x86UTM operating system enables every detail of the Halting Problem<br> 
-proof to be concretely examined at the level of the C programming language.<br>
-When we do this we can directly see details that could not be represented <br> 
-in the Turing Machine form of the Halting Theorem. 
+The x86UTM operating system enables every detail of the Halting<br>
+Problem proof to be concretely examined at the level of the C<br>
+programming language. 
 
-In the concrete C implementation it is clear that the behavior of the<br>
-executable function invoked in main() is the caller of HHH(DD). This can<br>
-also be seen in the Peter Linz Turing Machine based proof. 
+**What is shown below**<br> 
+The Halting Theorem defines a mapping other than the mapping from<br>
+finite string inputs to outputs thus outside of the domain of<br>
+computable functions. 
 
 **Computation(Olcott)<br> 
 Paraphrase of Emil Post definition of computation** <br>
