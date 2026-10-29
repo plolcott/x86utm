@@ -83,7 +83,7 @@ int HHH(ptr P);
 Line 11: main() invokes HHH(DD);
 
 **Simulation invariant**<br>
-Line 03: simulated DD() invokes simulated HHH(DD) that simulates DD()
+Line 03: simulated DD() invokes simulated HHH(DD) that simulates DD()<br> 
 **DD simulated by HHH does not reach its own simulated final state.**
 
 **Implementation details totally irrelvant to proof**<br>
