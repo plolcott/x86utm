@@ -86,7 +86,7 @@ int HHH(ptr P);
 **Simulation Trace**<br>
 Line 11: main() invokes HHH(DD);
 
-**Simulation invariant**<br>
+**Simulation invariant** (while DD is simulated by HHH)<br>
 Line 03: simulated DD() invokes simulated HHH(DD) that simulates DD()<br> 
 
 Thus this is entailed:<br>
