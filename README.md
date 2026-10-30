@@ -27,9 +27,9 @@ to the decision criteria. It must make its decision on this basis.<br>
 **Halt Decider(Olcott)<br>** 
 Decider(Olcott) entails that Halt Decider(Olcott) H(D) must apply<br>
 finite-string inference steps according to the operational semantics<br>
-of the source-code computation language of D. These inference <br>
-steps must correctly determine the behavior specified by D. <br>
-H must make its halting decision on this basis.<br>
+of the source-code computation language of D. The only way to determine<br>
+the halting property of a finite string input is to examine the same<br>
+behavior as the behavior of D simulated by H. 
 
 **Input to Halt Decider(Olcott)<br>** 
 Is not any mere description of any executing process such as<br>
