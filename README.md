@@ -16,7 +16,7 @@ any and all outputs.
 
 Because **Post canonical systems** are Turing equivalent anything <br>
 that cannot be derived by applying finite string transformations <br>
-to finite strings is outside of the scope of computation. <br>
+to finite strings is outside of the scope of Church-Turing computation. <br>
 
 **Decider(Olcott)<br>
 Correcting the misnomer term-of-the-art: decider**<br>
