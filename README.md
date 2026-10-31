@@ -29,9 +29,10 @@ justify the decision.
 **Halt Decider(Olcott)<br>** 
 Decider(Olcott) entails that Halt Decider(Olcott) H(D) must <br>
 apply finite-string inference steps according to the operational<br> 
-semantics of the source-code computation language of D. The only<br>
-way to determine the halting property of a finite string input<br>
-is to examine the same behavior as the behavior of D simulated by H. 
+semantics of the source-code computation language of D. The <br> 
+only way to determine the halting property of a finite string<br> 
+input is to examine the same behavior as the behavior of D<br> 
+simulated by H. 
 
 **Input to Halt Decider(Olcott)<br>** 
 Is not any mere description of any executing process such as<br>
