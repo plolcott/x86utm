@@ -10,8 +10,8 @@ of computable functions.
 
 **Computation(Olcott)<br> 
 Paraphrase of Emil Post definition of computation** <br>
-All computations are equivalent to the application of finite <br>
-string transformation rules to finite string inputs to derive <br>
+All computations are equivalent applying finite string <br>
+transformation rules to finite string inputs to derive <br>
 any and all outputs. 
 
 Because **Post canonical systems** are Turing-equivalent, <br>
