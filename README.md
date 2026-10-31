@@ -20,12 +20,11 @@ transformations to finite strings is outside of the domain of<br>
 Church–Turing computable functions. 
 
 **Decider(Olcott)<br>** 
-Deciders(Olcott) are the subset of theory-of-computation deciders <br>
-that actually make decisions. They do this by applying finite-string<br>
-transformation inference steps to their finite-string inputs. <br>
-These inference steps must be relevant to the decision criterion<br>
-and correctly justify the resulting decision.
-
+A Decider (Olcott) is a theory-of-computation decider whose decision<br>
+is justified by finite-string transformation inference steps applied<br>
+to its finite-string input. The inference steps must be relevant<br>
+to the decision criterion and correctly justify the decision.
+ 
 **Halt Decider(Olcott)<br>** 
 Decider(Olcott) entails that Halt Decider(Olcott) H(D) must apply<br>
 finite-string inference steps according to the operational semantics<br>
