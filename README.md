@@ -6,7 +6,7 @@ programming language.
 **What is shown below**<br> 
 The Halting Theorem defines a mapping other than the mapping <br>
 from finite string inputs to output thus outside of the domain<br>
-of computable functions. 
+of Turing computable functions. 
 
 **Computation(Olcott)<br> 
 Paraphrase of Emil Post definition of computation** <br>
