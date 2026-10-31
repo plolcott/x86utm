@@ -19,7 +19,8 @@ anything that cannot be derived by applying finite string <br>
 transformations to finite strings is outside of the domain of<br>
 Church–Turing computable functions. 
 
-**Decider(Olcott)<br>
+
+**Theory of Computation Deciders That Actually Make Decisions.**
 Correcting the misnomer term-of-the-art: decider**<br>
 Every Decider(Olcott) must apply finite string transformation <br> 
 inference steps to their finite string inputs that are relevant <br>
