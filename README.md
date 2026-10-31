@@ -98,6 +98,7 @@ Thus this is entailed:<br>
 **Implementation details totally irrelvant to proof**<br>
 The first time that HHH is invoked it allocates a shared memory block so that it can watch the execution trace of each DD instance thoughout all of its recursive invocations. 
 Every HHH appends each new instruction that it simulates to this shared block. As soon as the outermost HHH sees a repeating state it aborts its simulation and rejects its input. 
+Because HHH only aborts its simulation after the non-termination simulation invariant has been proven the behavior after DD has been aborted is irrelevant. 
 
 The x86utm operating system enables functions written in C to be simulated in Debug Step mode by another C function using an x86 emulator. 
 x86utm.exe takes the COFF object file: Halt7.obj as its command line parameter. x86utm.exe sends its standard output to Halt7out.txt.
