@@ -99,7 +99,7 @@ DD simulated by HHH such that the simulated DD reaches<br>
 its own simulated "return" statement while DD is being<br>
 simulated by HHH. 
 
-The mathematical proof of non-termination takes the
+The mathematical proof of non-termination takes the<br>
 simulation invariant of<br>
 **DD simulated by HHH does not halt while being simulated**<br>
 as formal proof of non-termination while DD is being simulated<br> 
