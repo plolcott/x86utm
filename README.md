@@ -94,8 +94,8 @@ Line 03: simulated DD() invokes simulated HHH(DD) that simulates DD()<br>
 Thus this is entailed:<br>
 **DD simulated by HHH does not reach its own simulated final state.**
 
-There does there exist any finite number of N simulations<br> 
-of DD simulated by HHH such that the simulated DD reaches<br> 
+There does exist any finite number of N simulations of <br> 
+DD simulated by HHH such that the simulated DD reaches<br>  
 its own simulated "return" statement while DD is being<br> 
 simulated by HHH. 
 
