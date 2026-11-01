@@ -105,6 +105,14 @@ semantics of C such that the simulated C function DD reaches<br>
 its own simulated return statement in any N finite number of<br> 
 steps. 
 
+**ENTAILS**
+
+This mathematical induction proof of non-termination
+simulation invariant:
+**DD simulated by HHH does not halt while being simulated**
+as formal proof of non-termination of DD while DD is being
+simulated by HHH.
+
 The mathematical induction proof of non-termination takes<br> 
 the simulation invariant of<br>
 **DD simulated by HHH does not halt while being simulated**<br>
