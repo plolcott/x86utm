@@ -103,7 +103,7 @@ There does not exist any implementation of C function HHH<br>
 that simulates C function DD according to the operational<br>
 semantics of C such that the simulated C function DD reaches<br>
 its own simulated return statement in any N finite number of<br> 
-simulations. 
+steps. 
 
 The mathematical induction proof of non-termination takes<br> 
 the simulation invariant of<br>
