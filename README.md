@@ -34,12 +34,6 @@ only way to determine the halting property of a finite string<br>
 input is to examine the same behavior as the behavior of D<br> 
 simulated by H. 
 
-**Input to Halt Decider(Olcott)<br>** 
-Is not any mere description of any executing process such as<br>
-"Turing Machine Description". For Turing Machines sequences<br>
-of 'quintuples' of five-symbol Turing machine instructions<br>
-are called source code within the Turing model of computation. 
-
 **Concretely applied to the HHH/DD decider/input pair**<br> 
 DD is simulated by HHH according to the operational semantics<br>
 of the C programming language.  (see trace below)<br>
