@@ -38,6 +38,11 @@ simulated by H.
 DD is simulated by HHH according to the operational semantics<br>
 of the C programming language.  (see trace below)<br>
 
+**Axiom 1**<br>
+There does not exist any finite number of simulations of DD by <br>
+HHH such that the simulated DD ever reaches its own simulated <br>
+"return" statement final halt state. <br>
+
 **Axiom 5**<br>
 This single unique correct simulation trace derived from (2) can be seen<br>
 below. This trace excludes behavior equivalent to DD() directly executed<br> 
