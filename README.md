@@ -99,10 +99,11 @@ Line 03: simulated DD() invokes simulated HHH(DD) that simulates DD()<br>
 Thus this is entailed:<br>
 **DD simulated by HHH does not reach its own simulated final state.**
 
-There does exist any finite number of N simulations of <br>
-DD simulated by HHH such that the simulated DD reaches<br>
-its own simulated "return" statement while DD is being<br>
-simulated by HHH. 
+There does not exist any implementation of C function HHH<br>
+that simulates C function DD according to the operational<br>
+semantics of C such that the simulated C function DD reaches<br>
+its own simulated return statement in any N finite number of<br> 
+simulations. 
 
 The mathematical induction proof of non-termination takes<br> 
 the simulation invariant of<br>
