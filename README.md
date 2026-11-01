@@ -3,6 +3,11 @@ The x86UTM operating system enables every detail of the Halting<br>
 Problem proof to be concretely examined at the level of the C<br>
 programming language. 
 
+DD is to be construed as a finite string of C source code of<br>
+a C function. HHH is to be construed as a C interpreter that<br>
+simulates C source code. HHH can simulate itself simulating<br> 
+DD if needed. 
+
 **What is shown below**<br> 
 The Halting Theorem defines a mapping other than the mapping <br>
 from finite string inputs to output thus outside of the domain<br>
