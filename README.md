@@ -95,8 +95,7 @@ Thus this is entailed:<br>
 **DD simulated by HHH does not reach its own simulated final state.**
 
 There does exist any finite number of N simulations of <br>
-DD simulated by HHH such that the simulated DD reaches<br>
-its own simulated "return" statement while DD is being<br>
+DD simulated by HHH such that the simulated DD reaches its own simulated "return" statement while DD is being<br>
 simulated by HHH. 
 
 **Implementation details totally irrelevant to proof**<br>
