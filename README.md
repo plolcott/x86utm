@@ -99,6 +99,14 @@ DD simulated by HHH such that the simulated DD reaches<br>
 its own simulated "return" statement while DD is being<br>
 simulated by HHH. 
 
+The mathematical proof of non-termination takes the
+simulation invariant of<br>
+**DD simulated by HHH does not halt while being simulated**<br>
+as formal proof of non-termination while DD is being simulated<br> 
+by HHH.
+
+
+
 **Implementation details totally irrelevant to proof**<br>
 The first time that HHH is invoked it allocates a shared memory block so that it can watch the execution trace of each DD instance thoughout all of its recursive invocations. 
 Every HHH appends each new instruction that it simulates to this shared block. As soon as the outermost HHH sees a repeating state it aborts its simulation and rejects its input. 
