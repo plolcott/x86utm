@@ -107,18 +107,11 @@ steps.
 
 **ENTAILS**
 
-This mathematical induction proof of non-termination
-simulation invariant:
-**DD simulated by HHH does not halt while being simulated**
-as formal proof of non-termination of DD while DD is being
-simulated by HHH.
-
-The mathematical induction proof of non-termination takes<br> 
-the simulation invariant of<br>
+This mathematical induction proof of non-termination<br>
+simulation invariant:<br>
 **DD simulated by HHH does not halt while being simulated**<br>
 as formal proof of non-termination of DD while DD is being<br>
 simulated by HHH.
-
 
 
 **Implementation details totally irrelevant to proof**<br>
