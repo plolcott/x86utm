@@ -13,7 +13,6 @@ The Halting Theorem defines a mapping other than the mapping <br>
 from finite string inputs to output thus outside of the domain<br>
 of Turing computable functions. 
 
-**Computation(Olcott)<br> 
 Paraphrase of Emil Post definition of computation** <br>
 All computations are equivalent applying finite string <br>
 transformation rules to finite string inputs to derive <br>
