@@ -68,12 +68,11 @@ proof requires a halt decider H to report on the behavior it its own caller D<br
 otherwise this caller D cannot possibly do the opposite of whatever value that<br> 
 H returns to it. 
 
-```
 DD is to be construed as a finite string of C source code of<br>
 a C function. HHH is to be construed as a C interpreter that<br>
 simulates C source code. HHH can simulate itself simulating<br> 
 DD if needed.
-
+```
 typedef int (*ptr)();
 int HHH(ptr P); 
 
