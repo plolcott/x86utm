@@ -93,9 +93,6 @@ int HHH(ptr P);
 Line 11: main() invokes HHH(DD);
 
 **Simulation invariant** (while DD is simulated by HHH)<br>
-Line 03: simulated DD() invokes simulated HHH(DD) that simulates DD()<br> 
-
-Thus this is entailed:<br>
 **DD simulated by HHH does not reach its own simulated final state.**
 
 There does not exist any implementation of C function HHH<br>
