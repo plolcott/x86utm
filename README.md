@@ -95,10 +95,14 @@ Line 11: main() invokes HHH(DD);
 **Simulation invariant** (while DD is simulated by HHH)<br>
 **DD simulated by HHH does not reach its own simulated final state.**
 
+A simulating halt decider simulates its input until it correctly<br>
+detects a repeating state that cannot possibly reach a final state.<br>
 We cannot ever judge halting on the basis of what happens after<br>
 simulation has been aborted or we would judge that all infinite<br>
 loops always halt. Instead we look for a repeating state while the<br>
 simulation continues. 
+
+On this basis simulating halt decider HHH correctly rejects its input DD
 
 There does not exist any implementation of C function HHH<br>
 that simulates C function DD according to the operational<br>
