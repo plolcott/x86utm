@@ -95,6 +95,10 @@ Line 11: main() invokes HHH(DD);
 **Simulation invariant** (while DD is simulated by HHH)<br>
 **DD simulated by HHH does not reach its own simulated final state.**
 
+We cannot ever judge halting on the basis of what happens after<br>
+simulation has been aborted or we would judge that all infinite<br>
+loops always halt. Instead we look for a repeating state. 
+
 There does not exist any implementation of C function HHH<br>
 that simulates C function DD according to the operational<br>
 semantics of C such that the simulated C function DD reaches<br>
