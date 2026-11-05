@@ -74,7 +74,7 @@ Line 11: main() invokes HHH(DD);
 **Simulation invariant** (while DD is simulated by HHH)<br>
 **DD simulated by HHH does not reach its own simulated final state.**
 
-A simulating halt decider simulates its input until it correctly<br>
+A simulating halt decider H simulates its input D until it correctly<br>
 detects a repeating state that cannot possibly reach a final state.<br>
 We cannot ever judge halting on the basis of what happens after<br>
 simulation has been aborted or we would judge that all infinite<br>
