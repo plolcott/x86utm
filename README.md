@@ -38,27 +38,6 @@ simulated by H.
 DD is simulated by HHH according to the operational semantics<br>
 of the C programming language.  (see trace below)<br>
 
-**Axiom 1**<br>
-There does not exist any finite number of simulations of DD by <br>
-HHH such that the simulated DD ever reaches its own simulated <br>
-"return" statement final halt state. <br>
-
-**Axiom 5**<br>
-This single unique correct simulation trace derived from (2) can be seen<br>
-below. This trace excludes behavior equivalent to DD() directly executed<br> 
-from main(). HHH cannot report on the behavior of its caller DD().<br> 
-**There cannot possibly be any input to a halt decider that is also its<br> 
-caller these are always mutually exclusive.**
-
-**Axiom 6**<br>
-DD correctly simulated by HHH cannot possibly reach its own simulated<br>
-final halt state is determined by the simulation trace shown below.
-
-**Axiom 7**<br>
-From Axioms (1)(2)(3)(4)(5)(6) HHH is correct to reject its input as non-halting<br> 
-and we know that it is incorrect to require HHH to report on the behavior of<br> 
-its own caller DD(). 
-
 **Conclusion**<br>
 From Axioms (1)(2)(3)(4)(5)(6)(7) The HP requires the logically impossible on the basis<br> 
 of violating the correctly elaborated details of the fundamental nature of a halt decider.
