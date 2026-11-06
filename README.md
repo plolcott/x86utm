@@ -16,8 +16,8 @@ any and all outputs.
 
 Because **Post canonical systems** are Turing-equivalent, <br>
 anything that cannot be derived by applying finite string <br>
-transformations to finite strings is outside of the domain of<br>
-Church–Turing computable functions. 
+transformations to finite strings is outside of the domain<br> 
+of Church–Turing computable functions. 
 
 **Decider(Olcott)<br>** 
 A Decider (Olcott) is a theory-of-computation decider whose<br>
