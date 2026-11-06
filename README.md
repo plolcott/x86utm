@@ -16,7 +16,7 @@ any and all outputs.
 
 Because **Post canonical systems** are Turing-equivalent, <br>
 anything that cannot be derived by applying finite string <br>
-transformations to finite string inputs is outside of the
+transformations to finite string inputs is outside of the<br>
 domain of Church–Turing computable functions. 
 
 **Decider(Olcott)<br>** 
