@@ -9,6 +9,11 @@ from finite string inputs to output thus outside of the domain<br>
 of Turing computable functions. 
 
 **Computation defined**<br>
+
+A computation is a finite set of rules for transforming finite strings<br>
+of symbols into other finite strings of symbols. Any Turing-equivalent<br> 
+system can perform every computation expressible this way.
+
 A simplified Paraphrase of Emil Post definition of computation<br>
 All Turing equivalent computations can be reduced to applying <br> 
 finite string transformation rules to finite string inputs to <br>
