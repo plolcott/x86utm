@@ -9,9 +9,9 @@ from finite string inputs to output thus outside of the domain<br>
 of Turing computable functions. 
 
 **Computation defined**<br>
-Paraphrase of Emil Post definition of computation<br>
-All computations are equivalent applying finite string <br>
-transformation rules to finite string inputs to derive <br>
+A simplified Paraphrase of Emil Post definition of computation<br>
+All Turing equivalent computations can be reduced to applying finite<br>
+string transformation rules to finite string inputs to derive <br>
 any and all outputs. 
 
 Because **Post canonical systems** are Turing-equivalent, <br>
