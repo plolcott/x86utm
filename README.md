@@ -10,9 +10,9 @@ of Turing computable functions.
 
 **Computation defined**<br>
 A simplified Paraphrase of Emil Post definition of computation<br>
-All Turing equivalent computations can be reduced to applying finite<br>
-string transformation rules to finite string inputs to derive <br>
-any and all outputs. 
+All Turing equivalent computations can be reduced to applying <br> 
+finite string transformation rules to finite string inputs to <br>
+derive any and all outputs. 
 
 Because **Post canonical systems** are Turing-equivalent, <br>
 anything that cannot be derived by applying finite string <br>
