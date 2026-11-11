@@ -88,11 +88,10 @@ simulation continues.
 
 On this basis simulating halt decider HHH correctly rejects its input DD
 
-There does not exist any implementation of C function HHH<br>
-that ONLY simulates C function DD according to the operational<br>
-semantics of C such that the simulated C function DD reaches<br>
-its own simulated return statement in any N finite number of<br> 
-steps. 
+A computation is a finite set of rules for transforming<br>
+finite strings of symbols into other finite strings of <br>
+symbols. Any Turing-equivalent system can perform every <br>
+computation expressible this way.
 
 **ENTAILS**
 
