@@ -88,11 +88,11 @@ simulation continues.
 
 On this basis simulating halt decider HHH correctly rejects its input DD
 
-There does not exist any implementation of C function HHH<br>
-that ONLY simulates C function DD according to the operational<br>
-semantics of C such that the simulated C function DD reaches<br>
-its own simulated return statement in any N finite number of<br> 
-steps. 
+There does not exist any implementation of C function <br>
+HHH that ONLY simulates C function DD according to the <br>
+operational semantics of C such that the simulated C <br>
+function DD reaches its own simulated return statement <br>
+in any N finite number of steps.
 
 **ENTAILS**
 
