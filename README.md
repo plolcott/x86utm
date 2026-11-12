@@ -92,7 +92,8 @@ There does not exist any implementation of C function <br>
 HHH that ONLY simulates C function DD according to the <br>
 operational semantics of C such that the simulated C <br>
 function DD reaches its own simulated return statement <br>
-in any N finite number of steps.
+in any N finite number of steps while DD is being simulated<br>
+by HHH.
 
 **ENTAILS**
 
