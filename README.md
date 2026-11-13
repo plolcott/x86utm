@@ -25,9 +25,9 @@ transformations to finite string inputs is outside of the<br>
 domain of Church–Turing computable functions. 
 
 When we know that all computation must be able to be reduced<br>
-to applying finite string transformations to finite string<br>
-inputs then we can begin examining what subsets of these<br>
-transformations might be relevant to a specific decision criteria.<br>
+to applying finite string transformations to finite string inputs<br>
+then we can begin examining what subsets of these transformations<br>
+might be relevant to a specific decision criteria.
 
 **Decider(Olcott)<br>** 
 A Decider (Olcott) is a theory-of-computation decider whose<br>
