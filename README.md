@@ -29,6 +29,12 @@ to applying finite string transformations to finite string inputs<br>
 then we can begin examining what subsets of these transformations<br>
 might be relevant to a specific decision criteria.
 
+ALL Turing equivalent Computation must be able to be<br>
+reduced to applying finite string transformations to<br>
+finite string inputs to derive any and all outputs.<br>
+
+
+
 **Decider(Olcott)<br>** 
 A Decider (Olcott) is a theory-of-computation decider whose<br>
 decision is justified by finite-string transformation inference<br>
