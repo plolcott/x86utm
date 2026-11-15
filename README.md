@@ -4,9 +4,9 @@ Problem proof to be concretely examined at the level of the C<br>
 programming language. 
 
 **What is shown below**<br> 
-The Halting Theorem defines a mapping other than the mapping <br>
-from finite string inputs to output thus outside of the domain<br>
-of Turing computable functions. 
+The Halting Theorem is a category error because it requires<br>
+reporting on behavior other than the behavior specified by<br>
+its input finite string.<br>
 
 **Computation defined**<br>
 Turing equivalent Post canonical systems and semi-Thue<br>
