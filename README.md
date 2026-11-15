@@ -28,16 +28,15 @@ rewriting system (SRS), historically called a semi-Thue system,<br>
 is a rewriting system over strings from a (usually finite) alphabet.<br> 
 https://en.wikipedia.org/wiki/Semi-Thue_system
 
-Deciders only apply finite string transformation/inference<br> 
+Deciders only apply finite string transformation/inference<br>
 steps to their finite strings AS INPUTS.
 
-They must only apply these inference steps that are relevant<br> 
-to the decision criterion. 
+They must only apply inference steps that are relevant to <br>
+the decision criterion.
 
-For halt deciders these inference steps are restricted to <br>
-the operational semantics of the language of computation <br> 
-of the input. 
-
+Thus for halt deciders these inference steps are restricted<br>
+to the operational semantics of the language of computation<br>
+of the input.
 
 
 
