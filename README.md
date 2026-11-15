@@ -16,7 +16,6 @@ All Turing equivalent computations can be reduced <br>
 to applying finite string transformation rules to <br>
 finite string inputs to derive any and all outputs.<br>
 
-
 A Post canonical system, also known as a Post production<br>
 system, as created by Emil Post, is a string-manipulation<br> 
 system that starts with finitely many strings and repeatedly<br>
@@ -28,18 +27,6 @@ In theoretical computer science and mathematical logic a string<br>
 rewriting system (SRS), historically called a semi-Thue system,<br> 
 is a rewriting system over strings from a (usually finite) alphabet.<br> 
 https://en.wikipedia.org/wiki/Semi-Thue_system
-
-All Turing equivalent computations can be reduced <br>
-to applying finite string transformation rules to <br>
-finite string inputs to derive any and all outputs.<br>
-
-
-A computation is a finite set of rules for transforming finite strings<br>
-of symbols into other finite strings of symbols. Any Turing-equivalent<br> 
-system can perform every computation expressible this way.
-
-A simplified Paraphrase of Emil Post definition of computation<br>
-
 
 Deciders only apply finite string transformation/<br>
 inference steps to their finite strings AS INPUTS.<br>
