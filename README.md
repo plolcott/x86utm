@@ -29,14 +29,14 @@ is a rewriting system over strings from a (usually finite) alphabet.<br>
 https://en.wikipedia.org/wiki/Semi-Thue_system
 
 Deciders only apply finite string transformation/inference<br> 
-steps to their finite strings AS INPUTS.<br>
+steps to their finite strings AS INPUTS.
 
 They must only apply these inference steps that are relevant<br> 
-to the decision criterion. <br>
+to the decision criterion. 
 
 For halt deciders these inference steps are restricted to <br>
 the operational semantics of the language of computation <br> 
-of the input. <br>
+of the input. 
 
 
 
