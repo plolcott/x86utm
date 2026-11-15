@@ -88,9 +88,9 @@ int HHH(ptr P);
 Line 11: main() invokes HHH(DD);
 
 Line 03: DD calls HHH(DD); HHH simulates DD;<br>
-&nbsp;Line 03: DD calls HHH(DD); HHH simulates DD;<br>
 &nbsp;&nbsp;Line 03: DD calls HHH(DD); HHH simulates DD;<br>
-&nbsp;&nbsp;&nbsp;Line 03: DD calls HHH(DD); HHH simulates DD;
+&nbsp;&nbsp;&nbsp;&nbsp;Line 03: DD calls HHH(DD); HHH simulates DD;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Line 03: DD calls HHH(DD); HHH simulates DD;
 
 A simulating halt decider H simulates its input D until it correctly<br>
 detects a repeating state that cannot possibly reach a final state.<br>
