@@ -25,44 +25,7 @@ the decision criterion.
 Thus for halt deciders these inference steps are restricted<br>
 to the operational semantics of the language of computation<br>
 of the input.
-
-
-
-All Turing equivalent computations can be reduced to applying <br> 
-finite string transformation rules to finite string inputs to <br>
-derive any and all outputs. 
-
-Because **Post canonical systems** are Turing-equivalent, <br>
-anything that cannot be derived by applying finite string <br>
-transformations to finite string inputs is outside of the<br>
-domain of Church–Turing computable functions. 
-
-When we know that all computation must be able to be reduced<br>
-to applying finite string transformations to finite string inputs<br>
-then we can begin examining what subsets of these transformations<br>
-might be relevant to a specific decision criteria.
-
-ALL Turing equivalent Computation must be able to be<br>
-reduced to applying finite string transformations to<br>
-finite string inputs to derive any and all outputs.<br>
-
-
-
-**Decider(Olcott)<br>** 
-A Decider (Olcott) is a theory-of-computation decider whose<br>
-decision is justified by finite-string transformation inference<br>
-steps applied to its finite-string input. The inference steps <br>
-must be relevant to the decision criterion and correctly<br>
-justify the decision.
  
-**Halt Decider(Olcott)<br>** 
-Decider(Olcott) entails that Halt Decider(Olcott) H(D) must <br>
-apply finite-string inference steps according to the operational<br> 
-semantics of the source-code computation language of D. The <br> 
-only way to determine the halting property of a finite string<br> 
-input is to examine the same behavior as the behavior of D<br> 
-simulated by H. 
-
 **Concretely applied to the HHH/DD decider/input pair**<br> 
 DD is simulated by HHH according to the operational semantics<br>
 of the C programming language.  (see trace below)<br>
