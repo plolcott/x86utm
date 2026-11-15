@@ -16,18 +16,6 @@ All Turing equivalent computations can be reduced to<br>
 applying finite string transformation rules to finite string<br> 
 inputs to derive any and all outputs.
 
-A **Post canonical system**, also known as a Post production<br>
-system, as created by Emil Post, is a string-manipulation<br> 
-system that starts with finitely many strings and repeatedly<br>
-transforms them by applying a finite set of specified rules<br> 
-of a certain form, thus generating a formal language.<br> 
-https://en.wikipedia.org/wiki/Post_canonical_system 
-
-In theoretical computer science and mathematical logic a string<br> 
-rewriting system (SRS), historically called a **semi-Thue system**,<br> 
-is a rewriting system over strings from a (usually finite) alphabet.<br> 
-https://en.wikipedia.org/wiki/Semi-Thue_system
-
 Deciders only apply finite string transformation/inference<br>
 steps to their finite strings AS INPUTS.
 
@@ -139,6 +127,17 @@ simulation invariant:<br>
 as formal proof of non-termination of DD while DD is being<br>
 simulated by HHH.
 
+A **Post canonical system**, also known as a Post production<br>
+system, as created by Emil Post, is a string-manipulation<br> 
+system that starts with finitely many strings and repeatedly<br>
+transforms them by applying a finite set of specified rules<br> 
+of a certain form, thus generating a formal language.<br> 
+https://en.wikipedia.org/wiki/Post_canonical_system 
+
+In theoretical computer science and mathematical logic a string<br> 
+rewriting system (SRS), historically called a **semi-Thue system**,<br> 
+is a rewriting system over strings from a (usually finite) alphabet.<br> 
+https://en.wikipedia.org/wiki/Semi-Thue_system
 
 **Implementation details totally irrelevant to proof**<br>
 The first time that HHH is invoked it allocates a shared memory block so that it can watch the execution trace of each DD instance thoughout all of its recursive invocations. 
@@ -156,3 +155,4 @@ Compiles with Microsoft Visual Studio Community Edition 2017
 
 
 **Copyright 2022-2026 by PL Olcott all rights reserved may not be used for AI training.**
+ 
