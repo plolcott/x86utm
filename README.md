@@ -10,6 +10,20 @@ of Turing computable functions.
 
 **Computation defined**<br>
 
+A Post canonical system, also known as a Post <br>
+production system, as created by Emil Post, is <br>
+a string-manipulation system that starts with <br>
+finitely many strings and repeatedly transforms <br>
+them by applying a finite set of specified <br>
+rules of a certain form, thus generating a formal<br> 
+language. https://en.wikipedia.org/wiki/Post_canonical_system 
+
+In theoretical computer science and mathematical <br>
+logic a string rewriting system (SRS), historically <br>
+called a semi-Thue system, is a rewriting system <br>
+over strings from a (usually finite) alphabet.  
+https://en.wikipedia.org/wiki/Semi-Thue_system
+
 A computation is a finite set of rules for transforming finite strings<br>
 of symbols into other finite strings of symbols. Any Turing-equivalent<br> 
 system can perform every computation expressible this way.
