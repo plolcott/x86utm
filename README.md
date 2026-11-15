@@ -13,8 +13,8 @@ Turing equivalent Post canonical systems and semi-Thue<br>
 systems are simplified and made generic as follows:<br> 
 
 All Turing equivalent computations can be reduced to<br>
-applying finite string transformation rules to finite<br> 
-string inputs to derive any and all outputs.<br>
+applying finite string transformation rules to finite string<br> 
+inputs to derive any and all outputs.
 
 A Post canonical system, also known as a Post production<br>
 system, as created by Emil Post, is a string-manipulation<br> 
