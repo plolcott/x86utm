@@ -87,8 +87,10 @@ int HHH(ptr P);
 **Simulation Trace**<br>
 Line 11: main() invokes HHH(DD);
 
-**Simulation invariant** (while DD is simulated by HHH)<br>
-**DD simulated by HHH does not reach its own simulated final state.**
+Line 03: DD calls HHH(DD); HHH simulates DD;<br>
+ Line 03: DD calls HHH(DD); HHH simulates DD;<br>
+  Line 03: DD calls HHH(DD); HHH simulates DD;<br>
+   Line 03: DD calls HHH(DD); HHH simulates DD; ...
 
 A simulating halt decider H simulates its input D until it correctly<br>
 detects a repeating state that cannot possibly reach a final state.<br>
