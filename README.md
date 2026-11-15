@@ -85,7 +85,7 @@ int HHH(ptr P);
 12 }
 ```
 **Simulation Trace**<br>
-Line 11: main() invokes HHH(DD);
+Line 11: main() invokes HHH(DD);<br>
 Line 03: DD calls HHH(DD); HHH simulates DD;<br>
 &nbsp;&nbsp;Line 03: DD calls HHH(DD); HHH simulates DD;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;Line 03: DD calls HHH(DD); HHH simulates DD;<br>
