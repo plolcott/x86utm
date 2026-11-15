@@ -20,6 +20,19 @@ All Turing equivalent computations can be reduced <br>
 to applying finite string transformation rules to <br>
 finite string inputs to derive any and all outputs.<br>
 
+Deciders only apply finite string transformation/<br>
+inference steps to their finite strings AS INPUTS.<br>
+
+They must only apply these inference steps that<br>
+are relevant to the decision criterion. <br>
+
+For halt deciders these inference steps are <br>
+restricted to the operational semantics of <br>
+the language of computation of the input. <br>
+
+
+
+
 All Turing equivalent computations can be reduced to applying <br> 
 finite string transformation rules to finite string inputs to <br>
 derive any and all outputs. 
