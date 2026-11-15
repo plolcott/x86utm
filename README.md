@@ -15,6 +15,11 @@ of symbols into other finite strings of symbols. Any Turing-equivalent<br>
 system can perform every computation expressible this way.
 
 A simplified Paraphrase of Emil Post definition of computation<br>
+
+All Turing equivalent computations can be reduced <br>
+to applying finite string transformation rules to <br>
+finite string inputs to derive any and all outputs.<br>
+
 All Turing equivalent computations can be reduced to applying <br> 
 finite string transformation rules to finite string inputs to <br>
 derive any and all outputs. 
