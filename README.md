@@ -24,10 +24,9 @@ transforms them by applying a finite set of specified rules<br>
 of a certain form, thus generating a formal language.<br> 
 https://en.wikipedia.org/wiki/Post_canonical_system 
 
-In theoretical computer science and mathematical logic a <br> 
-string rewriting system (SRS), historically called a <br> 
-semi-Thue system, is a rewriting system over strings from<br> 
-a (usually finite) alphabet. <br> 
+In theoretical computer science and mathematical logic a string<br> 
+rewriting system (SRS), historically called a semi-Thue system,<br> 
+is a rewriting system over strings from a (usually finite) alphabet.<br> 
 https://en.wikipedia.org/wiki/Semi-Thue_system
 
 All Turing equivalent computations can be reduced <br>
