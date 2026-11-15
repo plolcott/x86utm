@@ -9,6 +9,13 @@ from finite string inputs to output thus outside of the domain<br>
 of Turing computable functions. 
 
 **Computation defined**<br>
+Turing equivalent Post canonical systems and semi-Thue<br>
+systems are simplified and made generic as follows:<br> 
+
+All Turing equivalent computations can be reduced <br>
+to applying finite string transformation rules to <br>
+finite string inputs to derive any and all outputs.<br>
+
 
 A Post canonical system, also known as a Post <br>
 production system, as created by Emil Post, is <br>
@@ -24,15 +31,17 @@ called a semi-Thue system, is a rewriting system <br>
 over strings from a (usually finite) alphabet.  
 https://en.wikipedia.org/wiki/Semi-Thue_system
 
+All Turing equivalent computations can be reduced <br>
+to applying finite string transformation rules to <br>
+finite string inputs to derive any and all outputs.<br>
+
+
 A computation is a finite set of rules for transforming finite strings<br>
 of symbols into other finite strings of symbols. Any Turing-equivalent<br> 
 system can perform every computation expressible this way.
 
 A simplified Paraphrase of Emil Post definition of computation<br>
 
-All Turing equivalent computations can be reduced <br>
-to applying finite string transformation rules to <br>
-finite string inputs to derive any and all outputs.<br>
 
 Deciders only apply finite string transformation/<br>
 inference steps to their finite strings AS INPUTS.<br>
