@@ -83,7 +83,9 @@ When HHH sees that DD calls the same function with the <br>
 same arguments from the same address twice in sequence <br>
 and there were no conditional branch instructions <br>
 from the beginning of DD to its call to HHH(DD), then<br> 
-HHH has matched a non-halting behavior pattern. 
+HHH has matched a non-halting behavior pattern. At this <br> 
+point HHH stops simulating its static finite string input<br> 
+and returns 0 to indicate rejection. 
 
 A **Post canonical system**, also known as a Post production<br>
 system, as created by Emil Post, is a string-manipulation<br> 
