@@ -33,7 +33,7 @@ of the input.
 DD is simulated by HHH according to the operational semantics<br>
 of the C programming language.  (see trace below)<br>
 
-**Assumption** 
+**Assumption**<br>
 DD is to be construed as a finite string of C source code of<br>
 a C function. HHH is to be construed as a C interpreter that<br>
 simulates C source code. HHH can simulate itself simulating<br> 
