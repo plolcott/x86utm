@@ -73,14 +73,6 @@ semantics of C such that the simulated C function DD reaches<br>
 its own simulated return statement in any N finite number of<br> 
 steps while DD is being simulated by HHH.
 
-**ENTAILS**
-
-This mathematical induction proof of non-termination<br>
-simulation invariant:<br>
-**DD simulated by HHH does not halt while being simulated**<br>
-as formal proof of non-termination of DD while DD is being<br>
-simulated by HHH.
-
 A **Post canonical system**, also known as a Post production<br>
 system, as created by Emil Post, is a string-manipulation<br> 
 system that starts with finitely many strings and repeatedly<br>
