@@ -79,11 +79,11 @@ function DD reaches its own simulated return statement <br>
 in any N finite number of steps while DD is being simulated<br>
 by HHH.
 
-When HHH sees that DD called the same function with the same<br>
-arguments from the same address twice in sequence and there<br>
-were no conditional branch instructions instructions from the <br>
-beginning of DD to its call to HHH(DD), then HHH has matched <br>
-a non-halting behavior pattern. 
+When HHH sees that DD calls the same function with the <br>
+same arguments from the same address twice in sequence <br>
+and there were no conditional branch instructions <br>
+instructions from the beginning of DD to its call to <br>
+HHH(DD), then HHH has matched a non-halting behavior pattern. <br>
 
 A **Post canonical system**, also known as a Post production<br>
 system, as created by Emil Post, is a string-manipulation<br> 
