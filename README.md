@@ -1,7 +1,7 @@
 # x86utm operating system
-The x86UTM operating system enables every detail of the Halting<br>
-Problem proof to be concretely examined at the level of the C<br>
-programming language. 
+The x86UTM operating system enables every detail of the <br> 
+Halting Problem proof to be concretely examined at the <br> 
+level of the C programming language. 
 
 **What is shown below**<br> 
 The Halting Theorem is a category error because it requires<br>
