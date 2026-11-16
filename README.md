@@ -30,11 +30,6 @@ of the input.
 DD is simulated by HHH according to the operational semantics<br>
 of the C programming language.  (see trace below)<br>
 
-From knowledge of the conventional proof every instance of the Halting Problem<br>
-proof requires a halt decider H to report on the behavior it its own caller D<br>
-otherwise this caller D cannot possibly do the opposite of whatever value that<br> 
-H returns to it. 
-
 DD is to be construed as a finite string of C source code of<br>
 a C function. HHH is to be construed as a C interpreter that<br>
 simulates C source code. HHH can simulate itself simulating<br> 
