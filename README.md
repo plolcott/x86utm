@@ -49,8 +49,7 @@ int HHH(ptr P);
 09 void main()  
 10 {  
 11  HHH(DD);  
-12 }
-```
+12 }```
 **Simulation Trace**<br>
 Line 11: main() invokes HHH(DD);<br>
 Line 03: DD calls HHH(DD); HHH simulates DD;<br>
