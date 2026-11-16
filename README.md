@@ -30,10 +30,6 @@ of the input.
 DD is simulated by HHH according to the operational semantics<br>
 of the C programming language.  (see trace below)<br>
 
-**Conclusion**<br>
-From Axioms (1)(2)(3)(4)(5)(6)(7) The HP requires the logically impossible on the basis<br> 
-of violating the correctly elaborated details of the fundamental nature of a halt decider.
-
 From knowledge of the conventional proof every instance of the Halting Problem<br>
 proof requires a halt decider H to report on the behavior it its own caller D<br>
 otherwise this caller D cannot possibly do the opposite of whatever value that<br> 
