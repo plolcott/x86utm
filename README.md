@@ -63,20 +63,21 @@ Line 03: DD calls HHH(DD); HHH simulates DD;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;Line 03: DD calls HHH(DD); HHH simulates DD;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Line 03: DD calls HHH(DD); HHH simulates DD;
 
-A simulating halt decider H simulates its input D until it correctly<br>
-detects a repeating state that cannot possibly reach a final state.<br>
-We cannot ever judge halting on the basis of what happens after<br>
-simulation has been aborted or we would judge that all infinite<br>
-loops always halt. Instead we look for a repeating state while the<br>
-simulation continues. 
+A simulating halt decider H simulates its input D until it<br>
+correctly detects a repeating state that cannot possibly <br>
+reach a final state. We cannot ever judge halting on the <br>
+basis of what happens after simulation has been aborted or <br>
+we would judge that all infinite loops always halt. Instead<br>
+we look for a repeating state while the simulation continues.
 
 On this basis simulating halt decider HHH correctly rejects its input DD
 
-There does not exist any implementation of C function HHH<br> 
-that ONLY simulates C function DD according to the operational<br> 
-semantics of C such that the simulated C function DD reaches<br> 
-its own simulated return statement in any N finite number of<br> 
-steps while DD is being simulated by HHH.
+There does not exist any implementation of C function <br>
+HHH that ONLY simulates C function DD according to the <br>
+operational semantics of C such that the simulated C <br>
+function DD reaches its own simulated return statement <br>
+in any N finite number of steps while DD is being simulated<br>
+by HHH.
 
 A **Post canonical system**, also known as a Post production<br>
 system, as created by Emil Post, is a string-manipulation<br> 
