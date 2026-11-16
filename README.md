@@ -9,6 +9,7 @@ reporting on behavior other than the behavior specified by<br>
 its input finite string.<br>
 
 **Computation defined**<br>
+**Axiom 1**<br>
 Turing equivalent Post canonical systems and semi-Thue<br>
 systems are simplified and made generic as follows:<br> 
 
@@ -16,12 +17,14 @@ All Turing equivalent computations can be reduced to<br>
 applying finite string transformation rules to finite string<br> 
 inputs to derive any and all outputs.
 
+**Axiom 2**<br>
 Deciders only apply finite string transformation/inference<br>
 steps to their finite strings AS INPUTS.
 
 They must only apply inference steps that are relevant to <br>
 the decision criterion.
 
+**Axiom 3**<br>
 Thus for halt deciders these inference steps are restricted<br>
 to the operational semantics of the language of computation<br>
 of the input.
@@ -30,6 +33,7 @@ of the input.
 DD is simulated by HHH according to the operational semantics<br>
 of the C programming language.  (see trace below)<br>
 
+**Assumption** 
 DD is to be construed as a finite string of C source code of<br>
 a C function. HHH is to be construed as a C interpreter that<br>
 simulates C source code. HHH can simulate itself simulating<br> 
@@ -51,6 +55,7 @@ int HHH(ptr P);
 11  HHH(DD);  
 12 }
 ```
+
 **Simulation Trace**<br>
 Line 11: main() invokes HHH(DD);<br>
 Line 03: DD calls HHH(DD); HHH simulates DD;<br>
