@@ -27,8 +27,8 @@ to the operational semantics of the language of computation<br>
 of the input.
  
 **Concretely applied to the HHH/DD decider/input pair**<br> 
-DD is simulated by HHH according to the operational semantics<br>
-of the C programming language.  (see trace below)<br>
+DD is simulated by HHH according to the operational 
+semantics of the C programming language.  (see trace below)<br>
 
 **Assumption**<br>
 DD is to be construed as a finite string of C source code of<br>
