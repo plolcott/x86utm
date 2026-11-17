@@ -12,7 +12,6 @@ its input finite string.<br>
 **Axiom 1**<br>
 Turing equivalent Post canonical systems and semi-Thue<br>
 systems are simplified and made generic as follows:<br> 
-
 All Turing equivalent computations can be reduced to<br>
 applying finite string transformation rules to finite string<br> 
 inputs to derive any and all outputs.
