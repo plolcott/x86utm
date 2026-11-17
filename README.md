@@ -19,10 +19,8 @@ inputs to derive any and all outputs.
 
 **Axiom 2**<br>
 Deciders only apply finite string transformation/inference<br>
-steps to their finite strings AS INPUTS.
-
-They must only apply inference steps that are relevant to <br>
-the decision criterion.
+steps to their finite strings AS INPUTS and must only apply<br>
+inference steps that are relevant to the decision criterion.<br>
 
 **Axiom 3**<br>
 Thus for halt deciders these inference steps are restricted<br>
