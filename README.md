@@ -8,20 +8,19 @@ The Halting Theorem is a category error because it requires<br>
 reporting on behavior other than the behavior specified by<br>
 its input finite string.<br>
 
-**Computation defined**<br>
-**Axiom 1**<br>
+**Computation defined --- Axiom 1**<br>
 Turing equivalent Post canonical systems and semi-Thue<br>
 systems are simplified and made generic as follows:<br> 
 All Turing equivalent computations can be reduced to<br>
 applying finite string transformation rules to finite string<br> 
 inputs to derive any and all outputs.
 
-**Axiom 2**<br>
+**Decider Defined --- Axiom 2**<br>
 Deciders only apply finite string transformation/inference<br>
 steps to their finite strings AS INPUTS and must only apply<br>
 inference steps that are relevant to the decision criterion.<br>
 
-**Axiom 3**<br>
+**Halt Decider Defined --- Axiom 3**<br>
 Thus for halt deciders these inference steps are restricted<br>
 to the operational semantics of the language of computation<br>
 of the input.
