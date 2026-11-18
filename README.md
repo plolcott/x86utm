@@ -12,8 +12,8 @@ its input finite string.<br>
 Turing equivalent Post canonical systems and semi-Thue<br>
 systems are simplified and made generic as follows:<br> 
 All Turing equivalent computations can be reduced to<br>
-applying finite string transformation rules to finite string<br> 
-inputs to derive any and all outputs.
+applying (some kind of) finite string transformation rules<br> 
+to finite string inputs to derive any and all outputs.
 
 **Decider Defined --- Axiom 2**<br>
 Deciders only apply finite string transformation/inference<br>
