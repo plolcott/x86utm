@@ -8,7 +8,7 @@ The Halting Theorem is a category error because it requires<br>
 reporting on behavior other than the behavior specified by<br>
 its input finite string.<br>
 
-**Computation defined --- Axiom 1**<br>
+**The limits of Computation defined --- Axiom 1**<br>
 Turing equivalent Post canonical systems and semi-Thue<br>
 systems are simplified and made generic as follows:<br> 
 All Turing equivalent computations can be reduced to<br>
