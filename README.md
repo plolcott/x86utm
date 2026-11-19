@@ -23,7 +23,7 @@ inference steps that are relevant to the decision criterion.<br>
 **Decider Defined --- Axiom 2**<br> 
 The output from a decider is based on applying finite<br>
 string transformation/inference steps to input finite<br>
-strings and these steps relevant to the decision criterion.
+strings relevant to the decision criterion.
 
 applying inference
 steps to the input finite string that are relevant to the decision criteria. 
