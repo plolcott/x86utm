@@ -20,6 +20,17 @@ Deciders only apply finite string transformation/inference<br>
 steps to their finite strings AS INPUTS and must only apply<br>
 inference steps that are relevant to the decision criterion.<br>
 
+**Decider Defined --- Axiom 2**
+The output from a decider is based on string <br>
+transformation/inference<br> steps to input finite <br>
+ strings AS INPUTS and inference these steps<br>
+must be relevant to the decision criterion.
+
+applying inference
+steps to the input finite string that are relevant to the decision criteria. 
+
+
+
 **Halt Decider Defined --- Axiom 3**<br>
 Thus for halt deciders these inference steps are restricted<br>
 to the operational semantics of the language of computation<br>
