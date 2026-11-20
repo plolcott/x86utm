@@ -3,11 +3,13 @@ The x86UTM operating system enables every detail of the <br>
 Halting Problem proof to be concretely examined at the <br> 
 level of the C programming language. 
 
-Once it is understood that the only correct halt status 
-decision can only be made by a termination analyzer that 
-simulates its static finite string of source code according 
-to the operational semantics of its language of computation 
-then halting undeciability is properly understood. 
+Once this assertion has been validated then halting 
+undecidability is properly understood: 
+
+A correct halt status decision can only be made by a<br>
+termination analyzer that simulates its input. An input <br>
+is a static finite string of source code. This source-code<br>
+has the operational semantics of its language of computation.
 
 
 **What is shown below**<br> 
