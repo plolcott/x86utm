@@ -3,6 +3,13 @@ The x86UTM operating system enables every detail of the <br>
 Halting Problem proof to be concretely examined at the <br> 
 level of the C programming language. 
 
+Once it is understood that the only correct halt status 
+decision can only be made by a termination analyzer that 
+simulates its static finite string of source code according 
+to the operational semantics of its language of computation 
+then halting undeciability is properly understood. 
+
+
 **What is shown below**<br> 
 The Halting Theorem is a category error because it requires<br>
 reporting on behavior other than the behavior specified by<br>
