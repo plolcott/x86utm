@@ -19,8 +19,8 @@ strings AS INPUTS that are relevant to the decision criteria.
 **Decider Defined --- Axiom 2**<br>
 All decisions inherently require applying inference steps<br>
 that are  specifically relevant to a decision criteria. <br>
-Thus the output of a Decider must come only from (finite<br>
-string transformation/inference steps) to finite strings<br>
+Thus the output of a Decider must come only from (finite <br>
+string transformation/inference steps) to finite strings <br>
 AS INPUTS that are relevant to the decision criteria.
 
 **Halt Decider Defined --- Axiom 3**<br>
