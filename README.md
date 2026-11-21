@@ -23,10 +23,9 @@ language of computation of the input.
 
 **Simulating Halt Decider Defined --- Axiom 4**<br>
 Input D is the source code of a language of computation.<br>
-In the concrete example shown below DD is a function <br>
-written in C. DD is simulated by simulating halt decider<br>
-HHH until HHH correctly determines that HHH cannot reach<br>
-its final state while being correctly simulated.<br>
+D is correctly simulated by simulating halt decider H until<br>
+H correctly determines that D cannot possibly its final state<br>
+while being correctly simulated.
  
 **Concretely applied to the HHH/DD decider/input pair**<br> 
 DD is simulated by HHH according to the operational<br>
