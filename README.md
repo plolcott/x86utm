@@ -16,13 +16,6 @@ to decision criteria. Thus the output of a Decider must come<br>
 from (finite string transformation/inference steps) to finite<br>
 strings AS INPUTS that are relevant to the decision criteria.
 
-**Decider Defined --- Axiom 2**<br>
-All decisions inherently require applying inference steps<br>
-that are  specifically relevant to a decision criteria. <br>
-Thus the output of a Decider must come only from (finite <br>
-string transformation/inference steps) to finite strings <br>
-AS INPUTS that are relevant to the decision criteria.
-
 **Halt Decider Defined --- Axiom 3**<br>
 For halt deciders  relevance requires that these inference <br>
 steps be restricted to the operational semantics of the <br>
