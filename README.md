@@ -11,8 +11,6 @@ applying (some kind of) finite string transformation rules<br>
 to finite string inputs to derive any and all outputs.
 
 **Decider Defined --- Axiom 2**<br>
-For a decision to be made by anyone or anything inference<br>
-steps must be applied on the basis of a decision criteria. <br> 
 Deciders only apply finite string transformation/inference<br>
 steps to their finite strings AS INPUTS and must only apply<br>
 inference steps that are relevant to the decision criterion.<br>
@@ -144,3 +142,6 @@ Compiles with Microsoft Visual Studio Community Edition 2017
 The output from a decider is based on applying finite<br>
 string transformation/inference steps to input finite<br>
 strings relevant to the decision criterion.
+
+For a decision to be made by anyone or anything inference<br>
+steps must be applied on the basis of a decision criteria. <br> 
