@@ -3,19 +3,6 @@ The x86UTM operating system enables every detail of the <br>
 Halting Problem proof to be concretely examined at the <br> 
 level of the C programming language. 
 
-Only after this assertion has been validated can halting <br>
-undecidability be properly understood: <br> 
-A correct halt status decision can only be made by a<br>
-termination analyzer that simulates its input. An input <br>
-is a static finite string of source code. This source-code<br>
-has the operational semantics of its language of computation.
-
-
-**What is shown below**<br> 
-The Halting Theorem is a category error because it requires<br>
-reporting on behavior other than the behavior specified by<br>
-its input finite string.<br>
-
 **The limits of Computation defined --- Axiom 1**<br>
 Turing equivalent Post canonical systems and semi-Thue<br>
 systems are simplified and made generic as follows:<br> 
@@ -92,6 +79,11 @@ the beginning of DD to its call to HHH(DD), then HHH<br>
 has matched a non-halting behavior pattern. At this <br>
 point HHH stops simulating its static finite string input<br>
 and returns 0 to indicate rejection. 
+
+**What is shown above**<br> 
+The Halting Theorem is a category error because it requires<br>
+reporting on behavior other than the behavior specified by<br>
+its input finite string.<br>
 
 A **Post canonical system**, also known as a Post production<br>
 system, as created by Emil Post, is a string-manipulation<br> 
