@@ -20,7 +20,7 @@ does not make it go away. It merely hides important<br>
 details. 
 
 Because of this the output of a Decider must come from only<br>
-(finite string transformation/inference steps) to finite <br>
+(finite string transformation / inference steps) to finite <br>
 strings AS INPUTS that are relevant to the decision criteria.
 
 **Halt Decider Defined --- Axiom 3**<br>
