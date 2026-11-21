@@ -11,10 +11,11 @@ applying (some kind of) finite string transformation rules<br>
 to finite string inputs to derive any and all outputs.
 
 **Decider Defined --- Axiom 2**<br>
-All decisions inherently require applying inference steps<br>
-to decision criteria. Thus the output of a Decider must come<br>
-from (finite string transformation/inference steps) to finite<br>
-strings AS INPUTS that are relevant to the decision criteria.
+All decisions by anyone or anything inherently require applying<br>
+inference steps that are relevant to a decsion criteria. <br>
+Thus the output of a Decider must come from (finite string <br>
+transformation/inference steps) to finite strings AS INPUTS <br>
+that are relevant to the decision criteria.
 
 **Halt Decider Defined --- Axiom 3**<br>
 For halt deciders  relevance requires that these inference <br>
