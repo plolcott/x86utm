@@ -85,6 +85,30 @@ The Halting Theorem is a category error because it requires<br>
 reporting on behavior other than the behavior specified by<br>
 its input finite string.<br>
 
+Here is the same thing from Linz where H and Ĥ.embedded_H <br>
+are also based on UTM simulation of their inputs.<br>
+https://www.liarparadox.org/Peter_Linz_HP_317-320.pdf 
+
+Linz encodes his embedding of his machine H as Ĥq0<br>
+Linz calls the finite string input to Ĥ: Wm
+
+**From the bottom of page 319**<br>
+q0 Wm Wm ⊢* Ĥq0 Wm Wm ⊢* Ĥ.∞ // accept state<br>
+q0 Wm Wm ⊢* Ĥq0 Wm Wm ⊢* Ĥ.qn // reject state<br>
+
+**has been adapted to this**<br>
+Ĥ.q0 ⟨Ĥ⟩ ⊢* Ĥ.embedded_H ⟨Ĥ⟩ ⟨Ĥ⟩ ⊢* Ĥ.∞, // accept state<br>
+Ĥ.q0 ⟨Ĥ⟩ ⊢* Ĥ.embedded_H ⟨Ĥ⟩ ⟨Ĥ⟩ ⊢* Ĥ.qn // reject state<br>
+
+⟨Ĥ⟩ more conventionally shows that Ĥ is taking its <br>
+own finite string machine description as its input.<br>
+
+When embedded_H is a UTM based simulating halt decider then<br>
+Simulation Invariant <br>
+(a) Ĥ copies its input ⟨Ĥ⟩<br>
+(b) Ĥ invokes embedded_H ⟨Ĥ⟩ ⟨Ĥ⟩<br>
+(c) embedded_H simulates ⟨Ĥ⟩ ⟨Ĥ⟩
+
 A **Post canonical system**, also known as a Post production<br>
 system, as created by Emil Post, is a string-manipulation<br> 
 system that starts with finitely many strings and repeatedly<br>
