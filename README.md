@@ -17,9 +17,9 @@ from (finite string transformation/inference steps) to finite<br>
 strings AS INPUTS that are relevant to the decision criteria.
 
 **Halt Decider Defined --- Axiom 3**<br>
-Thus for halt deciders these inference steps are restricted<br>
-to the operational semantics of the language of computation<br>
-of the input.
+For halt deciders  relevance requires that these inference <br>
+steps be restricted to the operational semantics of the <br>
+language of computation of the input.
  
 **Concretely applied to the HHH/DD decider/input pair**<br> 
 DD is simulated by HHH according to the operational<br>
