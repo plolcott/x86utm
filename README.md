@@ -104,7 +104,7 @@ q0 Wm Wm ⊢* Ĥq0 Wm Wm ⊢* Ĥ.qn // reject state<br>
 own finite string machine description as its input.<br>
 
 When embedded_H is a UTM based simulating halt decider then<br>
-Simulation Invariant <br>
+**Simulation Invariant** <br>
 (a) Ĥ copies its input ⟨Ĥ⟩<br>
 (b) Ĥ invokes embedded_H ⟨Ĥ⟩ ⟨Ĥ⟩<br>
 (c) embedded_H simulates ⟨Ĥ⟩ ⟨Ĥ⟩
