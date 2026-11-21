@@ -22,11 +22,11 @@ steps be restricted to the operational semantics of the <br>
 language of computation of the input.
 
 **Simulating Halt Decider Defined --- Axiom 4**<br>
-Input D is simulated by simulating halt decider H <br>
-according to the operational semantics of the progamming<br>
-language of the source code of D. The decision criteria<br>
-is whether or not DD simulated by HHH can reach its final<br>
-state while being simulated. 
+Input D is the source code of a language of computation.<br>
+In the concrete example shown below DD is a function <br>
+written in C. DD is simulated by simulating halt decider<br>
+HHH until HHH correctly determines that HHH cannot reach<br>
+its final state while being correctly simulated.<br>
  
 **Concretely applied to the HHH/DD decider/input pair**<br> 
 DD is simulated by HHH according to the operational<br>
