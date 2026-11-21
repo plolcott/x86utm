@@ -20,6 +20,13 @@ strings AS INPUTS that are relevant to the decision criteria.
 For halt deciders  relevance requires that these inference <br>
 steps be restricted to the operational semantics of the <br>
 language of computation of the input.
+
+**Simulating Halt Decider Defined --- Axiom 4**<br>
+Input D is simulated by simulating halt decider H 
+according to the operational semantics of the progamming
+language of the source code of D. The decision criteria
+is whether or not DD simulated by HHH can reach its final 
+state while being simulated. 
  
 **Concretely applied to the HHH/DD decider/input pair**<br> 
 DD is simulated by HHH according to the operational<br>
