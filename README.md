@@ -19,8 +19,8 @@ Ignoring this and defining deciders as black boxes <br>
 does not make it go away. It merely hides important<br>
 details. 
 
-Because of this the output of a Decider must come from <br>
-only (finite string transformation / inference steps) <br>
+Because of this the output of a Decider must come <br>
+from only (finite string transformation / inference steps) <br>
 to finite strings AS INPUTS that are relevant to the <br>
 decision criteria.
 
