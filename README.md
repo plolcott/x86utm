@@ -19,9 +19,10 @@ Ignoring this and defining deciders as black boxes <br>
 does not make it go away. It merely hides important<br>
 details. 
 
-Because of this the output of a Decider must come from only<br>
-(finite string transformation / inference steps) to finite <br>
-strings AS INPUTS that are relevant to the decision criteria.
+Because of this the output of a Decider must come from <br>
+only (finite string transformation / inference steps) <br>
+to finite strings AS INPUTS that are relevant to the <br>
+decision criteria.
 
 **Halt Decider Defined --- Axiom 3**<br>
 For halt deciders  relevance requires that these inference <br>
