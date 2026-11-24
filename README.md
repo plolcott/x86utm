@@ -69,6 +69,14 @@ Line 03: DD calls HHH(DD); HHH simulates DD;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;Line 03: DD calls HHH(DD); HHH simulates DD;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Line 03: DD calls HHH(DD); HHH simulates DD;
 
+A simulating halt decider H simulates its input D <br>
+until it correctly detects a repeating state that <br>
+cannot possibly reach a final state. We cannot ever<br>
+judge halting on the basis of what happens after <br>
+simulation has been aborted or we would judge that <br>
+all infinite loops always halt. Instead we look for <br>
+a repeating state while the simulation continues
+
 A simulating halt decider H simulates its input D until it<br>
 correctly detects a repeating state that cannot possibly <br>
 reach a final state. We cannot ever judge halting on the <br>
