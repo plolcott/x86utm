@@ -77,13 +77,6 @@ simulation has been aborted or we would judge that <br>
 all infinite loops always halt. Instead we look for <br>
 a repeating state while the simulation continues
 
-A simulating halt decider H simulates its input D until it<br>
-correctly detects a repeating state that cannot possibly <br>
-reach a final state. We cannot ever judge halting on the <br>
-basis of what happens after simulation has been aborted or <br>
-we would judge that all infinite loops always halt. Instead<br>
-we look for a repeating state while the simulation continues.
-
 On this basis simulating halt decider HHH correctly rejects its input DD
 
 There does not exist any implementation of C function <br>
